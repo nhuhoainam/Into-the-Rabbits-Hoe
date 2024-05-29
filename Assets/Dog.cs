@@ -40,13 +40,13 @@ public class Dog : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
-            mAnimator.SetTrigger(pressLeft);
             mAnimator.SetBool(holdLeft, false);
+            mAnimator.SetTrigger(pressLeft);
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {
-            mAnimator.SetTrigger(pressRight);
             mAnimator.SetBool(holdRight, false);
+            mAnimator.SetTrigger(pressRight);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
