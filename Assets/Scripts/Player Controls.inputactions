@@ -2,13 +2,22 @@
     "name": "Player Controls",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Player",
             "id": "1b15fb41-8aa0-4804-94a4-6f175479a8c0",
             "actions": [
                 {
                     "name": "Move",
                     "type": "PassThrough",
                     "id": "a63b9708-d312-47ff-9767-7560d20fe29d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "8ae21af7-8ac5-4ce3-b2f7-03afd579664e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -70,6 +79,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "61ddf74e-fc23-4c6d-a0c7-33ff84aedcf2",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

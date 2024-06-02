@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     const string PLAYER_RUN = "Player-Running-";
     const string PLAYER_USE_HOE = "Player-Using-Hoe-";
     const string PLAYER_USE_AXE = "Player-Using-Axe-";
+    const string PLAYER_USE_WATERING_CAN = "Player-Using-Watering-Can-";
 
     const string DIRECTION_FRONT = "Front";
     const string DIRECTION_BACK = "Back";
@@ -32,6 +34,10 @@ public class PlayerController : MonoBehaviour
         mAnimator = GetComponent<Animator>();
         mCurrentAnim = PLAYER_IDLE;
         mCurrentDirection = DIRECTION_FRONT;
+    }
+
+    private void Start()
+    {
     }
 
     void ChangeAnimationState(string newState, string newDirection)
@@ -56,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerInput()
     {
-        movement = playerControls.Movement.Move.ReadValue<Vector2>();
+        movement = playerControls.Player.Move.ReadValue<Vector2>();
         if (movement.x > 0)
         {
             ChangeAnimationState(PLAYER_WALK, DIRECTION_RIGHT);
@@ -82,6 +88,24 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         playerRb.MovePosition(playerRb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+    }
+
+    private void Interact()
+    {
+        ChangeAnimationState(PLAYER_USE_HOE, mCurrentDirection);
+    }
+
+    private void OnInteract(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Interact();
+        }
+    }
+
+    private void Idle()
+    {
+        ChangeAnimationState(PLAYER_IDLE, mCurrentDirection);
     }
 
     private void Update()
