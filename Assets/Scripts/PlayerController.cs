@@ -17,10 +17,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private DirectionalAnimationSet _UsingAxe;
     [SerializeField] private DirectionalAnimationSet _UsingWateringCan;
     [SerializeField] private Vector2 _Direction = Vector2.down;
+    
+    private DirectionalAnimationSet _CurrentAnimationSet;
+
+    private TimeSynchronizationGroup _MovementSynchronization;
 
     private PlayerControls playerControls;
     private Rigidbody2D playerRb;
-    private Vector2 movement;
+    private Vector2 _Movement;
 
     private bool isRunning = false;
 
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         playerControls = new PlayerControls();
         playerRb = GetComponent<Rigidbody2D>();
+        _MovementSynchronization = new TimeSynchronizationGroup(_Animancer) { _Idle, _Walking };
     }
 
     private void Start()
@@ -41,8 +46,13 @@ public class PlayerController : MonoBehaviour
     
     private AnimancerState Play(DirectionalAnimationSet animations)
     {
-        var clip = animations.GetClip(_Direction);
-        return _Animancer.Play(clip);
+        _MovementSynchronization.StoreTime(_CurrentAnimationSet);
+
+        _CurrentAnimationSet = animations;
+        var state = _Animancer.Play(animations.GetClip(_Direction));
+
+        _MovementSynchronization.SyncTime(_CurrentAnimationSet);
+        return state;
     }
 
     private void OnEnable()
@@ -61,15 +71,15 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        movement = playerControls.Player.Move.ReadValue<Vector2>();
+        _Movement = playerControls.Player.Move.ReadValue<Vector2>();
 
-        if (movement != Vector2.zero)
+        if (_Movement != Vector2.zero)
         {
-            _Direction = movement.normalized;
-            if (isRunning)
-                Play(_Running);
-            else
-                Play(_Walking);
+            _Direction = _Movement;
+
+            UpdateMovementState();
+            _Movement = _CurrentAnimationSet.Snap(_Movement);
+            _Movement = Vector2.ClampMagnitude(_Movement, 1);
         }
         else
         {
@@ -77,10 +87,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void UpdateMovementState() 
+    {
+        Play(isRunning ? _Running : _Walking);
+    }
+
     private void MovePlayer()
     {
         playerRb.MovePosition(playerRb.position 
-            + movement 
+            + _Movement 
             * (moveSpeed 
                 * (isRunning ? runSpeedModifier : 1.0f) 
                 * Time.fixedDeltaTime));
