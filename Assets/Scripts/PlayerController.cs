@@ -2,52 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Animancer;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private float runSpeedModifier = 2.0f;
 
-    const string PLAYER_IDLE = "Player-Idle-";
-    const string PLAYER_WALK = "Player-Walking-";
-    const string PLAYER_RUN = "Player-Running-";
-    const string PLAYER_USE_HOE = "Player-Using-Hoe-";
-    const string PLAYER_USE_AXE = "Player-Using-Axe-";
-    const string PLAYER_USE_WATERING_CAN = "Player-Using-Watering-Can-";
-
-    const string DIRECTION_FRONT = "Front";
-    const string DIRECTION_BACK = "Back";
-    const string DIRECTION_LEFT = "Left";
-    const string DIRECTION_RIGHT = "Right";
+    [SerializeField] private AnimancerComponent _Animancer;
+    [SerializeField] private DirectionalAnimationSet _Idle;
+    [SerializeField] private DirectionalAnimationSet _Walking;
+    [SerializeField] private DirectionalAnimationSet _Running;
+    [SerializeField] private DirectionalAnimationSet _UsingHoe;
+    [SerializeField] private DirectionalAnimationSet _UsingAxe;
+    [SerializeField] private DirectionalAnimationSet _UsingWateringCan;
+    [SerializeField] private Vector2 _Direction = Vector2.down;
 
     private PlayerControls playerControls;
     private Rigidbody2D playerRb;
     private Vector2 movement;
 
-    Animator mAnimator;
-    private string mCurrentAnim;
-    private string mCurrentDirection;
+    private bool isRunning = false;
 
+    private bool isUsingTool = false;
+
+    Animator mAnimator;
     private void Awake()
     {
         playerControls = new PlayerControls();
         playerRb = GetComponent<Rigidbody2D>();
         mAnimator = GetComponent<Animator>();
-        mCurrentAnim = PLAYER_IDLE;
-        mCurrentDirection = DIRECTION_FRONT;
     }
 
     private void Start()
     {
+        playerControls.Player.Run.performed += ctx => isRunning = true;
+        playerControls.Player.Run.canceled += ctx => isRunning = false;
+        playerControls.Player.Interact.performed += ctx => Interact();
     }
-
-    void ChangeAnimationState(string newState, string newDirection)
+    
+    private AnimancerState Play(DirectionalAnimationSet animations)
     {
-        if (mCurrentAnim == newState && mCurrentDirection == newDirection) return;
-
-        mAnimator.Play(newState + newDirection);
-
-        mCurrentAnim = newState;
-        mCurrentDirection = newDirection;
+        var clip = animations.GetClip(_Direction);
+        return _Animancer.Play(clip);
     }
 
     private void OnEnable()
@@ -62,50 +59,44 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerInput()
     {
+        if (isUsingTool)
+        {
+            return;
+        }
         movement = playerControls.Player.Move.ReadValue<Vector2>();
-        if (movement.x > 0)
+
+        if (movement != Vector2.zero)
         {
-            ChangeAnimationState(PLAYER_WALK, DIRECTION_RIGHT);
-        }
-        else if (movement.x < 0)
-        {
-            ChangeAnimationState(PLAYER_WALK, DIRECTION_LEFT);
-        }
-        else if (movement.y > 0)
-        {
-            ChangeAnimationState(PLAYER_WALK, DIRECTION_BACK);
-        }
-        else if (movement.y < 0)
-        {
-            ChangeAnimationState(PLAYER_WALK, DIRECTION_FRONT);
+            _Direction = movement.normalized;
+            if (isRunning)
+                Play(_Running);
+            else
+                Play(_Walking);
         }
         else
         {
-            ChangeAnimationState(PLAYER_IDLE, mCurrentDirection);
+            Play(_Idle);
         }
     }
 
     private void MovePlayer()
     {
-        playerRb.MovePosition(playerRb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        playerRb.MovePosition(playerRb.position 
+            + movement 
+            * (moveSpeed 
+                * (isRunning ? runSpeedModifier : 1.0f) 
+                * Time.fixedDeltaTime));
     }
 
     private void Interact()
     {
-        ChangeAnimationState(PLAYER_USE_HOE, mCurrentDirection);
-    }
-
-    private void OnInteract(InputValue value)
-    {
-        if (value.isPressed)
+        if (isUsingTool)
         {
-            Interact();
+            return;
         }
-    }
-
-    private void Idle()
-    {
-        ChangeAnimationState(PLAYER_IDLE, mCurrentDirection);
+        isUsingTool = true;
+        var state = Play(_UsingHoe);
+        state.Events.OnEnd = () => isUsingTool = false;
     }
 
     private void Update()

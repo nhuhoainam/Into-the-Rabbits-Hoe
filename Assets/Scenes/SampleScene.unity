@@ -1963,6 +1963,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: _Idle
+      value: 
+      objectReference: {fileID: 11400000, guid: b0581ab2879192b4a9ffd5507320db05, type: 2}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: _Running
+      value: 
+      objectReference: {fileID: 11400000, guid: d74ae17e09fc8104fb9bbc1f3e48b152, type: 2}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: _Walking
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fa672e841a7be24e8717f9615766860, type: 2}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: _UsingAxe
+      value: 
+      objectReference: {fileID: 11400000, guid: 43a28226709b5054eb8012377943f54a, type: 2}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: _UsingHoe
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c8a81228f06abf4a80b2654bc90683c, type: 2}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: _Animancer
+      value: 
+      objectReference: {fileID: 5412983241290947130}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: _UsingWateringCan
+      value: 
+      objectReference: {fileID: 11400000, guid: a376349e41d7aca489dc8552a90e4509, type: 2}
     - target: {fileID: 2095377061378462741, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5000001
