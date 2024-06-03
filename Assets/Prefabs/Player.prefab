@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1082716110149414617}
   - component: {fileID: 1175156004204750851}
   - component: {fileID: 7012955430567073179}
+  - component: {fileID: 1422109911127921738}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -127,6 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  runSpeedModifier: 2
+  _Animancer: {fileID: 1422109911127921738}
+  _Idle: {fileID: 11400000, guid: b0581ab2879192b4a9ffd5507320db05, type: 2}
+  _Walking: {fileID: 11400000, guid: 2fa672e841a7be24e8717f9615766860, type: 2}
+  _Running: {fileID: 11400000, guid: d74ae17e09fc8104fb9bbc1f3e48b152, type: 2}
+  _UsingHoe: {fileID: 11400000, guid: 1c8a81228f06abf4a80b2654bc90683c, type: 2}
+  _UsingAxe: {fileID: 11400000, guid: 43a28226709b5054eb8012377943f54a, type: 2}
+  _UsingWateringCan: {fileID: 11400000, guid: a376349e41d7aca489dc8552a90e4509, type: 2}
+  _Direction: {x: 0, y: -1}
 --- !u!95 &7012955430567073179
 Animator:
   serializedVersion: 5
@@ -148,3 +158,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1422109911127921738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415766887931774903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad50f81b1d25c441943c37a89ba23f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Animator: {fileID: 7012955430567073179}
+  _ActionOnDisable: 0

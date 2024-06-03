@@ -26,12 +26,10 @@ public class PlayerController : MonoBehaviour
 
     private bool isUsingTool = false;
 
-    Animator mAnimator;
     private void Awake()
     {
         playerControls = new PlayerControls();
         playerRb = GetComponent<Rigidbody2D>();
-        mAnimator = GetComponent<Animator>();
     }
 
     private void Start()
