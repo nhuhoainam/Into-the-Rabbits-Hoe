@@ -39,9 +39,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        playerControls.Player.Run.performed += ctx => isRunning = true;
-        playerControls.Player.Run.canceled += ctx => isRunning = false;
-        playerControls.Player.Interact.performed += ctx => Interact();
+        playerControls.Movement.Run.performed += ctx => isRunning = true;
+        playerControls.Movement.Run.canceled += ctx => isRunning = false;
+        playerControls.Interaction.Interact.performed += ctx => Interact();
     }
     
     private AnimancerState Play(DirectionalAnimationSet animations)
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        _Movement = playerControls.Player.Move.ReadValue<Vector2>();
+        _Movement = playerControls.Movement.Move.ReadValue<Vector2>();
 
         if (_Movement != Vector2.zero)
         {

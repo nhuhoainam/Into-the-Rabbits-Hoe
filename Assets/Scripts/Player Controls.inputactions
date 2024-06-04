@@ -2,22 +2,13 @@
     "name": "Player Controls",
     "maps": [
         {
-            "name": "Player",
+            "name": "Movement",
             "id": "1b15fb41-8aa0-4804-94a4-6f175479a8c0",
             "actions": [
                 {
                     "name": "Move",
                     "type": "PassThrough",
                     "id": "a63b9708-d312-47ff-9767-7560d20fe29d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "8ae21af7-8ac5-4ce3-b2f7-03afd579664e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -91,7 +82,35 @@
                 },
                 {
                     "name": "",
-                    "id": "61ddf74e-fc23-4c6d-a0c7-33ff84aedcf2",
+                    "id": "52a41c1b-a2c0-4d6d-8fbb-15adfe03ceca",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Interaction",
+            "id": "ac98b5a1-0ad2-4c70-bf99-864f1fe988d5",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "6e12ca03-7ae8-42eb-a686-ae56b80f2fcd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8bef9e4f-1801-4d24-9c2c-4da3d0333317",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
@@ -99,15 +118,76 @@
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Inventory",
+            "id": "503e2425-77c1-44e4-b194-1833bcf86a83",
+            "actions": [
+                {
+                    "name": "Active",
+                    "type": "Value",
+                    "id": "c15d5775-5f5e-482c-a7f2-869eb5bcd55a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "47a52112-4cd2-46a1-ab67-92bbe26c0782",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "Scale",
+                    "groups": "",
+                    "action": "Active",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "52a41c1b-a2c0-4d6d-8fbb-15adfe03ceca",
-                    "path": "<Keyboard>/leftShift",
+                    "id": "1b041aa7-4d20-4f8f-ba03-83fe028abc3a",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Scale(factor=2)",
                     "groups": "",
-                    "action": "Run",
+                    "action": "Active",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d63dd614-ee27-47a3-b2f8-5c1a8244aeb8",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "Scale(factor=3)",
+                    "groups": "",
+                    "action": "Active",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3dfbd7b4-6a04-453a-af33-2117083abe71",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "Scale(factor=4)",
+                    "groups": "",
+                    "action": "Active",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fca1d23-9f02-4bc9-8e2b-960a6ed90e01",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "Scale(factor=5)",
+                    "groups": "",
+                    "action": "Active",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
