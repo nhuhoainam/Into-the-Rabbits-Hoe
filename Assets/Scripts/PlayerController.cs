@@ -65,6 +65,15 @@ public class PlayerController : MonoBehaviour
         playerControls.Disable();
     }
 
+    private void FindTile()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, _Direction, 1.0f);
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.collider.name);
+        }
+    }
+
     private void PlayerInput()
     {
         if (isUsingTool)
