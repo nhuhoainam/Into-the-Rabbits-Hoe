@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     
     private DirectionalAnimationSet _CurrentAnimationSet;
 
-    private TimeSynchronizationGroup _MovementSynchronization;
+    // private TimeSynchronizationGroup _MovementSynchronization;
 
     private PlayerControls playerControls;
     private Rigidbody2D playerRb;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         playerControls = new PlayerControls();
         playerRb = GetComponent<Rigidbody2D>();
-        _MovementSynchronization = new TimeSynchronizationGroup(_Animancer) { _Idle, _Walking };
+        // _MovementSynchronization = new TimeSynchronizationGroup(_Animancer) { _Idle, _Walking };
     }
 
     private void Start()
@@ -46,12 +46,12 @@ public class PlayerController : MonoBehaviour
     
     private AnimancerState Play(DirectionalAnimationSet animations)
     {
-        _MovementSynchronization.StoreTime(_CurrentAnimationSet);
+        // _MovementSynchronization.StoreTime(_CurrentAnimationSet);
 
         _CurrentAnimationSet = animations;
         var state = _Animancer.Play(animations.GetClip(_Direction));
 
-        _MovementSynchronization.SyncTime(_CurrentAnimationSet);
+        // _MovementSynchronization.SyncTime(_CurrentAnimationSet);
         return state;
     }
 
