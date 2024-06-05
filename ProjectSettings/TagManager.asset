@@ -44,6 +44,9 @@ TagManager:
   - name: Land
     uniqueID: 2143024459
     locked: 0
+  - name: TileHighlight
+    uniqueID: 3605692483
+    locked: 0
   - name: Entity
     uniqueID: 1399307659
     locked: 0
