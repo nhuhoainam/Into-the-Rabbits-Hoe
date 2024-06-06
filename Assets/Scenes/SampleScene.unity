@@ -1467,7 +1467,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1841406989}
   - component: {fileID: 1841406988}
-  - component: {fileID: 1841406990}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -1504,20 +1503,6 @@ Transform:
   - {fileID: 2131225125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1841406990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841406987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2342e6962570a0142ba25e2d156f8876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactiveMap: {fileID: 1724057732}
-  hoverTile: {fileID: 11400000, guid: 26e384dd6dd54704581336db3d1f3388, type: 2}
 --- !u!1 &1874118827
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,16 +3388,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: hoverTile
+      value: 
+      objectReference: {fileID: 11400000, guid: 26e384dd6dd54704581336db3d1f3388, type: 2}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: _Animancer
       value: 
       objectReference: {fileID: 5412983241290947136}
+    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: interactiveMap
+      value: 
+      objectReference: {fileID: 1724057732}
     - target: {fileID: 2095377061378462741, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5000001
       objectReference: {fileID: 0}
     - target: {fileID: 2095377061378462741, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.50000006
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2095377061378462741, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: m_LocalPosition.z

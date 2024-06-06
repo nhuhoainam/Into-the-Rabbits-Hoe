@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
 using Animancer;
 
@@ -16,8 +17,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private DirectionalAnimationSet _UsingHoe;
     [SerializeField] private DirectionalAnimationSet _UsingAxe;
     [SerializeField] private DirectionalAnimationSet _UsingWateringCan;
-    [SerializeField] private Vector2 _Direction = Vector2.down;
+
+    [SerializeField] private Tilemap interactiveMap;
+    [SerializeField] private Tile hoverTile;
+    private Vector3Int _prevHighlightedPos = new();
     
+    private Vector2 _Direction = Vector2.down;
     private DirectionalAnimationSet _CurrentAnimationSet;
 
     // private TimeSynchronizationGroup _MovementSynchronization;
@@ -65,12 +70,19 @@ public class PlayerController : MonoBehaviour
         playerControls.Disable();
     }
 
-    private void FindTile()
+    private void HighlightTile()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, _Direction, 1.0f);
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.name);
+            var tilemap = hit.collider.GetComponent<Tilemap>();
+            Vector3Int highlightPos = tilemap.WorldToCell(hit.point);
+            if (highlightPos != _prevHighlightedPos)
+            {
+                interactiveMap.SetTile(_prevHighlightedPos, null);
+                interactiveMap.SetTile(highlightPos, hoverTile);
+                _prevHighlightedPos = highlightPos;
+            }
         }
     }
 
@@ -124,6 +136,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         PlayerInput();
+        HighlightTile();
     }
 
     private void FixedUpdate()
