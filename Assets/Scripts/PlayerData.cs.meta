@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 79ab9f90c320b7f40a4ed65339f09898
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - idle: {fileID: 11400000, guid: b0581ab2879192b4a9ffd5507320db05, type: 2}
+  - walking: {fileID: 11400000, guid: 2fa672e841a7be24e8717f9615766860, type: 2}
+  - running: {fileID: 11400000, guid: d74ae17e09fc8104fb9bbc1f3e48b152, type: 2}
+  - usingHoe: {fileID: 11400000, guid: 1c8a81228f06abf4a80b2654bc90683c, type: 2}
+  - usingAxe: {fileID: 11400000, guid: 43a28226709b5054eb8012377943f54a, type: 2}
+  - usingWateringCan: {fileID: 11400000, guid: a376349e41d7aca489dc8552a90e4509, type: 2}
+  - interactiveMap: {instanceID: 0}
+  - hoverTile: {fileID: 11400000, guid: 26e384dd6dd54704581336db3d1f3388, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

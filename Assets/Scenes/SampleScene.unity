@@ -1836,7 +1836,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
 --- !u!1839735485 &2131225127
@@ -3388,17 +3388,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: hoverTile
+      propertyPath: playerData
       value: 
-      objectReference: {fileID: 11400000, guid: 26e384dd6dd54704581336db3d1f3388, type: 2}
-    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: _Animancer
-      value: 
-      objectReference: {fileID: 5412983241290947136}
-    - target: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: interactiveMap
-      value: 
-      objectReference: {fileID: 1724057732}
+      objectReference: {fileID: 11400000, guid: cebeca40fb5fa2147a42f4eef8335dd7, type: 2}
     - target: {fileID: 2095377061378462741, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5000001
@@ -3439,22 +3431,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8911759914056759389, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: interactiveMap
+      value: 
+      objectReference: {fileID: 1724057732}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
---- !u!114 &5412983241290947136 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1219905386968366885, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-  m_PrefabInstance: {fileID: 5412983241290947128}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad50f81b1d25c441943c37a89ba23f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

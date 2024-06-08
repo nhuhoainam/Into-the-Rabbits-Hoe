@@ -7,56 +7,35 @@ using Animancer;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5.0f;
-    [SerializeField] private float runSpeedModifier = 2.0f;
-
     [SerializeField] private AnimancerComponent _Animancer;
-    [SerializeField] private DirectionalAnimationSet _Idle;
-    [SerializeField] private DirectionalAnimationSet _Walking;
-    [SerializeField] private DirectionalAnimationSet _Running;
-    [SerializeField] private DirectionalAnimationSet _UsingHoe;
-    [SerializeField] private DirectionalAnimationSet _UsingAxe;
-    [SerializeField] private DirectionalAnimationSet _UsingWateringCan;
 
-    [SerializeField] private Tilemap interactiveMap;
-    [SerializeField] private Tile hoverTile;
-    private Vector3Int _prevHighlightedPos = new();
-    
+    public PlayerData playerData;
+
     private Vector2 _Direction = Vector2.down;
     private DirectionalAnimationSet _CurrentAnimationSet;
-
-    // private TimeSynchronizationGroup _MovementSynchronization;
 
     private PlayerControls playerControls;
     private Rigidbody2D playerRb;
     private Vector2 _Movement;
 
-    private bool isRunning = false;
-
-    private bool isUsingTool = false;
-
     private void Awake()
     {
         playerControls = new PlayerControls();
         playerRb = GetComponent<Rigidbody2D>();
-        // _MovementSynchronization = new TimeSynchronizationGroup(_Animancer) { _Idle, _Walking };
     }
 
     private void Start()
     {
-        playerControls.Movement.Run.performed += ctx => isRunning = true;
-        playerControls.Movement.Run.canceled += ctx => isRunning = false;
+        playerControls.Movement.Run.performed += ctx => playerData.isRunning = true;
+        playerControls.Movement.Run.canceled += ctx => playerData.isRunning = false;
         playerControls.Interaction.Interact.performed += ctx => Interact();
     }
     
     private AnimancerState Play(DirectionalAnimationSet animations)
     {
-        // _MovementSynchronization.StoreTime(_CurrentAnimationSet);
-
         _CurrentAnimationSet = animations;
         var state = _Animancer.Play(animations.GetClip(_Direction));
 
-        // _MovementSynchronization.SyncTime(_CurrentAnimationSet);
         return state;
     }
 
@@ -70,25 +49,9 @@ public class PlayerController : MonoBehaviour
         playerControls.Disable();
     }
 
-    private void HighlightTile()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, _Direction, 1.0f);
-        if (hit.collider != null)
-        {
-            var tilemap = hit.collider.GetComponent<Tilemap>();
-            Vector3Int highlightPos = tilemap.WorldToCell(hit.point);
-            if (highlightPos != _prevHighlightedPos)
-            {
-                interactiveMap.SetTile(_prevHighlightedPos, null);
-                interactiveMap.SetTile(highlightPos, hoverTile);
-                _prevHighlightedPos = highlightPos;
-            }
-        }
-    }
-
     private void PlayerInput()
     {
-        if (isUsingTool)
+        if (playerData.isUsingTool)
         {
             return;
         }
@@ -99,44 +62,44 @@ public class PlayerController : MonoBehaviour
             _Direction = _Movement;
 
             UpdateMovementState();
-            _Movement = _CurrentAnimationSet.Snap(_Movement);
+            _Direction = _CurrentAnimationSet.Snap(_Direction);
             _Movement = Vector2.ClampMagnitude(_Movement, 1);
         }
         else
         {
-            Play(_Idle);
+            Play(playerData.idle);
         }
     }
 
     private void UpdateMovementState() 
     {
-        Play(isRunning ? _Running : _Walking);
+        Play(playerData.isRunning ? playerData.running : playerData.walking);
     }
 
     private void MovePlayer()
     {
         playerRb.MovePosition(playerRb.position 
             + _Movement 
-            * (moveSpeed 
-                * (isRunning ? runSpeedModifier : 1.0f) 
+            * (playerData.moveSpeed 
+                * (playerData.isRunning ? playerData.runSpeedModifier : 1.0f) 
                 * Time.fixedDeltaTime));
     }
 
     private void Interact()
     {
-        if (isUsingTool)
+        if (playerData.isUsingTool)
         {
             return;
         }
-        isUsingTool = true;
-        var state = Play(_UsingHoe);
-        state.Events.OnEnd = () => isUsingTool = false;
+        playerData.isUsingTool = true;
+        var state = Play(playerData.usingHoe);
+        state.Events.OnEnd = () => playerData.isUsingTool = false;
     }
 
     private void Update()
     {
+        playerData.position = transform.position;
         PlayerInput();
-        HighlightTile();
     }
 
     private void FixedUpdate()

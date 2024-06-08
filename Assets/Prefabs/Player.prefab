@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1175156004204750851}
   - component: {fileID: 1219905386968366885}
   - component: {fileID: 6835384773500110962}
+  - component: {fileID: 8911759914056759389}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1399307659
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1315801902, guid: ed5bb7cc76427fd418aea1c63be88ad1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,16 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7772368e6a6036748aae9b959042f8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  runSpeedModifier: 2
   _Animancer: {fileID: 1219905386968366885}
-  _Idle: {fileID: 11400000, guid: b0581ab2879192b4a9ffd5507320db05, type: 2}
-  _Walking: {fileID: 11400000, guid: 2fa672e841a7be24e8717f9615766860, type: 2}
-  _Running: {fileID: 11400000, guid: d74ae17e09fc8104fb9bbc1f3e48b152, type: 2}
-  _UsingHoe: {fileID: 11400000, guid: 1c8a81228f06abf4a80b2654bc90683c, type: 2}
-  _UsingAxe: {fileID: 11400000, guid: 43a28226709b5054eb8012377943f54a, type: 2}
-  _UsingWateringCan: {fileID: 11400000, guid: a376349e41d7aca489dc8552a90e4509, type: 2}
-  _Direction: {x: 0, y: -1}
+  playerData: {fileID: 11400000, guid: cebeca40fb5fa2147a42f4eef8335dd7, type: 2}
 --- !u!114 &1219905386968366885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,3 +165,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8911759914056759389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415766887931774903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a8d900c9a99c0498c1132ea746270c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveMap: {fileID: 0}
+  playerData: {fileID: 11400000, guid: cebeca40fb5fa2147a42f4eef8335dd7, type: 2}
