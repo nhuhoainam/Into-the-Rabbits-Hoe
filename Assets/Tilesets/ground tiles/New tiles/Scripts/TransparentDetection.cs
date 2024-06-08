@@ -10,12 +10,10 @@ public class TransparentDetection : MonoBehaviour
     [SerializeField] private float transparentAmount = 0.8f;
     [SerializeField] private float fadeTime = 0.5f;
 
-    private SpriteRenderer spriteRenderer;
-    private Tilemap tilemap;
+    public  SpriteRenderer spriteRenderer;
+    public Tilemap tilemap;
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        tilemap = FindObjectOfType<Tilemap>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
