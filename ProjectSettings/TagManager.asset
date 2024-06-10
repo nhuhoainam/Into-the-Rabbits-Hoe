@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Cow
   - Grass
+  - CameraBounding
+  - VirtualCamera
   layers:
   - Default
   - TransparentFX
