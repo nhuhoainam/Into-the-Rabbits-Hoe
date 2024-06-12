@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7cf530575e42ded409d7e55c41ddc57b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - activeInventoryData: {fileID: 11400000, guid: 697dab5151b1c6849a2c8ae458493ba5, type: 2}
+  - activeInventorySlotPrefab: {fileID: 7016097832711722542, guid: 78bc8088b58f4954bb5c0efafddcf8d0, type: 3}
+  - activeInventoryPanel: {fileID: 5709163230379804796, guid: 1ec308306c412574da939f8a196c64e5, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

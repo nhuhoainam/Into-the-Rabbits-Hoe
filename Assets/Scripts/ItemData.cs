@@ -5,9 +5,10 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ItemData : ScriptableObject
 {
+    public int itemID;
     public string itemName;
     public Sprite itemSprite;
-    [TextArea]
     public GameObject model;
+    [TextArea]
     public string itemDescription;
 }

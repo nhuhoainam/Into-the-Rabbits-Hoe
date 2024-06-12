@@ -8,9 +8,16 @@ public class InventoryData : ScriptableObject
     public const int maxNoItems = 36;
     public List<ItemInstance> items = new();
 
+    public const int maxActiveItems = 9;
+    public int currentSlot = 0;
+    public List<ItemInstance> activeItems = new();
+
     public InventoryData() {
         for (int i = 0; i < maxNoItems; i++) {
             items.Add(null);
+        }
+        for (int i = 0; i < maxActiveItems; i++) {
+            activeItems.Add(null);
         }
     }
 
