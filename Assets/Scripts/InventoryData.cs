@@ -30,4 +30,14 @@ public class InventoryData : ScriptableObject
         }
         return false;
     }
+
+    public bool AddActiveItem(ItemInstance newItem) {
+        for (int i = 0; i < maxActiveItems; i++) {
+            if (activeItems[i] == null) {
+                activeItems[i] = newItem;
+                return true;
+            }
+        }
+        return false;
+    }
 }

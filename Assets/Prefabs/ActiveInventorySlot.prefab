@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 8818074910048783867}
   m_Layer: 5
   m_Name: Item
-  m_TagString: Untagged
+  m_TagString: ItemDisplay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3780725158957541112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881917636889116012}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -181,8 +181,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2928181922386100396}
   - {fileID: 3780725158957541112}
+  - {fileID: 2928181922386100396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -240,4 +240,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156f3a6d349f2b34aa09afa8b4c9c25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInstance: {fileID: 0}

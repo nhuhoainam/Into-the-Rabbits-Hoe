@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIActiveInventory : MonoBehaviour
 {
-    public InventoryData activeInventoryData;
+    public InventoryData inventoryData;
 
     public GameObject activeInventorySlotPrefab;
     public GameObject activeInventoryPanel;
@@ -19,16 +19,19 @@ public class UIActiveInventory : MonoBehaviour
     private void Start()
     {
         playerControls.Inventory.Active.performed += ctx => ChangeActiveSlot((int)ctx.ReadValue<float>());
+    }
 
+    public void Initialize()
+    {
         for (int i = 0; i < InventoryData.maxActiveItems; i++)
         {
             var slot = Instantiate(activeInventorySlotPrefab, activeInventoryPanel.transform);
             UIInventorySlot slotScript = slot.GetComponent<UIInventorySlot>();
-            if (activeInventoryData.items[i] != null) {
-                slotScript.SetItem(activeInventoryData.items[i]);
+            if (inventoryData.activeItems[i] != null) {
+                slotScript.SetItem(inventoryData.activeItems[i]);
             }
         }
-        ChangeActiveHighlight(activeInventoryData.currentSlot);
+        ChangeActiveHighlight(inventoryData.currentSlot);
     }
 
     private void OnEnable()
@@ -48,13 +51,17 @@ public class UIActiveInventory : MonoBehaviour
 
     private void ChangeActiveHighlight(int index)
     {
-        activeInventoryData.currentSlot = index;
+        inventoryData.currentSlot = index;
 
         foreach (Transform inventorySlot in transform)
         {
-            inventorySlot.GetChild(0).gameObject.SetActive(false);
+            inventorySlot.GetChild(1).gameObject.SetActive(false);
         }
 
-        transform.GetChild(activeInventoryData.currentSlot).GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(inventoryData.currentSlot).GetChild(1).gameObject.SetActive(true);
+    }
+
+    private void Update()
+    {
     }
 }

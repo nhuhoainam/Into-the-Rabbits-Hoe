@@ -17,11 +17,40 @@ public class UIInventory : MonoBehaviour
         playerControls = new PlayerControls();
     }
 
+    public void Initialize() {
+        for (int i = 0; i < InventoryData.maxNoItems; i++) {
+            UIInventorySlot slotScript = inventoryPanel.transform.GetChild(i).GetComponent<UIInventorySlot>();
+            if (inventoryData.items[i] != null) {
+                slotScript.SetItem(inventoryData.items[i]);
+            }
+        }
+    }
+
     private void ToggleInventory()
     {
-        Debug.Log("Toggling inventory");
-        isOpen = !isOpen;
-        inventoryPanel.SetActive(isOpen);
+        if (isOpen)
+        {
+            CloseInventory();
+        }
+        else
+        {
+            OpenInventory();
+        }
+    }
+
+    private void OpenInventory()
+    {
+        Debug.Log("Opening inventory");
+        isOpen = true;
+        inventoryPanel.SetActive(true);
+        Initialize();
+    }
+
+    private void CloseInventory()
+    {
+        Debug.Log("Closing inventory");
+        isOpen = false;
+        inventoryPanel.SetActive(false);
     }
 
     void OnEnable() {
@@ -36,13 +65,9 @@ public class UIInventory : MonoBehaviour
     void Start()
     {
         playerControls.Inventory.OpenInventory.performed += ctx => ToggleInventory();
-
+        
         for (int i = 0; i < InventoryData.maxNoItems; i++) {
-            GameObject slot = Instantiate(inventorySlotPrefab, inventoryPanel.transform);
-            UIInventorySlot slotScript = slot.GetComponent<UIInventorySlot>();
-            if (inventoryData.items[i] != null) {
-                slotScript.SetItem(inventoryData.items[i]);
-            }
+            Instantiate(inventorySlotPrefab, inventoryPanel.transform);
         }
     }
 }
