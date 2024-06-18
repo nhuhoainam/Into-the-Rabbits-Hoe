@@ -5,46 +5,31 @@ using UnityEngine;
 public class UIActiveInventory : MonoBehaviour
 {
     public InventoryData inventoryData;
-
     public GameObject activeInventorySlotPrefab;
     public GameObject activeInventoryPanel;
+    public List<UIInventorySlot> slots = new(InventoryData.maxActiveItems);
 
-    private PlayerControls playerControls;
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
+        for (int i = 0; i < InventoryData.maxActiveItems; i++)
+        {
+            slots.Add(null);
+        }
     }
 
     private void Start()
     {
-        playerControls.Inventory.Active.performed += ctx => ChangeActiveSlot((int)ctx.ReadValue<float>());
-    }
-
-    public void Initialize()
-    {
         for (int i = 0; i < InventoryData.maxActiveItems; i++)
         {
             var slot = Instantiate(activeInventorySlotPrefab, activeInventoryPanel.transform);
-            UIInventorySlot slotScript = slot.GetComponent<UIInventorySlot>();
-            if (inventoryData.activeItems[i] != null) {
-                slotScript.SetItem(inventoryData.activeItems[i]);
-            }
+            slots[i] = slot.GetComponent<UIInventorySlot>();
         }
         ChangeActiveHighlight(inventoryData.currentSlot);
+        UpdateInventory();
     }
 
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Disable();
-    }
-
-    private void ChangeActiveSlot(int slot)
+    public void ChangeActiveSlot(int slot)
     {
         ChangeActiveHighlight(slot - 1);
     }
@@ -61,7 +46,20 @@ public class UIActiveInventory : MonoBehaviour
         transform.GetChild(inventoryData.currentSlot).GetChild(1).gameObject.SetActive(true);
     }
 
-    private void Update()
+    public void UpdateInventory()
     {
+        for (int i = 0; i < InventoryData.maxActiveItems; i++)
+        {
+            if (inventoryData.activeItems[i] != null)
+            {
+                slots[i].SetItem(inventoryData.activeItems[i]);
+            }
+            else
+            {
+                slots[i].ClearItem();
+            }
+            slots[i].UpdateItemDisplay();
+        }
+        ChangeActiveHighlight(inventoryData.currentSlot);
     }
 }

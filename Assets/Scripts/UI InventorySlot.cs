@@ -32,11 +32,16 @@ public class UIInventorySlot : MonoBehaviour
         itemDisplay.sprite = null;
     }
 
-    public void Update() {
-        if (itemInstance != null) {
+    public void UpdateItemDisplay()
+    {
+        if (itemInstance != null)
+        {
+            itemDisplay.sprite = itemInstance.itemData.itemSprite;
             itemDisplay.gameObject.SetActive(true);
         }
-        else {
+        else
+        {
+            itemDisplay.sprite = null;
             itemDisplay.gameObject.SetActive(false);
         }
     }

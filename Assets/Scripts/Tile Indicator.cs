@@ -11,7 +11,7 @@ public class TileIndicator : MonoBehaviour
 
     private void HighlightTile()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerData.curDirection, 1.0f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerData.curDirection, 1.0f, LayerMask.GetMask("Tilemap"));
         if (hit.collider != null)
         {
             var tilemap = hit.collider.GetComponent<Tilemap>();

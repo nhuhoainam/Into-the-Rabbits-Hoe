@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ItemDisplay
+  - DroppedItem
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tilemap
   - Water
   - UI
   - 
@@ -46,6 +48,9 @@ TagManager:
     locked: 0
   - name: TileHighlight
     uniqueID: 3605692483
+    locked: 0
+  - name: Items
+    uniqueID: 1608987633
     locked: 0
   - name: Entity
     uniqueID: 1399307659

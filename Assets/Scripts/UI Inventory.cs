@@ -8,25 +8,21 @@ public class UIInventory : MonoBehaviour
     public InventoryData inventoryData;
     public GameObject inventorySlotPrefab;
     public GameObject inventoryPanel;
+    public List<UIInventorySlot> slots = new(InventoryData.maxNoItems);
 
-    private PlayerControls playerControls;
 
     public bool isOpen = false;
 
-    void Awake() {
-        playerControls = new PlayerControls();
-    }
+    void Awake()
+    {
 
-    public void Initialize() {
-        for (int i = 0; i < InventoryData.maxNoItems; i++) {
-            UIInventorySlot slotScript = inventoryPanel.transform.GetChild(i).GetComponent<UIInventorySlot>();
-            if (inventoryData.items[i] != null) {
-                slotScript.SetItem(inventoryData.items[i]);
-            }
+        for (int i = 0; i < InventoryData.maxNoItems; i++)
+        {
+            slots.Add(null);
         }
     }
 
-    private void ToggleInventory()
+    public void ToggleInventory()
     {
         if (isOpen)
         {
@@ -43,7 +39,7 @@ public class UIInventory : MonoBehaviour
         Debug.Log("Opening inventory");
         isOpen = true;
         inventoryPanel.SetActive(true);
-        Initialize();
+        UpdateInventory();
     }
 
     private void CloseInventory()
@@ -53,21 +49,30 @@ public class UIInventory : MonoBehaviour
         inventoryPanel.SetActive(false);
     }
 
-    void OnEnable() {
-        playerControls.Enable();
-    }
-
-    void OnDisable() {
-        playerControls.Disable();
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        playerControls.Inventory.OpenInventory.performed += ctx => ToggleInventory();
-        
-        for (int i = 0; i < InventoryData.maxNoItems; i++) {
-            Instantiate(inventorySlotPrefab, inventoryPanel.transform);
+        for (int i = 0; i < InventoryData.maxNoItems; i++)
+        {
+            var slot = Instantiate(inventorySlotPrefab, inventoryPanel.transform);
+            slots[i] = slot.GetComponent<UIInventorySlot>();
+        }
+    }
+
+    public void UpdateInventory()
+    {
+        for (int i = 0; i < InventoryData.maxNoItems; i++)
+        {
+            if (inventoryData.items[i] != null)
+            {
+                slots[i].SetItem(inventoryData.items[i]);
+            }
+            else
+            {
+                slots[i].ClearItem();
+            }
+            slots[i].UpdateItemDisplay();
         }
     }
 }

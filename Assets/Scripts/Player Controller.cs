@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
 
     public PlayerData playerData;
 
-    private Vector2 _Direction = Vector2.down;
+    private Vector2 Direction {
+        get => playerData.curDirection;
+        set => playerData.curDirection = value;
+    }
     private DirectionalAnimationSet _CurrentAnimationSet;
 
     private PlayerControls playerControls;
@@ -34,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private AnimancerState Play(DirectionalAnimationSet animations)
     {
         _CurrentAnimationSet = animations;
-        var state = _Animancer.Play(animations.GetClip(_Direction));
+        var state = _Animancer.Play(animations.GetClip(Direction));
 
         return state;
     }
@@ -59,10 +62,10 @@ public class PlayerController : MonoBehaviour
 
         if (_Movement != Vector2.zero)
         {
-            _Direction = _Movement;
+            Direction = _Movement;
 
             UpdateMovementState();
-            _Direction = _CurrentAnimationSet.Snap(_Direction);
+            Direction = _CurrentAnimationSet.Snap(Direction);
             _Movement = Vector2.ClampMagnitude(_Movement, 1);
         }
         else
