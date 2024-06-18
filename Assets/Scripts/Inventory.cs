@@ -45,12 +45,19 @@ public class Inventory : MonoBehaviour
         playerControls.Inventory.OpenInventory.performed += ctx => uiInventory.ToggleInventory();
 
         var hoe = AssetDatabase.LoadAssetAtPath<ItemData>("Assets/Scripts/Item_Hoe.asset");
-        var ok = inventoryData.AddActiveItem(new ItemInstance(hoe));
+        inventoryData.AddActiveItem(new ItemInstance(hoe));
         inventoryData.AddItem(new ItemInstance(hoe));
 
         uiActiveInventory.UpdateInventory();
+    }
 
-        Debug.Log("Adding hoe to active inventory: " + ok);
+    public void AddItem(ItemInstance item) {
+        inventoryData.AddItem(item, out bool addedToActive);
+        if (addedToActive) {
+            uiActiveInventory.UpdateInventory();
+        } else {
+            uiInventory.UpdateInventory();
+        }
     }
 
     public void DropItem(int itemIndex, bool active = false) {
@@ -82,7 +89,7 @@ public class Inventory : MonoBehaviour
     {
         if (other.TryGetComponent(out ItemInstanceContainer foundItem))
         {
-            inventoryData.AddItem(foundItem.TakeItem());
+            AddItem(foundItem.TakeItem());
         }
     }
 }

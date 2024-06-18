@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d77e33a424e1214abedc8c53dccbb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: cebeca40fb5fa2147a42f4eef8335dd7, type: 2}
   inventoryData: {fileID: 0}
   uiInventoryRef: {fileID: 1392951551}
   uiActiveInventoryRef: {fileID: 812563255}
@@ -185,7 +186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &738138396
 GameObject:
