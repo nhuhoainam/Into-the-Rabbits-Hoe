@@ -24,10 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
-        {
-            NextText();
-        }
+
     }
 
     // Start the conversation, is called by the NPC script
@@ -36,18 +33,12 @@ public class DialogueManager : MonoBehaviour
         this.dialogue = dialogue;
         this.npcName = npcName;
         this.npcAvatar = npcAvatar;
-        dialogueIndex = 0;
-        dialoguePanel.SetActive(true);
         nameBox.GetComponent<TextMeshProUGUI>().text = npcName;
         avatarBox.GetComponent<Image>().sprite = npcAvatar;
-        dialogueBox.GetComponent<TextMeshProUGUI>().text = "";
-        isDialogueActive = true;
-
         var player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player.DisableInput();
-        player.SetIdleState();
-
-        NextText();
+        isDialogueActive = true;
+        dialoguePanel.SetActive(true);
     }
 
     // Display the next text
@@ -60,7 +51,7 @@ public class DialogueManager : MonoBehaviour
             dialogueIndex++;
         }
         else {
-            dialogueIndex++;
+            EndDialogue();
         }
     }
 
@@ -80,6 +71,7 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueActive = false;
         dialogueBox.GetComponent<TextMeshProUGUI>().text = "";
+        dialogueIndex = 0;
         dialoguePanel.SetActive(false);
         var player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player.EnableInput();

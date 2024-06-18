@@ -42,10 +42,10 @@ public class NPC : MonoBehaviour
                 if (!dialogueManager.isDialogueActive)
                 {
                     dialogueManager.StartDialogue(dialogue, npcName, avatar);
+                    dialogueManager.NextText();
                 }
-                if (dialogueManager.isDialogueActive && dialogueManager.dialogueIndex == dialogue.Length + 1)
-                {
-                    dialogueManager.EndDialogue();
+                else {
+                    dialogueManager.NextText();
                 }
             }
             else
