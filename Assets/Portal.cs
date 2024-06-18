@@ -20,10 +20,15 @@ public class Portal : MonoBehaviour
                 yield break;
             }
             PlayerPrefs.SetString("SpawnPoint", spawnPointName);
+            // Set the state of the player to idle corresponding to the direction
+            other.gameObject.GetComponent<PlayerController>().SetIdleState();
+            // Ignore the input until next scene is loaded
+            other.gameObject.GetComponent<PlayerController>().enabled = false;
             transAnim.GetComponent<Animator>().SetTrigger("End");
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene(sceneToLoad);
             transAnim.GetComponent<Animator>().SetTrigger("Start");
+            other.gameObject.GetComponent<PlayerController>().enabled = true;
         }
     }
 }

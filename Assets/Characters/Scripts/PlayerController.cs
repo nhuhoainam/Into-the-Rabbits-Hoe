@@ -66,4 +66,20 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void DisableInput()
+    {
+        playerControls.Movement.Disable();
+    }
+
+    public void EnableInput()
+    {
+        playerControls.Movement.Enable();
+    }
+
+    public void SetIdleState()
+    {
+        myAnimator.SetFloat("moveX", 0);
+        myAnimator.SetFloat("moveY", 0);
+    }
 }
