@@ -101221,7 +101221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2dab5fe9e51c44b8c2422f104ce054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: NPC2
+  npcName: NPC3
   avatar: {fileID: 1481341364, guid: 7bc2feb824796ce4ba90e7b1c8ae78b1, type: 3}
   dialogue:
   - Hello, I am NPC3.
