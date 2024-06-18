@@ -40,4 +40,12 @@ public class InventoryData : ScriptableObject
         }
         return false;
     }
+
+    public void RemoveItem(int index) {
+        items[index] = null;
+    }
+
+    public void RemoveActiveItem(int index) {
+        activeItems[index] = null;
+    }
 }
