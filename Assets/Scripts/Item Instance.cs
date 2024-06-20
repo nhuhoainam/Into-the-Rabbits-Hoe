@@ -5,10 +5,11 @@ using UnityEngine;
 public class ItemInstance
 {
     public ItemData itemData;
-    // public int quantity = 1;
+    public uint quantity;
 
-    public ItemInstance(ItemData itemData)
+    public ItemInstance(ItemData itemData, uint quantity = 1)
     {
         this.itemData = itemData;
+        this.quantity = quantity;
     }
 }

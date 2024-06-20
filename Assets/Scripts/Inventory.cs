@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour
     private UIInventory uiInventory;
     private UIActiveInventory uiActiveInventory;
 
+    public GameObject droppedItemPrefab;
+
     public PlayerControls playerControls;
 
     void Awake()
@@ -45,8 +47,10 @@ public class Inventory : MonoBehaviour
         playerControls.Inventory.OpenInventory.performed += ctx => uiInventory.ToggleInventory();
 
         var hoe = AssetDatabase.LoadAssetAtPath<ItemData>("Assets/Scripts/Item_Hoe.asset");
+        var wood = AssetDatabase.LoadAssetAtPath<ItemData>("Assets/Scripts/Item_Wood.asset");
         inventoryData.AddActiveItem(new ItemInstance(hoe));
         inventoryData.AddItem(new ItemInstance(hoe));
+        inventoryData.AddItem(new ItemInstance(wood, quantity: 6), out _);
 
         uiActiveInventory.UpdateInventory();
     }
@@ -68,14 +72,9 @@ public class Inventory : MonoBehaviour
             } else {
                 inventoryData.RemoveItem(itemIndex);
             }
-            GameObject droppedItem = new();
-            droppedItem.AddComponent<ItemInstanceContainer>().item = item;
-            droppedItem.AddComponent<Rigidbody2D>();
-            droppedItem.AddComponent<SpriteRenderer>().sprite = item.itemData.itemSprite;
-            var collider = droppedItem.AddComponent<BoxCollider2D>();
-            collider.isTrigger = true;
-            droppedItem.GetComponent<Renderer>().sortingLayerName = "Items";
-            droppedItem.tag = "DroppedItem";
+            GameObject droppedItem = Instantiate(droppedItemPrefab);
+            droppedItem.GetComponent<ItemInstanceContainer>().item = item;
+            droppedItem.GetComponent<SpriteRenderer>().sprite = item.itemData.itemSprite;
             droppedItem.transform.position = transform.position + new Vector3(playerData.curDirection.x, playerData.curDirection.y, 0) * 2;
         }
         if (active) {

@@ -23,7 +23,7 @@ public class UIActiveInventory : MonoBehaviour
         for (int i = 0; i < InventoryData.maxActiveItems; i++)
         {
             var slot = Instantiate(activeInventorySlotPrefab, activeInventoryPanel.transform);
-            slots[i] = slot.GetComponent<UIInventorySlot>();
+            slots[i] = slot.transform.GetChild(0).GetComponent<UIInventorySlot>();
         }
         ChangeActiveHighlight(inventoryData.currentSlot);
         UpdateInventory();

@@ -143,6 +143,7 @@ MonoBehaviour:
   inventoryData: {fileID: 0}
   uiInventoryRef: {fileID: 1392951551}
   uiActiveInventoryRef: {fileID: 812563255}
+  droppedItemPrefab: {fileID: 9204610817383023028, guid: 4f0b446f43c6f0b459e4657de1c2a696, type: 3}
 --- !u!61 &77475715
 BoxCollider2D:
   m_ObjectHideFlags: 0
