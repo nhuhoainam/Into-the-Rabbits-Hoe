@@ -12,23 +12,30 @@ public class InventoryData : ScriptableObject
     public int currentSlot = 0;
     public List<ItemInstance> activeItems = new();
 
-    public InventoryData() {
-        for (int i = 0; i < maxNoItems; i++) {
+    public InventoryData()
+    {
+        for (int i = 0; i < maxNoItems; i++)
+        {
             items.Add(null);
         }
-        for (int i = 0; i < maxActiveItems; i++) {
+        for (int i = 0; i < maxActiveItems; i++)
+        {
             activeItems.Add(null);
         }
     }
 
-    public bool AddItem(ItemInstance newItem, out bool addedToActive) {
+    public bool AddItem(ItemInstance newItem, out bool addedToActive)
+    {
         addedToActive = AddActiveItem(newItem);
-        if (addedToActive) {
+        if (addedToActive)
+        {
             return true;
         }
         addedToActive = false;
-        for (int i = 0; i < maxNoItems; i++) {
-            if (items[i] == null) {
+        for (int i = 0; i < maxNoItems; i++)
+        {
+            if (items[i] == null)
+            {
                 items[i] = newItem;
                 return true;
             }
@@ -36,9 +43,27 @@ public class InventoryData : ScriptableObject
         return false;
     }
 
-    public bool AddItem(ItemInstance newItem) {
-        for (int i = 0; i < maxNoItems; i++) {
-            if (items[i] == null) {
+    public bool AddItem(ItemInstance newItem)
+    {
+        if (newItem.itemData.isStackable == true)
+        {
+            for (int i = 0; i < maxNoItems; i++)
+            {
+                if (items[i] == null)
+                {
+                    continue;
+                }
+                if (items[i].itemData.itemID == newItem.itemData.itemID)
+                {
+                    items[i].quantity += newItem.quantity;
+                    return true;
+                }
+            }
+        }
+        for (int i = 0; i < maxNoItems; i++)
+        {
+            if (items[i] == null)
+            {
                 items[i] = newItem;
                 return true;
             }
@@ -46,9 +71,27 @@ public class InventoryData : ScriptableObject
         return false;
     }
 
-    public bool AddActiveItem(ItemInstance newItem) {
-        for (int i = 0; i < maxActiveItems; i++) {
-            if (activeItems[i] == null) {
+    public bool AddActiveItem(ItemInstance newItem)
+    {
+        if (newItem.itemData.isStackable == true)
+        {
+            for (int i = 0; i < maxActiveItems; i++)
+            {
+                if (activeItems[i] == null)
+                {
+                    continue;
+                }
+                if (activeItems[i].itemData.itemID == newItem.itemData.itemID)
+                {
+                    activeItems[i].quantity += newItem.quantity;
+                    return true;
+                }
+            }
+        }
+        for (int i = 0; i < maxActiveItems; i++)
+        {
+            if (activeItems[i] == null)
+            {
                 activeItems[i] = newItem;
                 return true;
             }
@@ -56,11 +99,13 @@ public class InventoryData : ScriptableObject
         return false;
     }
 
-    public void RemoveItem(int index) {
+    public void RemoveItem(int index)
+    {
         items[index] = null;
     }
 
-    public void RemoveActiveItem(int index) {
+    public void RemoveActiveItem(int index)
+    {
         activeItems[index] = null;
     }
 }

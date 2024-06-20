@@ -67,15 +67,15 @@ public class Inventory : MonoBehaviour
     public void DropItem(int itemIndex, bool active = false) {
         ItemInstance item = active ? inventoryData.activeItems[itemIndex] : inventoryData.items[itemIndex];
         if (item != null) {
+            GameObject droppedItem = Instantiate(droppedItemPrefab);
+            droppedItem.GetComponent<ItemInstanceContainer>().item = item;
+            droppedItem.GetComponent<SpriteRenderer>().sprite = item.itemData.itemSprite;
+            droppedItem.transform.position = transform.position + new Vector3(playerData.curDirection.x, playerData.curDirection.y, 0) * 2;
             if (active) {
                 inventoryData.RemoveActiveItem(itemIndex);
             } else {
                 inventoryData.RemoveItem(itemIndex);
             }
-            GameObject droppedItem = Instantiate(droppedItemPrefab);
-            droppedItem.GetComponent<ItemInstanceContainer>().item = item;
-            droppedItem.GetComponent<SpriteRenderer>().sprite = item.itemData.itemSprite;
-            droppedItem.transform.position = transform.position + new Vector3(playerData.curDirection.x, playerData.curDirection.y, 0) * 2;
         }
         if (active) {
             uiActiveInventory.UpdateInventory();
