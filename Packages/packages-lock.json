@@ -1,15 +1,5 @@
 {
   "dependencies": {
-    "com.seanba.super-tiled2unity": {
-      "version": "file:SuperTiled2Unity",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.physics2d": "1.0.0",
-        "com.unity.modules.tilemap": "1.0.0"
-      }
-    },
     "com.stalengd.quickruletileeditor": {
       "version": "https://github.com/stalengd/QuickRuleTileEditor.git",
       "depth": 0,
