@@ -109,4 +109,14 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
     }
+
+    public void DisableInput()
+    {
+        playerControls.Disable();
+    }
+
+    public void EnableInput()
+    {
+        playerControls.Enable();
+    }
 }
