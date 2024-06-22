@@ -9,9 +9,7 @@ public class Inventory : MonoBehaviour
     public InventoryData inventoryData;
 
     public GameObject uiInventoryRef;
-    public GameObject uiActiveInventoryRef;
-    private UIMainInventory uiInventory;
-    private UIActiveInventory uiActiveInventory;
+    private UIInventory uiInventory;
 
     public GameObject droppedItemPrefab;
 
@@ -20,13 +18,12 @@ public class Inventory : MonoBehaviour
     void Awake()
     {
         playerControls = new PlayerControls();
-
+        
         // Create a new inventory
-        inventoryData = InventoryData.CreateInstance<InventoryData>();
-        uiInventory = uiInventoryRef.GetComponent<UIMainInventory>();
-        uiActiveInventory = uiActiveInventoryRef.GetComponent<UIActiveInventory>();
+        inventoryData = new();
+        uiInventory = uiInventoryRef.GetComponent<UIInventory>();
         uiInventory.inventoryData = inventoryData;
-        uiActiveInventory.inventoryData = inventoryData;
+        uiInventory.Init();
     }
 
     void OnEnable()
@@ -42,9 +39,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerControls.Inventory.Active.performed += ctx => uiActiveInventory.ChangeActiveSlot((int)ctx.ReadValue<float>());
         playerControls.Inventory.DropItem.performed += ctx => DropItem(inventoryData.currentSlot, true);
-        playerControls.Inventory.OpenInventory.performed += ctx => uiInventory.ToggleInventory();
 
         var hoe = AssetDatabase.LoadAssetAtPath<ItemData>("Assets/Scripts/Item_Hoe.asset");
         var wood = AssetDatabase.LoadAssetAtPath<ItemData>("Assets/Scripts/Item_Wood.asset");
@@ -52,16 +47,12 @@ public class Inventory : MonoBehaviour
         inventoryData.AddItem(new ItemInstance(hoe));
         inventoryData.AddItem(new ItemInstance(wood, quantity: 6), out _);
 
-        uiActiveInventory.UpdateInventory();
+        uiInventory.UpdateInventory();
     }
 
     public void AddItem(ItemInstance item) {
         inventoryData.AddItem(item, out bool addedToActive);
-        if (addedToActive) {
-            uiActiveInventory.UpdateInventory();
-        } else {
-            uiInventory.UpdateInventory();
-        }
+        uiInventory.UpdateInventory(addedToActive);
     }
 
     public void DropItem(int itemIndex, bool active = false) {
@@ -77,11 +68,7 @@ public class Inventory : MonoBehaviour
                 inventoryData.RemoveItem(itemIndex);
             }
         }
-        if (active) {
-            uiActiveInventory.UpdateInventory();
-        } else {
-            uiInventory.UpdateInventory();
-        }
+        uiInventory.UpdateInventory(active);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

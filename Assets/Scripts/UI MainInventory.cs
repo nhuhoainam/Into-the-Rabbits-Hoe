@@ -10,53 +10,12 @@ public class UIMainInventory : MonoBehaviour
     public GameObject inventoryPanel;
     public List<UIInventorySlot> slots = new(InventoryData.maxNoItems);
 
-
-    public bool isOpen = false;
-
     void Awake()
-    {
-
-        for (int i = 0; i < InventoryData.maxNoItems; i++)
-        {
-            slots.Add(null);
-        }
-    }
-
-    public void ToggleInventory()
-    {
-        if (isOpen)
-        {
-            CloseInventory();
-        }
-        else
-        {
-            OpenInventory();
-        }
-    }
-
-    private void OpenInventory()
-    {
-        Debug.Log("Opening inventory");
-        isOpen = true;
-        inventoryPanel.SetActive(true);
-        UpdateInventory();
-    }
-
-    private void CloseInventory()
-    {
-        Debug.Log("Closing inventory");
-        isOpen = false;
-        inventoryPanel.SetActive(false);
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
     {
         for (int i = 0; i < InventoryData.maxNoItems; i++)
         {
             var slot = Instantiate(inventorySlotPrefab, inventoryPanel.transform);
-            slots[i] = slot.GetComponent<UIInventorySlot>();
+            slots.Add(slot.GetComponent<UIInventorySlot>());
         }
     }
 

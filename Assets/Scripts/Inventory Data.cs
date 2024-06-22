@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class InventoryData : ScriptableObject
+public class InventoryData
 {
     public const int maxNoItems = 36;
     public List<ItemInstance> items = new();
