@@ -173,6 +173,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DragAndDrop"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""a14d44c7-e49c-40ca-ad36-67006e92de98"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": ""MouseDrag"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -296,6 +305,50 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""DropItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Mouse Drag"",
+                    ""id"": ""7bbff400-897b-4ef2-bb80-c057de639bc2"",
+                    ""path"": ""MouseDrag"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DragAndDrop"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Button"",
+                    ""id"": ""ebb92363-0f0e-42e4-9c93-06a3d40c0a6f"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DragAndDrop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Axis1"",
+                    ""id"": ""1544cf06-02b4-4187-81eb-a7b27398c1f4"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DragAndDrop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Axis2"",
+                    ""id"": ""946638fd-1581-4124-9e15-a70d16219ed7"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DragAndDrop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -314,6 +367,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Inventory_Active = m_Inventory.FindAction("Active", throwIfNotFound: true);
         m_Inventory_OpenInventory = m_Inventory.FindAction("OpenInventory", throwIfNotFound: true);
         m_Inventory_DropItem = m_Inventory.FindAction("DropItem", throwIfNotFound: true);
+        m_Inventory_DragAndDrop = m_Inventory.FindAction("DragAndDrop", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -478,6 +532,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Inventory_Active;
     private readonly InputAction m_Inventory_OpenInventory;
     private readonly InputAction m_Inventory_DropItem;
+    private readonly InputAction m_Inventory_DragAndDrop;
     public struct InventoryActions
     {
         private @PlayerControls m_Wrapper;
@@ -485,6 +540,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Active => m_Wrapper.m_Inventory_Active;
         public InputAction @OpenInventory => m_Wrapper.m_Inventory_OpenInventory;
         public InputAction @DropItem => m_Wrapper.m_Inventory_DropItem;
+        public InputAction @DragAndDrop => m_Wrapper.m_Inventory_DragAndDrop;
         public InputActionMap Get() { return m_Wrapper.m_Inventory; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -503,6 +559,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @DropItem.started += instance.OnDropItem;
             @DropItem.performed += instance.OnDropItem;
             @DropItem.canceled += instance.OnDropItem;
+            @DragAndDrop.started += instance.OnDragAndDrop;
+            @DragAndDrop.performed += instance.OnDragAndDrop;
+            @DragAndDrop.canceled += instance.OnDragAndDrop;
         }
 
         private void UnregisterCallbacks(IInventoryActions instance)
@@ -516,6 +575,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @DropItem.started -= instance.OnDropItem;
             @DropItem.performed -= instance.OnDropItem;
             @DropItem.canceled -= instance.OnDropItem;
+            @DragAndDrop.started -= instance.OnDragAndDrop;
+            @DragAndDrop.performed -= instance.OnDragAndDrop;
+            @DragAndDrop.canceled -= instance.OnDragAndDrop;
         }
 
         public void RemoveCallbacks(IInventoryActions instance)
@@ -547,5 +609,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnActive(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnDropItem(InputAction.CallbackContext context);
+        void OnDragAndDrop(InputAction.CallbackContext context);
     }
 }
