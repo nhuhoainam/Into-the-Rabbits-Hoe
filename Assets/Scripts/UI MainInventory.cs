@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIInventory : MonoBehaviour
+public class UIMainInventory : MonoBehaviour
 {
     public InventoryData inventoryData;
     public GameObject inventorySlotPrefab;

@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject uiInventoryRef;
     public GameObject uiActiveInventoryRef;
-    private UIInventory uiInventory;
+    private UIMainInventory uiInventory;
     private UIActiveInventory uiActiveInventory;
 
     public GameObject droppedItemPrefab;
@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
 
         // Create a new inventory
         inventoryData = InventoryData.CreateInstance<InventoryData>();
-        uiInventory = uiInventoryRef.GetComponent<UIInventory>();
+        uiInventory = uiInventoryRef.GetComponent<UIMainInventory>();
         uiActiveInventory = uiActiveInventoryRef.GetComponent<UIActiveInventory>();
         uiInventory.inventoryData = inventoryData;
         uiActiveInventory.inventoryData = inventoryData;
