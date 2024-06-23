@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 45231289184312943}
   - component: {fileID: 151247935891830265}
   - component: {fileID: 9146690461610098541}
-  - component: {fileID: -8197271272773795327}
   - component: {fileID: 8196191461299867174}
   m_Layer: 0
   m_Name: Cow
@@ -77,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: -790458705
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1423281205, guid: 310b294134b4db216b4a39e97cbfffb4, type: 3}
+  m_Sprite: {fileID: -896120180, guid: 10c2060afd87cf34a83cbee7b9c4cd70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.6875, y: 1.125}
+  m_Size: {x: 1.625, y: 1.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -120,8 +119,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09707622, y: -0.26426393}
-  m_Size: {x: 1.493348, y: 0.5549469}
+  m_Offset: {x: -0.097075924, y: 0.24236466}
+  m_Size: {x: 1.4933482, y: 0.51496315}
   m_Direction: 1
 --- !u!50 &9146690461610098541
 Rigidbody2D:
@@ -150,19 +149,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &-8197271272773795327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4857744356676661314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef6fef1d7e9af360912a823d561c0fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
 --- !u!95 &8196191461299867174
 Animator:
   serializedVersion: 5
