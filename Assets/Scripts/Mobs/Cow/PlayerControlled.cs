@@ -17,10 +17,11 @@ public class PlayerControlled : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) 
         { 
             // Spacebar was pressed 
+            animator.SetTrigger("blinkEye");
         } 
             if (Input.GetMouseButtonDown(0)) 
         { 
-            // Left mouse was pressed 
+            animator.SetBool("isWavingTail", !animator.GetBool("isWavingTail"));
         } 
     }
 }
