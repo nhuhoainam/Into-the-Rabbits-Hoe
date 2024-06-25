@@ -1,60 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
-public class UIInventorySlot : MonoBehaviour
+public class UIInventorySlot : MonoBehaviour, IDropHandler
 {
-    public ItemInstance itemInstance;
-    private Image itemDisplay;
-    private TextMeshProUGUI itemQuantityDisplay;
+    public GameObject itemDisplayPrefab;
+    private UIItemDisplay itemDisplay;
 
-    void Awake() {
-        itemInstance = null;
-        itemDisplay = transform.GetChild(0).GetComponent<Image>();
-        itemQuantityDisplay = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        // Debug.Log("ItemDisplay: " + itemDisplay);
+    public int slotIndex;
+    public bool isActiveSlot;
+
+    public delegate void OnMouseDrop(GameObject dropped, int slotIndex, bool isActiveSlot);
+    public OnMouseDrop onMouseDrop;
+
+    void Awake()
+    {
+        itemDisplay = null;
     }
 
     public void SetItem(ItemInstance newItemInstance)
     {
-        itemInstance = newItemInstance;
-        Debug.Log("Setting item: " + itemInstance.itemData.itemSprite.name);
-        itemDisplay.sprite = itemInstance.itemData.itemSprite;
-        // itemDisplay.sprite = Sprite.Create(itemInstance.itemData.itemSprite.texture, new Rect(0, 0, itemInstance.itemData.itemSprite.texture.width, itemInstance.itemData.itemSprite.texture.height), new Vector2(0.5f, 0.5f));
+        try
+        {
+            var itemDisplayTransform = transform.GetChild(0);
+            itemDisplay = itemDisplayTransform.gameObject.GetComponent<UIItemDisplay>();
+        }
+        catch (System.Exception)
+        {
+            itemDisplay = Instantiate(itemDisplayPrefab, transform).GetComponent<UIItemDisplay>();
+        }
+        itemDisplay.SetItem(newItemInstance);
     }
 
     public void ClearItem()
     {
-        itemInstance = null;
-        itemDisplay.sprite = null;
+        if (itemDisplay != null)
+        {
+            Destroy(itemDisplay.gameObject);
+        }
+        itemDisplay = null;
     }
 
-    public void UpdateItemDisplay()
+    public void OnDrop(PointerEventData pointer)
     {
-        if (itemInstance != null)
-        {
-            itemDisplay.sprite = itemInstance.itemData.itemSprite;
-            itemDisplay.gameObject.SetActive(true);
-            if (itemInstance.quantity > 1)
-            {
-                itemQuantityDisplay.text = itemInstance.quantity.ToString();
-                itemQuantityDisplay.gameObject.SetActive(true);
-            }
-            else
-            {
-                itemQuantityDisplay.text = "";
-                itemQuantityDisplay.gameObject.SetActive(true);
-            }
-        }
-        else
-        {
-            itemDisplay.sprite = null;
-            itemDisplay.gameObject.SetActive(false);
-            itemQuantityDisplay.text = "";
-            itemQuantityDisplay.gameObject.SetActive(false);
-        }
+        GameObject dropped = pointer.pointerDrag;
+        onMouseDrop.Invoke(dropped, slotIndex, isActiveSlot);
     }
 }
