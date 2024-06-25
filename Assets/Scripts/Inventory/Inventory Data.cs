@@ -70,6 +70,21 @@ public class InventoryData
         return false;
     }
 
+    public bool AddItem(ItemInstance newItem, int index)
+    {
+        if (items[index] == null)
+        {
+            items[index] = newItem;
+            return true;
+        }
+        if (items[index].itemData.itemID == newItem.itemData.itemID)
+        {
+            items[index].quantity += newItem.quantity;
+            return true;
+        }
+        return false;
+    }
+
     public bool AddActiveItem(ItemInstance newItem)
     {
         if (newItem.itemData.isStackable == true)
@@ -94,6 +109,20 @@ public class InventoryData
                 activeItems[i] = newItem;
                 return true;
             }
+        }
+        return false;
+    }
+
+    public bool AddActiveItem(ItemInstance newItem, int index) {
+        if (activeItems[index] == null)
+        {
+            activeItems[index] = newItem;
+            return true;
+        }
+        if (activeItems[index].itemData.itemID == newItem.itemData.itemID)
+        {
+            activeItems[index].quantity += newItem.quantity;
+            return true;
         }
         return false;
     }

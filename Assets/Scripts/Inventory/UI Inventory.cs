@@ -114,11 +114,11 @@ public class UIInventory : MonoBehaviour
         }
         if (isActiveSlot)
         {
-            inventoryData.activeItems[slotIndex] = item.itemInstance;
+            inventoryData.AddActiveItem(item.itemInstance, slotIndex);
         }
         else
         {
-            inventoryData.items[slotIndex] = item.itemInstance;
+            inventoryData.AddItem(item.itemInstance, slotIndex);
         }
         UpdateInventory();
     }
