@@ -63,8 +63,6 @@ public class UIInventory : MonoBehaviour
         uiActiveInventory = uiActiveInventoryRef.GetComponent<UIActiveInventory>();
         uiMainInventory.inventoryData = inventoryData;
         uiActiveInventory.inventoryData = inventoryData;
-        uiMainInventory.onMouseDrop = OnMouseDrop;
-        uiActiveInventory.onMouseDrop = OnMouseDrop;
     }
 
     void Start()
@@ -93,33 +91,5 @@ public class UIInventory : MonoBehaviour
         {
             uiMainInventory.UpdateInventory();
         }
-    }
-
-    public void OnMouseDrop(GameObject dropped, int slotIndex, bool isActiveSlot)
-    {
-        var item = dropped.GetComponent<DraggableItem>();
-        var oldSlotIndex = item.slotIndex;
-        var oldIsActiveSlot = item.isActiveSlot;
-        if (isActiveSlot == oldIsActiveSlot && slotIndex == oldSlotIndex)
-        {
-            return;
-        }
-        if (oldIsActiveSlot)
-        {
-            inventoryData.activeItems[oldSlotIndex] = null;
-        }
-        else
-        {
-            inventoryData.items[oldSlotIndex] = null;
-        }
-        if (isActiveSlot)
-        {
-            inventoryData.AddActiveItem(item.itemInstance, slotIndex);
-        }
-        else
-        {
-            inventoryData.AddItem(item.itemInstance, slotIndex);
-        }
-        UpdateInventory();
     }
 }
