@@ -47,7 +47,7 @@ public class ChickenAI : MonoBehaviour
                     yield return new WaitForSeconds(idling2.length);
                 }
             }
-            yield return new WaitForSeconds(Random.Range(5, 10));
+            yield return new WaitForSeconds(Random.Range(0, 2));
         }
     }
 

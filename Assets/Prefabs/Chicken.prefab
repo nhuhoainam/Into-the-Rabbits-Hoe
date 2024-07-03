@@ -141,8 +141,8 @@ MonoBehaviour:
   stopFlying: {fileID: 7400000, guid: e53f793100e45ce32988a516a756c21d, type: 2}
   flying: {fileID: 7400000, guid: 0924913ead99564d780d541d59288341, type: 2}
   eating: {fileID: 7400000, guid: 9dd40701dd7359564abbcfff69037723, type: 2}
-  sittingIlding1: {fileID: 7400000, guid: 829bb8f61c24ac7068250c550772bbab, type: 2}
-  sittingIlding2: {fileID: 7400000, guid: bc8057e1e5e7a228fb620d73aba4a348, type: 2}
+  sittingIlding1: {fileID: 7400000, guid: bc8057e1e5e7a228fb620d73aba4a348, type: 2}
+  sittingIlding2: {fileID: 7400000, guid: 092dee1bb74b046439d2b5bb6b6f1195, type: 2}
   sittingDown: {fileID: 7400000, guid: 829bb8f61c24ac7068250c550772bbab, type: 2}
   sittingUp: {fileID: 7400000, guid: d827e10910a74567db93e43d2e4ab861, type: 2}
   hunger: 10000
