@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba897ab34e103169bf4d87971fcca5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animancer: {fileID: 0}
+  animancer: {fileID: -6268208686670905690}
   idling1: {fileID: 7400000, guid: fe23dc843cd77ab2cba9ef3374366f7d, type: 2}
   idling2: {fileID: 7400000, guid: d8b251075f9a45fa783186b63ae5c955, type: 2}
   startFlying: {fileID: 7400000, guid: 8adcff0967473cefea421a34dfaa178e, type: 2}
