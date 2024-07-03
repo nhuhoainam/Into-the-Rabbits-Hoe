@@ -153,13 +153,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DragAndDrop",
-                    "type": "PassThrough",
-                    "id": "a14d44c7-e49c-40ca-ad36-67006e92de98",
-                    "expectedControlType": "Vector2",
+                    "name": "SplitStack",
+                    "type": "Button",
+                    "id": "59719912-3853-4bbd-84ed-3577c98b02a3",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "MouseDrag",
-                    "initialStateCheck": true
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -285,48 +285,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Mouse Drag",
-                    "id": "e4d610b0-75a0-4dea-815f-6017854c3009",
-                    "path": "MouseDrag",
+                    "name": "",
+                    "id": "2b1ff21d-92d7-40eb-a2b6-4db1e989e661",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DragAndDrop",
-                    "isComposite": true,
+                    "action": "SplitStack",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "Button",
-                    "id": "71dea970-39ec-40f1-bf95-e8fff0d89b4a",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DragAndDrop",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Axis1",
-                    "id": "8da988ee-b3a5-4802-bb13-176a9b53360e",
-                    "path": "<Mouse>/position/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DragAndDrop",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Axis2",
-                    "id": "eaef6ebc-2121-47e0-89cd-e4ec6dd07993",
-                    "path": "<Mouse>/position/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DragAndDrop",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }

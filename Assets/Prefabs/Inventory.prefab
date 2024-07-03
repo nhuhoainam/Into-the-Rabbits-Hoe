@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6397044969790657645}
   - component: {fileID: 8591941560324621864}
   - component: {fileID: 6110387699466859253}
-  - component: {fileID: 704420806425053158}
+  - component: {fileID: 2441217611311207442}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 180, y: 180}
+  m_SizeDelta: {x: 1060, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6397044969790657645
 MonoBehaviour:
@@ -57,7 +57,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_StartCorner: 2
+  m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 90, y: 90}
   m_Spacing: {x: 20, y: 20}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.2
---- !u!114 &704420806425053158
+--- !u!114 &2441217611311207442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,10 +110,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6970849257155328293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fd85aed38b4a6249ace3105c59d6303, type: 3}
+  m_Script: {fileID: 11500000, guid: 03f55b5c78645dc4ca839c1acb6fa81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryData: {fileID: 11400000, guid: 697dab5151b1c6849a2c8ae458493ba5, type: 2}
-  inventorySlotPrefab: {fileID: 3814560756499542019, guid: f7673de26ee1b6943ac47bbbd99d8314, type: 3}
-  inventoryPanel: {fileID: 0}
-  isOpen: 0
+  mouseInventoryItem: {fileID: 0}
+  inventorySlotPrefab: {fileID: 3295086967561671565, guid: f7673de26ee1b6943ac47bbbd99d8314, type: 3}
