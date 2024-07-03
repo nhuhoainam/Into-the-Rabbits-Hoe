@@ -1916,160 +1916,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chicken default_86
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 16
-        width: 5
-        height: 5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 683833538ea87c0d3a9c1e3ef75b536d
-      internalID: -384872682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken default_87
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 18
-        width: 9
-        height: 7
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8333bf78566fc3939d0a8e7031df650
-      internalID: 1645951243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken default_88
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 16
-        width: 7
-        height: 6
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24da6a3e8cae3bb08ba9975263924ee5
-      internalID: 1260766108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken default_89
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 17
-        width: 7
-        height: 6
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5135ef8886d0f8c1b9af8c5fd40da1a8
-      internalID: 210857195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken default_90
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 19
-        width: 7
-        height: 6
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ec5600f5cbe6849ca1ce262c15eaea7
-      internalID: -530019211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken default_91
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 18
-        width: 7
-        height: 6
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df759c8b2eb52bb199ed5cb48701a266
-      internalID: 1110489430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken default_92
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 16
-        width: 5
-        height: 5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff5dea493c1ea4d15a1ca187ec7b58e4
-      internalID: -1738507233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: chicken default_93
       rect:
         serializedVersion: 2
         x: 1
         y: 1
         width: 11
-        height: 12
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2090,7 +1943,7 @@ TextureImporter:
         x: 17
         y: 1
         width: 11
-        height: 12
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2111,7 +1964,7 @@ TextureImporter:
         x: 33
         y: 1
         width: 11
-        height: 13
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2132,7 +1985,7 @@ TextureImporter:
         x: 49
         y: 1
         width: 11
-        height: 12
+        height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2153,7 +2006,7 @@ TextureImporter:
         x: 65
         y: 1
         width: 11
-        height: 11
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2174,7 +2027,7 @@ TextureImporter:
         x: 81
         y: 1
         width: 11
-        height: 12
+        height: 23
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2195,7 +2048,7 @@ TextureImporter:
         x: 97
         y: 1
         width: 11
-        height: 12
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
