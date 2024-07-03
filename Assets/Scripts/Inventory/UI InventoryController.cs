@@ -6,6 +6,8 @@ public class UIInventoryController : MonoBehaviour
 {
     public DynamicInventoryDisplay inventoryPanel;
 
+    private bool isOpen = false;
+
     private void OnEnable()
     {
 
@@ -21,7 +23,16 @@ public class UIInventoryController : MonoBehaviour
 
     void DisplayInventory(InventorySystem invToDisplay)
     {
-        inventoryPanel.gameObject.SetActive(true);
-        inventoryPanel.RefreshDynamicInventory(invToDisplay);
+        if (!isOpen)
+        {
+            isOpen = true;
+            inventoryPanel.gameObject.SetActive(true);
+            inventoryPanel.RefreshDynamicInventory(invToDisplay);
+        }
+        else
+        {
+            isOpen = false;
+            inventoryPanel.gameObject.SetActive(false);
+        }
     }
 }

@@ -19,6 +19,11 @@ public class PlayerInventoryHolder : InventoryHolder
         secondaryInventorySystem = new InventorySystem(secondaryInventorySize);
     }
 
+    void Start()
+    {
+        playerControls.Inventory.OpenInventory.performed += ctx => OnDynamicInventoryDisplayRequested?.Invoke(secondaryInventorySystem);
+    }
+
     private void OnEnable()
     {
         playerControls.Enable();
@@ -29,11 +34,10 @@ public class PlayerInventoryHolder : InventoryHolder
         playerControls.Disable();
     }
 
-    void Update()
+    public bool AddToInventory(ItemData item, int amount)
     {
-        if (playerControls.Inventory.OpenInventory.triggered)
-        {
-            OnDynamicInventoryDisplayRequested?.Invoke(secondaryInventorySystem);
-        }
+        if (primaryInventorySystem.AddToInventory(item, amount)) return true;
+        else if (secondaryInventorySystem.AddToInventory(item, amount)) return true;
+        else return false;
     }
 }

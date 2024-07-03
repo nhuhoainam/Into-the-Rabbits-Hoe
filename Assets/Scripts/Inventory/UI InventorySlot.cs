@@ -18,12 +18,11 @@ public class UIInventorySlot : MonoBehaviour
 
     private void Awake()
     {
+        ClearUISlot();
         button = GetComponent<Button>();
         button.onClick.AddListener(OnUISlotClick);
 
         ParentDisplay = GetComponentInParent<InventoryDisplay>();
-
-        ClearUISlot();
     }
 
     public void Init(InventorySlot slot)

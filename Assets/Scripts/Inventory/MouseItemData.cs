@@ -14,8 +14,6 @@ public class MouseItemData : MonoBehaviour
 
     void Awake()
     {
-        itemSprite = GetComponent<Image>();
-        amount = GetComponentInChildren<TextMeshProUGUI>();
         itemSprite.color = Color.clear;
         amount.text = "";
     }
@@ -33,10 +31,11 @@ public class MouseItemData : MonoBehaviour
     {
         if (AssignedSlot.ItemData != null) {
             transform.position = Mouse.current.position.ReadValue();
-
+            // Change to use PlayerControls
             if (Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
                 ClearSlot();
+                // TODO: Drop item
             }
         }
     }
@@ -57,7 +56,7 @@ public class MouseItemData : MonoBehaviour
         };
         List<RaycastResult> results = new();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
+        return results.Count > 0 || results != null;
     }
 
 }
