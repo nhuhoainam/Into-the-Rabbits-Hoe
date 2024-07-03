@@ -1228,7 +1228,7 @@ TextureImporter:
         serializedVersion: 2
         x: 16
         y: 289
-        width: 48
+        width: 16
         height: 9
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -2058,6 +2058,48 @@ TextureImporter:
       bones: []
       spriteID: 94f62dada6bb11bcbb0848dd385f0b34
       internalID: -143781813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken default_86
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 289
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebb016d5d09c09cabb7d86842f2f9b5
+      internalID: -384872682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken default_87
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 289
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65003080bb3b425ae8a5f9846fabbdae
+      internalID: 1645951243
       vertices: []
       indices: 
       edges: []
