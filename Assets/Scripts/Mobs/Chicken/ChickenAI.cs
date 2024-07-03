@@ -32,7 +32,16 @@ public class ChickenAI : MonoBehaviour
     {
         state = State.Idling;
         animancer.Play(idling1);
-        StartCoroutine(IdlingAction());
+        StartCoroutine(Fly());
+    }
+
+    private IEnumerator Fly() {
+        animancer.Play(startFlying);
+        yield return new WaitForSeconds(startFlying.length);
+        animancer.Play(flying);
+        yield return new WaitForSeconds(flying.length * 5);
+        animancer.Play(stopFlying);
+        yield return new WaitForSeconds(stopFlying.length);
     }
 
     private IEnumerator IdlingAction() {
