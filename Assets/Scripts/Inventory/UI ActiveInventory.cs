@@ -9,12 +9,16 @@ public class UIActiveInventory : MonoBehaviour
     public GameObject activeInventoryPanel;
     public List<UIInventorySlot> slots = new(InventoryData.maxActiveItems);
 
+    public UIInventorySlot.OnMouseDrop onMouseDrop;
 
     private void Awake()
     {
         for (int i = 0; i < InventoryData.maxActiveItems; i++)
         {
-            slots.Add(null);
+            var slot = Instantiate(activeInventorySlotPrefab, activeInventoryPanel.transform);
+            slots.Add(slot.transform.GetChild(0).GetComponent<UIInventorySlot>());
+            slots[i].slotIndex = i;
+            slots[i].isActiveSlot = true;
         }
     }
 
@@ -22,8 +26,7 @@ public class UIActiveInventory : MonoBehaviour
     {
         for (int i = 0; i < InventoryData.maxActiveItems; i++)
         {
-            var slot = Instantiate(activeInventorySlotPrefab, activeInventoryPanel.transform);
-            slots[i] = slot.transform.GetChild(0).GetComponent<UIInventorySlot>();
+            slots[i].onMouseDrop += onMouseDrop;
         }
         ChangeActiveHighlight(inventoryData.currentSlot);
         UpdateInventory();
@@ -58,7 +61,6 @@ public class UIActiveInventory : MonoBehaviour
             {
                 slots[i].ClearItem();
             }
-            slots[i].UpdateItemDisplay();
         }
         ChangeActiveHighlight(inventoryData.currentSlot);
     }

@@ -10,12 +10,17 @@ public class UIMainInventory : MonoBehaviour
     public GameObject inventoryPanel;
     public List<UIInventorySlot> slots = new(InventoryData.maxNoItems);
 
+    public UIInventorySlot.OnMouseDrop onMouseDrop;
+
     void Awake()
     {
         for (int i = 0; i < InventoryData.maxNoItems; i++)
         {
             var slot = Instantiate(inventorySlotPrefab, inventoryPanel.transform);
             slots.Add(slot.GetComponent<UIInventorySlot>());
+            slots[i].slotIndex = i;
+            slots[i].isActiveSlot = false;
+            slots[i].onMouseDrop += onMouseDrop;
         }
     }
 
@@ -31,7 +36,6 @@ public class UIMainInventory : MonoBehaviour
             {
                 slots[i].ClearItem();
             }
-            slots[i].UpdateItemDisplay();
         }
     }
 }
