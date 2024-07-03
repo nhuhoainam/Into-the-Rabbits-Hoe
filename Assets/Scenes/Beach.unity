@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 334017812}
   - component: {fileID: 334017814}
   - component: {fileID: 334017813}
+  - component: {fileID: 334017815}
   m_Layer: 0
   m_Name: Roof
   m_TagString: Untagged
@@ -2602,6 +2603,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &334017815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334017811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd43e2fe2aa7e249b604c96d608c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparentAmount: 0.8
+  fadeTime: 0.5
+  spriteRenderer: {fileID: 0}
+  tilemap: {fileID: 334017814}
 --- !u!1 &929498476
 GameObject:
   m_ObjectHideFlags: 0
