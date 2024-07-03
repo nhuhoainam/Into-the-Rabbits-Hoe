@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8343403aec6257e593b32e899201290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatingTime: 5
   animancer: {fileID: 8951485261994414299}
   standingAndWavingTail: {fileID: 7400000, guid: ac77d87e245b84fa48e136a01b496dd7, type: 2}
   standingAndBlinking: {fileID: 7400000, guid: 322f9755ab15f7722ae06c3b95e0e647, type: 2}
@@ -171,8 +170,8 @@ MonoBehaviour:
   walking: {fileID: 7400000, guid: d2aed53af9951b4e394a1a030c481078, type: 2}
   sleeping: {fileID: 7400000, guid: 806ec7b3bbed6369080af1cd9777ebb8, type: 2}
   chewing: {fileID: 7400000, guid: 24d5b22b7a5d82038ad8d9e9ad7039aa, type: 2}
-  hunger: 100
-  sleepiness: 100
+  hunger: 10000
+  sleepiness: 10000
 --- !u!95 &2440184013291369278
 Animator:
   serializedVersion: 5

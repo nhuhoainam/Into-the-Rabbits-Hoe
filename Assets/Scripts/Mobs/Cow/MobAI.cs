@@ -7,7 +7,6 @@ using Pathfinding;
 
 public class MobAI : MonoBehaviour
 {
-    [SerializeField] internal float eatingTime = 5;
     [SerializeField] internal AnimancerComponent animancer;
     [SerializeField] internal AnimationClip standingAndWavingTail;
     [SerializeField] internal AnimationClip standingAndBlinking;
