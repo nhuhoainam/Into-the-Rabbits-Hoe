@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,1975 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: chicken green_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 417
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e345113e3f2b730796bbcf7ecd849ad
+      internalID: 1931974811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 417
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f950146ba4ddb949a2289b71a3607c
+      internalID: 650992446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 417
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7abf59aa9bc9c6bda8fd6137db586358
+      internalID: 1386055469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 417
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e1b708d93dd4f31b7b46afd2ede4bc
+      internalID: 945187414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 401
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9ae9398015e12c58fa81d1df5aa10a
+      internalID: -1823077787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 401
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2602ca6ceafba06fda044be2b4d34fb5
+      internalID: -24267234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 401
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769acfcf99e88af59a81193d53975792
+      internalID: 103561794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_7
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 401
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea5bd03926cc1b23b1c5107592ab22f
+      internalID: -446976158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 401
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f028dc811b22d25debf7deb0cdb4d74a
+      internalID: 1011981496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 401
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a874d0d7a0f05c6c96642c0f6fe9424
+      internalID: -318124294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_10
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 401
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cebb213285a51ada982a25f7839518f
+      internalID: -1965581985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 385
+        width: 13
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfa4a490113ae3ef89b22747839ff31
+      internalID: 97839171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 385
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f7792af88b74019839df24a73517da
+      internalID: 652088428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735b404b8f0eaa99f9d41673a022ca01
+      internalID: -1434099614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52080918fcd13ff4b98a7c27bb86a030
+      internalID: 1618560210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 385
+        width: 13
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7515e960e292451dfa0c89e973c278ec
+      internalID: 789426785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_16
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958c76a326b8a0a44b5adc21e85dcd5e
+      internalID: 1108742605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cedf1eaaa32bffda6cb20830308538
+      internalID: 1613894484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_18
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88108cd81fd11c3ea85b50d32b9e60e7
+      internalID: 1038369329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 369
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb36f03bebecac8588d87784d86b5710
+      internalID: 1126418572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 369
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af1fa9c6178e17c0bf47f33d565a9f9
+      internalID: -1235368684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_21
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 369
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00197e24e40c6d16b449649890cc09d
+      internalID: 1341673504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_22
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 369
+        width: 12
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2631f31da05224798b5bc9993a2032
+      internalID: -1061800420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 369
+        width: 16
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f952a78758bbbde7b4dbfcda1ab3dae
+      internalID: 1567314054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_24
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 369
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9631b2f7bd5626f4ca8583d4bf83c4a3
+      internalID: 1467725225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_25
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 369
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084dbdd1d562bc140bfedbeccbd9d659
+      internalID: -17564855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 353
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54421d65c09103e4599b7df6ee94ea69
+      internalID: -1952683166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_27
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 353
+        width: 16
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274a289473c24b785843f755d76ea71b
+      internalID: 2045792081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_28
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 353
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415678de709347bc0b3e70763e8a8210
+      internalID: -2077766328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_29
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 353
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712c157dbf5678db89d03c5e3bec8e1a
+      internalID: 175044955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_30
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 353
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1e0f8fbbbeede75b08a83816b50f46
+      internalID: -1306333692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_31
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 353
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1507b1302ea729195502547052de3a
+      internalID: 1915069608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_32
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 353
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7bb8a3e4024af76be7f6831e1a062f
+      internalID: 1184827967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_33
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 337
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc03359478ebcbc5b7a0188f70788f7
+      internalID: 251816550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_34
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 337
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2640d278488cc6eba2b8ebe12c2fd7d
+      internalID: -1597130008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_35
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 340
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1eec72bb3a2c5a280211b052bb1852
+      internalID: -1542143610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_36
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 341
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae811574c42e75c99f1fe7425cdf9f6
+      internalID: 686822445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_37
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 339
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb020699b54e62aab1964d9c83baac0
+      internalID: 2033028754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_38
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 339
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e237a8911f0ea5eb47683f11f89eaa
+      internalID: -1788416183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_39
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 339
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91caaf9b60aefc4e5a5582426b7cf52c
+      internalID: -1470868372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 323
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08129aea9817da534ab8a435cc4941f6
+      internalID: 141569361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_41
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 323
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d165885341926dfb4bf31d028e64a1
+      internalID: -1341466003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_42
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 324
+        width: 11
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28434c2235402dcbab1c0609e7c3a4db
+      internalID: -1242874819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_43
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 325
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f692ebb7415f29e8a7e040dbf1b48e
+      internalID: -900849731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_44
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 324
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227bced182e20872c9afd205311bb20e
+      internalID: 1816694637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_45
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 321
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f560895d3d1deb9812111815bbf0c3
+      internalID: -1129543610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_46
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 321
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4818f5691e7a026a581c33ea1a237afe
+      internalID: 1255979237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_47
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 305
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dde958d8d722625aba9261bf1adc0c
+      internalID: 893475575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 305
+        width: 16
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc19bc3be2c50368e8bbf1ddfeb10707
+      internalID: -1262200332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_49
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 305
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9badf9e375f0b9a9e4eebbba591bb4
+      internalID: -446748652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_50
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 305
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b990fe10f3818b0eca60de927b2d63ee
+      internalID: 25835115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_51
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 305
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3dbce7991635b7b5ac9e26fd7b45dea
+      internalID: 106602738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_52
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 289
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe322c5a9ec9324c8fb670ccda8cf4c
+      internalID: -1833830417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_53
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 289
+        width: 48
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41b46984e3f5a50382ae507e3c64d05
+      internalID: -1162398175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_54
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 275
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9569cfc1fa686d5b549435e366f00a
+      internalID: 154605678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_55
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 275
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718ba1ee784170d0fbe987418143d9fc
+      internalID: 1107543103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_56
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 275
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7fc74f8d66ae1ccb193b1166a58a73
+      internalID: -1849604546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_57
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 275
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87888742986f636b28fa58b3ef9bb8e4
+      internalID: 1832295341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_58
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 275
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13c05ea2eae3dfa5a9bc39b5b3ab6aa
+      internalID: 1514443661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_59
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 259
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5cb02858bafb2b6a9d61eea19b7991
+      internalID: 354933389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_60
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 259
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dabe65ca72c2ca8da7e742d69bccb67
+      internalID: 1613364616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 259
+        width: 16
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af44b6cc1499fa51aa6e67b167ee172
+      internalID: -941842462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_62
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 259
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7573b341605c75dd851581137dd071c
+      internalID: -259139256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_63
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 241
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa050b910a4f87e2f97aa67140b76b05
+      internalID: -345437796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_64
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c681bc2ac5c2227a35a306f3a67b38
+      internalID: 2081669967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_65
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812c3cb8e865a4bcba589597d6ef7814
+      internalID: 199128956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_66
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74721c4d775e6ad45b74568f20abf668
+      internalID: -1819160137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_67
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e494b54d59eb129b42633f73f22780
+      internalID: -1154343307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_68
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 241
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855ee591293cb9cc49728ce8d6aaa571
+      internalID: -1468887149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_69
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 225
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9f0c9f202355bebb85a6429d791a6e
+      internalID: 100187491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_70
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 225
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5a0581df147da5c976c0c2bd229f6c
+      internalID: 143351233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_71
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 193
+        width: 13
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec95a1b59f3222bb6818f54fc6a8fbbf
+      internalID: -910378387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_72
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 193
+        width: 13
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf862e272b0b578db8b4c20d84757c7d
+      internalID: -561168703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_73
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 193
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c06306b696a683cebfd641794bb6dc9
+      internalID: -1907393731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_74
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 193
+        width: 11
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75dee7138ff4a37ce87c2c08ca827e9a
+      internalID: -1450279799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_75
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 161
+        width: 11
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c753f630bb56a76b9f90ce39e0b3c7
+      internalID: 2020168980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_76
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 161
+        width: 11
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c3e28bfc534cfe887a1ac49177a48e
+      internalID: 266435156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_77
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 129
+        width: 12
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61bce412db8eaefefaf863eaf47df751
+      internalID: 1321418759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_78
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 129
+        width: 12
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88be32477f192afaa8bc70e50ec25b0
+      internalID: -394756871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_79
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 129
+        width: 15
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235ef1cb1678f7e0ca5d1cb07301e769
+      internalID: -1470619056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_80
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 130
+        width: 16
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb14b05d0f09db72e9d44d22bde1d444
+      internalID: -338427138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_81
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 98
+        width: 12
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459a4cbccca953009ab99008576fe9ca
+      internalID: 2139468472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_82
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 65
+        width: 11
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb46ef242d571beeeb96fa220ce19d97
+      internalID: 1533454923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_83
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 65
+        width: 13
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf673b8cdd599cda38bf274f314dce54
+      internalID: 1010868309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_84
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 65
+        width: 13
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce4bb613b65d37f4b306f495311997b
+      internalID: 1197280342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_85
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 65
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64a89b726ded0664bba0c2402a0fad3
+      internalID: -1359183190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_93
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 11
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5add39dd6760f74fb38f5a4c8711a95
+      internalID: -1793429562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_94
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 11
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9c97e6370067aa9bc228c12954ecd4
+      internalID: -490473350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_95
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 11
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2495dec82b637f7bdaedafb658305c
+      internalID: -2018460144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_96
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 11
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520fb62e63c9b80a588213fa518c0c67
+      internalID: 1304704387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_97
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 11
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034f79bc85ba1073dbed45112ac34a16
+      internalID: 886274323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_98
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1
+        width: 11
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d276e51d50478f26a0d3989afea298d
+      internalID: 1216878771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken green_99
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 11
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d724cef5f5145be998f24de53e7ae0a
+      internalID: 1470633669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +2085,107 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chicken green_0: 1931974811
+      chicken green_1: 650992446
+      chicken green_10: -1965581985
+      chicken green_11: 97839171
+      chicken green_12: 652088428
+      chicken green_13: -1434099614
+      chicken green_14: 1618560210
+      chicken green_15: 789426785
+      chicken green_16: 1108742605
+      chicken green_17: 1613894484
+      chicken green_18: 1038369329
+      chicken green_19: 1126418572
+      chicken green_2: 1386055469
+      chicken green_20: -1235368684
+      chicken green_21: 1341673504
+      chicken green_22: -1061800420
+      chicken green_23: 1567314054
+      chicken green_24: 1467725225
+      chicken green_25: -17564855
+      chicken green_26: -1952683166
+      chicken green_27: 2045792081
+      chicken green_28: -2077766328
+      chicken green_29: 175044955
+      chicken green_3: 945187414
+      chicken green_30: -1306333692
+      chicken green_31: 1915069608
+      chicken green_32: 1184827967
+      chicken green_33: 251816550
+      chicken green_34: -1597130008
+      chicken green_35: -1542143610
+      chicken green_36: 686822445
+      chicken green_37: 2033028754
+      chicken green_38: -1788416183
+      chicken green_39: -1470868372
+      chicken green_4: -1823077787
+      chicken green_40: 141569361
+      chicken green_41: -1341466003
+      chicken green_42: -1242874819
+      chicken green_43: -900849731
+      chicken green_44: 1816694637
+      chicken green_45: -1129543610
+      chicken green_46: 1255979237
+      chicken green_47: 893475575
+      chicken green_48: -1262200332
+      chicken green_49: -446748652
+      chicken green_5: -24267234
+      chicken green_50: 25835115
+      chicken green_51: 106602738
+      chicken green_52: -1833830417
+      chicken green_53: -1162398175
+      chicken green_54: 154605678
+      chicken green_55: 1107543103
+      chicken green_56: -1849604546
+      chicken green_57: 1832295341
+      chicken green_58: 1514443661
+      chicken green_59: 354933389
+      chicken green_6: 103561794
+      chicken green_60: 1613364616
+      chicken green_61: -941842462
+      chicken green_62: -259139256
+      chicken green_63: -345437796
+      chicken green_64: 2081669967
+      chicken green_65: 199128956
+      chicken green_66: -1819160137
+      chicken green_67: -1154343307
+      chicken green_68: -1468887149
+      chicken green_69: 100187491
+      chicken green_7: -446976158
+      chicken green_70: 143351233
+      chicken green_71: -910378387
+      chicken green_72: -561168703
+      chicken green_73: -1907393731
+      chicken green_74: -1450279799
+      chicken green_75: 2020168980
+      chicken green_76: 266435156
+      chicken green_77: 1321418759
+      chicken green_78: -394756871
+      chicken green_79: -1470619056
+      chicken green_8: 1011981496
+      chicken green_80: -338427138
+      chicken green_81: 2139468472
+      chicken green_82: 1533454923
+      chicken green_83: 1010868309
+      chicken green_84: 1197280342
+      chicken green_85: -1359183190
+      chicken green_86: -277196681
+      chicken green_87: 1019450004
+      chicken green_88: -1324364809
+      chicken green_89: 1563724035
+      chicken green_9: -318124294
+      chicken green_90: -1709540665
+      chicken green_91: 581503261
+      chicken green_92: -2008561774
+      chicken green_93: -1793429562
+      chicken green_94: -490473350
+      chicken green_95: -2018460144
+      chicken green_96: 1304704387
+      chicken green_97: 886274323
+      chicken green_98: 1216878771
+      chicken green_99: 1470633669
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

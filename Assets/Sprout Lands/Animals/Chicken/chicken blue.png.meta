@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,1960 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: chicken blue_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 417
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d40b4c9fcc6040187c1a5a5774004a
+      internalID: -443493266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 417
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aede92ed07adc0da9febfb7fb4366dd
+      internalID: -1238578361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 417
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6728919c791a15478b11470d5040b5c3
+      internalID: 268081932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 417
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb34593e6870f0c99e4f70bfff00e45
+      internalID: 1200934430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 401
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4e2fcca36c28f859851c5c5282a019
+      internalID: 1395527892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 401
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a158ace46afa35e99556c97f10eec5
+      internalID: -1900639083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 401
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4d85eb1888be09bac92f62bf0cf3a0
+      internalID: -342491697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_7
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 401
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b79b27c7a5adeb888997c0469b5b8f
+      internalID: -368783726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 401
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37dec614896590d29a2307deab8cb58b
+      internalID: 1491195672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 401
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdaa7e967590a9f1971b2596d30353f
+      internalID: -1721384898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_10
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 401
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f1f08bc4629f54db421a88ccbc783e
+      internalID: 1449971903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 385
+        width: 13
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4fc0b3213647ffaebb12fe270c66f3f
+      internalID: 1926601225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 385
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f19965fbd1a434381dbddfb6c0d0db
+      internalID: 1392937412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9f6f32affb24038b7263311ef1d86c
+      internalID: 1551990085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e63122563ee9b77e9c0015dac37ccb7
+      internalID: 1339612673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 385
+        width: 13
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54e100223671789e9de05dcd158a15d
+      internalID: 1900889019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_16
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8861af641b5c9edbb85b3ab30c682a
+      internalID: 305006268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc889ce7ef53182bb5d0f7266e43e3b
+      internalID: 1618207081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_18
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 385
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1b63b9b592869208c74988ac38da12
+      internalID: -1032829736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 369
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15683f0657b2776485bb2c489cd5d10
+      internalID: 1064333605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 369
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401790dc4f7a33f3386b1ae23de9f318
+      internalID: 1551034420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_21
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 369
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae583705b55695aaaaf0a68b25241bf
+      internalID: -408936895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_22
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 369
+        width: 12
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1ac1e35306039239eb0c8addbe7a2f
+      internalID: 1408459977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 369
+        width: 16
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665bd6926b946f38dbb4f6e2e64bb53e
+      internalID: 1325819311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_24
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 369
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ebe9d7a25db35696883332caac15fcf
+      internalID: -428909976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_25
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 369
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e5b1495f8d9af9e823304c82677409
+      internalID: -868809954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 353
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3992eed66c9d5f018e4112ddd49c497
+      internalID: -1676502963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_27
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 353
+        width: 16
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1dda3b515d0f05c8cfdc8047b6a351
+      internalID: -1347475089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_28
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 353
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8c7c8c884f94e119045097e85e2afb
+      internalID: -2127037117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_29
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 353
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a74d94c8a28681894ee3b4426f813e
+      internalID: 157164018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_30
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 353
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0c2f90f17b79051b5873ce507eab8c
+      internalID: 1692901028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_31
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 353
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03f0d757a9921ab99f9e5ae81fc3c5f
+      internalID: -716063877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_32
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 353
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6320b552b987aab00ac8615159a364ef
+      internalID: -441089064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_33
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 337
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddd1f30c9317cb5883e11afd0cfc453
+      internalID: -1910822300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_34
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 337
+        width: 11
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860fed8bc1f46ebdb8cf89ea1c1d66cf
+      internalID: 1350366402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_35
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 340
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5932473b844030a57a7d6133d50e439f
+      internalID: -791258521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_36
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 341
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c1e4be0046d29ada1370c283a0f627
+      internalID: -469074376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_37
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 339
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d9959eb69e69b2dad3b0e3e9ecf343
+      internalID: 168037272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_38
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 339
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085caa11f6babed8aa90a6ae7c16be02
+      internalID: -1649628878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_39
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 339
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f962a2766c94a47bc9523dd08789d467
+      internalID: 1949324305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 323
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6556043432485aaab09e1377bdd7b2
+      internalID: -283293906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_41
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 323
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ad5c14e777fd5c4b6841cb26457797
+      internalID: 323316542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_42
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 324
+        width: 11
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8556c061064865828b48d6033921a73f
+      internalID: 851425811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_43
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 325
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f8926802e60ca148164d6474d09156
+      internalID: -498512466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_44
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 324
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267d28facdd1a26bc9297135cced9cef
+      internalID: -6660858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_45
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 321
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf3947487e0b61abb9e50e49416a8ef
+      internalID: -733426690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_46
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 321
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7957030f72db1d90797caf868a367d5c
+      internalID: 1691127719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_47
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 305
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a2836bd218482359c3efc81c4ca42f
+      internalID: 1345472005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 305
+        width: 16
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaad75584ceacc39cb039aee42d816a4
+      internalID: -1611896242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_49
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 305
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c88d17936b49787a85d102d69f3566
+      internalID: 845091679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_50
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 305
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3238c53df02cb51f3a66b4b36386a22c
+      internalID: 731467065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_51
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 305
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcea855f5d14c3adf8a522ab5eef8db2
+      internalID: 23402332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_52
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 289
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a326cb17ebfcc323bd249b82b5c7576
+      internalID: 1746646213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_53
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 289
+        width: 48
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c926ad4050f1f908afb0232ba4938af
+      internalID: 690124339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_54
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 275
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a471680f952e00bbf7d162f919dd0c
+      internalID: -1520066102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_55
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 275
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4416acf1fff99eeeb1a0b32e3d9dcf0
+      internalID: -1830461515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_56
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 275
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffce503c915e242eeb5195446645e172
+      internalID: -2008436662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_57
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 275
+        width: 12
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66209bc8287f0e32be6772bef1af176
+      internalID: 977094394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_58
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 275
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52856fd2b8bad78688a567169471cfbf
+      internalID: 1301759275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_59
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 259
+        width: 12
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f4454619190f1edb733823b382ed92
+      internalID: -736894724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_60
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 259
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435573fea5d2e2a8dbbdd31a150aa797
+      internalID: 1441583950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 259
+        width: 16
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4c1bc2e887e07d1a1b1a89c82f5743
+      internalID: 28899284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_62
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 259
+        width: 14
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c53469fcc8d22329d1697ae3a7cec3
+      internalID: 1524797078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_63
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 241
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e87c0b55722dee09fcdb9f3576fd6a
+      internalID: 672052320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_64
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9f7ea264b907557bd14a24f8f0c1f1
+      internalID: -333685974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_65
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cd02a0cfcdb5bd58d2679b39d29e64
+      internalID: 873586511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_66
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f63972a4bea1e9f489a0a874f8230084
+      internalID: -849977473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_67
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 241
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c6ace3b706c318e8263f695deae2fd
+      internalID: -164445001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_68
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 241
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b29e2b19ab4b0db975c5dd3221ea77
+      internalID: -1109832738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_69
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 225
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ef4ec85bdb1f9ff9bc826c3b6e011c
+      internalID: 1750331383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_70
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 225
+        width: 14
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b04baa604443ce14b6013e9ffe4258d
+      internalID: -1260583414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_71
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 193
+        width: 13
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a31cc8e5bba92ce2a6193afc6a9650b
+      internalID: 1914071315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_72
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 193
+        width: 13
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e8f883a3efa5995b162ebaf9b036fa
+      internalID: 627842485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_73
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 193
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8838cdbe7eb1935acbf286d1d30e0eaa
+      internalID: -1101737650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_74
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 193
+        width: 11
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26ff25ab4724a8cca6efe494cd13a93
+      internalID: -423339423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_75
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 161
+        width: 11
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7227e3e43fd09a0c8487a1e148ebc0c
+      internalID: 1912606917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_76
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 161
+        width: 11
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6c5ea11f3d0069996ae5b4396c844d
+      internalID: -549576239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_77
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 129
+        width: 12
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08fea0e5b021a0769c237ec5971d9c5
+      internalID: -523545300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_78
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 129
+        width: 12
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aad46bc5ffe9b2b8a279f5ed30fc615
+      internalID: -1867416068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_79
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 129
+        width: 15
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41b03cba772b81c19169cfed098219d
+      internalID: -1950622300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_80
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 130
+        width: 16
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9e190ef32b9b870939adcd7633dc19
+      internalID: 666306624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_81
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 98
+        width: 12
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7141e7efda963eb429139a34bc4670bb
+      internalID: -1937461273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_82
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 65
+        width: 11
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01107d5b608b925e092240fe7c225af6
+      internalID: 1273529393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_83
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 65
+        width: 13
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a17772626c163ac695bae4061c1f124
+      internalID: -1276716544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_84
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 65
+        width: 13
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f8c3b9f954391eebc1280b45957ca0
+      internalID: 2035418947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_85
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 65
+        width: 11
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a728f5783b2c3e0da3a9feaf9244ce9
+      internalID: -1788905833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_93
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 11
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9cecb7a55492820b46ac4f15bc22a1
+      internalID: 1711781826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_94
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 11
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1882ea71bbcbfc5769bb582d45a91fed
+      internalID: -103720996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_95
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 11
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b4d78bbf21f50bda25dff4c724c8d1
+      internalID: 866314793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_96
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 11
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f67aff4b3d7a77038d25b2ab84055dd
+      internalID: -687116346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_97
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 11
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c848144a2b3c59aa8451e9f36711be
+      internalID: -591216053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_98
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1
+        width: 11
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83509e8f668e46049ace223062eee25
+      internalID: 2108394756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken blue_99
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 11
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbfeeee51f761ec23927fd86a00670d4
+      internalID: 92243221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +2072,107 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chicken blue_0: -443493266
+      chicken blue_1: -1238578361
+      chicken blue_10: 1449971903
+      chicken blue_11: 1926601225
+      chicken blue_12: 1392937412
+      chicken blue_13: 1551990085
+      chicken blue_14: 1339612673
+      chicken blue_15: 1900889019
+      chicken blue_16: 305006268
+      chicken blue_17: 1618207081
+      chicken blue_18: -1032829736
+      chicken blue_19: 1064333605
+      chicken blue_2: 268081932
+      chicken blue_20: 1551034420
+      chicken blue_21: -408936895
+      chicken blue_22: 1408459977
+      chicken blue_23: 1325819311
+      chicken blue_24: -428909976
+      chicken blue_25: -868809954
+      chicken blue_26: -1676502963
+      chicken blue_27: -1347475089
+      chicken blue_28: -2127037117
+      chicken blue_29: 157164018
+      chicken blue_3: 1200934430
+      chicken blue_30: 1692901028
+      chicken blue_31: -716063877
+      chicken blue_32: -441089064
+      chicken blue_33: -1910822300
+      chicken blue_34: 1350366402
+      chicken blue_35: -791258521
+      chicken blue_36: -469074376
+      chicken blue_37: 168037272
+      chicken blue_38: -1649628878
+      chicken blue_39: 1949324305
+      chicken blue_4: 1395527892
+      chicken blue_40: -283293906
+      chicken blue_41: 323316542
+      chicken blue_42: 851425811
+      chicken blue_43: -498512466
+      chicken blue_44: -6660858
+      chicken blue_45: -733426690
+      chicken blue_46: 1691127719
+      chicken blue_47: 1345472005
+      chicken blue_48: -1611896242
+      chicken blue_49: 845091679
+      chicken blue_5: -1900639083
+      chicken blue_50: 731467065
+      chicken blue_51: 23402332
+      chicken blue_52: 1746646213
+      chicken blue_53: 690124339
+      chicken blue_54: -1520066102
+      chicken blue_55: -1830461515
+      chicken blue_56: -2008436662
+      chicken blue_57: 977094394
+      chicken blue_58: 1301759275
+      chicken blue_59: -736894724
+      chicken blue_6: -342491697
+      chicken blue_60: 1441583950
+      chicken blue_61: 28899284
+      chicken blue_62: 1524797078
+      chicken blue_63: 672052320
+      chicken blue_64: -333685974
+      chicken blue_65: 873586511
+      chicken blue_66: -849977473
+      chicken blue_67: -164445001
+      chicken blue_68: -1109832738
+      chicken blue_69: 1750331383
+      chicken blue_7: -368783726
+      chicken blue_70: -1260583414
+      chicken blue_71: 1914071315
+      chicken blue_72: 627842485
+      chicken blue_73: -1101737650
+      chicken blue_74: -423339423
+      chicken blue_75: 1912606917
+      chicken blue_76: -549576239
+      chicken blue_77: -523545300
+      chicken blue_78: -1867416068
+      chicken blue_79: -1950622300
+      chicken blue_8: 1491195672
+      chicken blue_80: 666306624
+      chicken blue_81: -1937461273
+      chicken blue_82: 1273529393
+      chicken blue_83: -1276716544
+      chicken blue_84: 2035418947
+      chicken blue_85: -1788905833
+      chicken blue_86: -187719825
+      chicken blue_87: 1562721844
+      chicken blue_88: 2100295323
+      chicken blue_89: 1077892324
+      chicken blue_9: -1721384898
+      chicken blue_90: 1335476303
+      chicken blue_91: -2015061299
+      chicken blue_92: 1754084861
+      chicken blue_93: 1711781826
+      chicken blue_94: -103720996
+      chicken blue_95: 866314793
+      chicken blue_96: -687116346
+      chicken blue_97: -591216053
+      chicken blue_98: 2108394756
+      chicken blue_99: 92243221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
