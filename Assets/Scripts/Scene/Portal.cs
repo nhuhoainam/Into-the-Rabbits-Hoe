@@ -22,6 +22,7 @@ public class Portal : MonoBehaviour
             PlayerPrefs.SetString("SpawnPoint", spawnPointName);
             // Set the state of the player to idle corresponding to the direction
             player.enabled = false;
+            player.SetIdleAnim();
             transAnim.GetComponent<Animator>().SetTrigger("End");
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene(sceneToLoad);

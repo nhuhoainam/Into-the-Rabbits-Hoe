@@ -119,4 +119,8 @@ public class PlayerController : MonoBehaviour
     {
         playerControls.Enable();
     }
+
+    public void SetIdleAnim() {
+        Play(playerData.idle);
+    }
 }
