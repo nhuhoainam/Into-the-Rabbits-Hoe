@@ -12,30 +12,50 @@ public class MouseItemData : MonoBehaviour
     public TextMeshProUGUI amount;
     public InventorySlot AssignedSlot;
 
+    public float dropOffset = 2f;
+
+    private Transform playerTransform;
+
     void Awake()
     {
+        itemSprite.preserveAspect = true;
         itemSprite.color = Color.clear;
         amount.text = "";
+
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        if (playerTransform == null) Debug.LogError("Player not found.");
     }
 
     public void UpdateMouseSlot(InventorySlot slot)
     {
         AssignedSlot.AssignItem(slot);
-        itemSprite.sprite = slot.ItemData.itemSprite;
+        UpdateMouseSlot();
+    }
+
+    public void UpdateMouseSlot()
+    {
+        itemSprite.sprite = AssignedSlot.ItemData.itemSprite;
         itemSprite.color = Color.white;
-        if (slot.StackSize > 1) amount.text = slot.StackSize.ToString();
+        if (AssignedSlot.StackSize > 1) amount.text = AssignedSlot.StackSize.ToString();
         else amount.text = "";
     }
 
     void Update()
     {
-        if (AssignedSlot.ItemData != null) {
+        if (AssignedSlot.ItemData != null)
+        {
             transform.position = Mouse.current.position.ReadValue();
             // Change to use PlayerControls
             if (Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
+                Debug.Log("Dropped item");
+
+                var playerDir = playerTransform.gameObject.GetComponent<PlayerController>().playerData.curDirection;
+                var dropPosition = playerTransform.position + new Vector3(playerDir.x * dropOffset, playerDir.y * dropOffset, 0f);
+                var droppedItem = Instantiate(AssignedSlot.ItemData.itemPrefab, dropPosition, Quaternion.identity);
+                droppedItem.GetComponent<ItemContainer>().amount = AssignedSlot.StackSize;
+
                 ClearSlot();
-                // TODO: Drop item
             }
         }
     }
@@ -56,7 +76,8 @@ public class MouseItemData : MonoBehaviour
         };
         List<RaycastResult> results = new();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0 || results != null;
+
+        return results.Exists(x => x.gameObject.layer == LayerMask.NameToLayer("UI"));
     }
 
 }

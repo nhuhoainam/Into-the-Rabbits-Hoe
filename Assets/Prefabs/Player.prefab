@@ -240,7 +240,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryInventorySize: 9
+  primaryInventorySystem:
+    inventorySlots: []
   secondaryInventorySize: 36
+  secondaryInventorySystem:
+    inventorySlots: []
 --- !u!114 &7026933921857616976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,3 +258,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 0}
+  playerInventoryPanel: {fileID: 0}

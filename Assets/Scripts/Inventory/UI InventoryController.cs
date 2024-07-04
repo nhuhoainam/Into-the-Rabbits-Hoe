@@ -4,35 +4,40 @@ using UnityEngine;
 
 public class UIInventoryController : MonoBehaviour
 {
-    public DynamicInventoryDisplay inventoryPanel;
+    public DynamicInventoryDisplay inventoryPanel; // For displaying the chests
 
-    private bool isOpen = false;
+    public DynamicInventoryDisplay playerInventoryPanel;
 
     private void OnEnable()
     {
-
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
+        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested += DisplayPlayerInventory;
+        PlayerInventoryHolder.OnInventoryCloseRequested += CloseInventory;
     }
     private void OnDisable()
     {
-
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
+        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested -= DisplayPlayerInventory;
+        PlayerInventoryHolder.OnInventoryCloseRequested -= CloseInventory;
     }
-
-    void Update() { }
 
     void DisplayInventory(InventorySystem invToDisplay)
     {
-        if (!isOpen)
-        {
-            isOpen = true;
+        if (inventoryPanel != null) {
             inventoryPanel.gameObject.SetActive(true);
             inventoryPanel.RefreshDynamicInventory(invToDisplay);
         }
-        else
-        {
-            isOpen = false;
-            inventoryPanel.gameObject.SetActive(false);
-        }
+    }
+
+    void DisplayPlayerInventory(InventorySystem invToDisplay)
+    {
+        playerInventoryPanel.gameObject.SetActive(true);
+        playerInventoryPanel.RefreshDynamicInventory(invToDisplay);
+    }
+
+    public void CloseInventory()
+    {
+        if (inventoryPanel != null) inventoryPanel.gameObject.SetActive(false);
+        playerInventoryPanel.gameObject.SetActive(false);
     }
 }

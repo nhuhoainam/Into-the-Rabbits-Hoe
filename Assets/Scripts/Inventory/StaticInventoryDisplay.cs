@@ -7,21 +7,33 @@ public class StaticInventoryDisplay : InventoryDisplay
     [SerializeField] private InventoryHolder inventoryHolder;
     [SerializeField] private UIInventorySlot[] slots;
 
+    protected override void OnEnable() {
+        base.OnEnable();
+        PlayerInventoryHolder.OnPlayerInventoryChanged += RefreshDisplay;
+    }
+
+    protected override void OnDisable() {
+        base.OnDisable();
+        PlayerInventoryHolder.OnPlayerInventoryChanged -= RefreshDisplay;
+    }
+
+    void RefreshDisplay() {
+        if (inventoryHolder != null) {
+            inventorySystem = inventoryHolder.PrimaryInventorySystem;
+            inventorySystem.OnInventorySlotChanged += UpdateSlot;
+        }
+        else {
+            Debug.LogWarning("No Inventory Holder assigned to Static Inventory Display");
+        }
+
+        AssignSlot(inventorySystem);
+    }
+
     protected override void Start()
     {
         base.Start();
 
-        if (inventoryHolder != null)
-        {
-            inventorySystem = inventoryHolder.PrimaryInventorySystem;
-            inventorySystem.OnInventorySlotChanged += UpdateSlot;
-        }
-        else
-        {
-            Debug.LogError("No Inventory Holder assigned to Static Inventory Display");
-        }
-
-        AssignSlot(inventorySystem);
+        RefreshDisplay();
     }
 
     public override void AssignSlot(InventorySystem invToDisplay)

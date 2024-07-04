@@ -20,12 +20,12 @@ public abstract class InventoryDisplay : MonoBehaviour
         playerControls = new PlayerControls();
     }
 
-    void OnEnable()
+    protected virtual void OnEnable()
     {
         playerControls.Inventory.Enable();
     }
 
-    void OnDisable()
+    protected virtual void OnDisable()
     {
         playerControls.Inventory.Disable();
     }
@@ -49,12 +49,15 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     public void SlotClicked(UIInventorySlot clickedUISlot)
     {
+        Debug.Log("Slot clicked");
+        if (Keyboard.current.shiftKey.isPressed) Debug.Log("Splitting stack");
         // Clicked slot has item & mouse doesn't have item => pick up item.
         if (clickedUISlot.AssignedSlot.ItemData != null && mouseInventoryItem.AssignedSlot.ItemData == null)
         {
             // Holding shift => Split stack.
             if (isSplittingStack && clickedUISlot.AssignedSlot.SplitStack(out InventorySlot halfSlot))
             {
+                Debug.Log("Splitting stack");
                 mouseInventoryItem.UpdateMouseSlot(halfSlot);
                 clickedUISlot.UpdateUISlot();
                 return;

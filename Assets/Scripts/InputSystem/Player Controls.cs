@@ -105,7 +105,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""52a41c1b-a2c0-4d6d-8fbb-15adfe03ceca"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -178,6 +178,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""SplitStack"",
                     ""type"": ""Button"",
                     ""id"": ""59719912-3853-4bbd-84ed-3577c98b02a3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CloseInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8e1daac-eae5-4a10-8c70-720025cd68c3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -316,6 +325,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""SplitStack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""189b8256-c850-419f-99ad-8b041ccc60fd"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -335,6 +355,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Inventory_OpenInventory = m_Inventory.FindAction("OpenInventory", throwIfNotFound: true);
         m_Inventory_DropItem = m_Inventory.FindAction("DropItem", throwIfNotFound: true);
         m_Inventory_SplitStack = m_Inventory.FindAction("SplitStack", throwIfNotFound: true);
+        m_Inventory_CloseInventory = m_Inventory.FindAction("CloseInventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -500,6 +521,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Inventory_OpenInventory;
     private readonly InputAction m_Inventory_DropItem;
     private readonly InputAction m_Inventory_SplitStack;
+    private readonly InputAction m_Inventory_CloseInventory;
     public struct InventoryActions
     {
         private @PlayerControls m_Wrapper;
@@ -508,6 +530,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @OpenInventory => m_Wrapper.m_Inventory_OpenInventory;
         public InputAction @DropItem => m_Wrapper.m_Inventory_DropItem;
         public InputAction @SplitStack => m_Wrapper.m_Inventory_SplitStack;
+        public InputAction @CloseInventory => m_Wrapper.m_Inventory_CloseInventory;
         public InputActionMap Get() { return m_Wrapper.m_Inventory; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -529,6 +552,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SplitStack.started += instance.OnSplitStack;
             @SplitStack.performed += instance.OnSplitStack;
             @SplitStack.canceled += instance.OnSplitStack;
+            @CloseInventory.started += instance.OnCloseInventory;
+            @CloseInventory.performed += instance.OnCloseInventory;
+            @CloseInventory.canceled += instance.OnCloseInventory;
         }
 
         private void UnregisterCallbacks(IInventoryActions instance)
@@ -545,6 +571,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SplitStack.started -= instance.OnSplitStack;
             @SplitStack.performed -= instance.OnSplitStack;
             @SplitStack.canceled -= instance.OnSplitStack;
+            @CloseInventory.started -= instance.OnCloseInventory;
+            @CloseInventory.performed -= instance.OnCloseInventory;
+            @CloseInventory.canceled -= instance.OnCloseInventory;
         }
 
         public void RemoveCallbacks(IInventoryActions instance)
@@ -577,5 +606,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnDropItem(InputAction.CallbackContext context);
         void OnSplitStack(InputAction.CallbackContext context);
+        void OnCloseInventory(InputAction.CallbackContext context);
     }
 }

@@ -19,6 +19,9 @@ public class UIInventorySlot : MonoBehaviour
     private void Awake()
     {
         ClearUISlot();
+
+        itemSprite.preserveAspect = true;
+
         button = GetComponent<Button>();
         button.onClick.AddListener(OnUISlotClick);
 

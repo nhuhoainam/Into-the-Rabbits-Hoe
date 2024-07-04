@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerInventoryHolder : InventoryHolder
 {
     [SerializeField] protected int secondaryInventorySize;
     [SerializeField] protected InventorySystem secondaryInventorySystem;
+
+    public static UnityAction OnPlayerInventoryChanged;
+    public static UnityAction<InventorySystem> OnPlayerInventoryDisplayRequested;
+    public static UnityAction OnInventoryCloseRequested;
 
     public InventorySystem SecondaryInventorySystem => secondaryInventorySystem;
 
@@ -21,7 +26,8 @@ public class PlayerInventoryHolder : InventoryHolder
 
     void Start()
     {
-        playerControls.Inventory.OpenInventory.performed += ctx => OnDynamicInventoryDisplayRequested?.Invoke(secondaryInventorySystem);
+        playerControls.Inventory.OpenInventory.performed += ctx => OnPlayerInventoryDisplayRequested?.Invoke(secondaryInventorySystem);
+        playerControls.Inventory.CloseInventory.performed += ctx => OnInventoryCloseRequested?.Invoke();
     }
 
     private void OnEnable()

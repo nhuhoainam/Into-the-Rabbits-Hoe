@@ -83,7 +83,7 @@
                 {
                     "name": "",
                     "id": "52a41c1b-a2c0-4d6d-8fbb-15adfe03ceca",
-                    "path": "<Keyboard>/leftShift",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -156,6 +156,15 @@
                     "name": "SplitStack",
                     "type": "Button",
                     "id": "59719912-3853-4bbd-84ed-3577c98b02a3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CloseInventory",
+                    "type": "Button",
+                    "id": "a8e1daac-eae5-4a10-8c70-720025cd68c3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -292,6 +301,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SplitStack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "189b8256-c850-419f-99ad-8b041ccc60fd",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
