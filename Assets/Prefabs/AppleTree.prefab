@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 3096170400435850015}
   - component: {fileID: 6785075828461581082}
   - component: {fileID: -3459706601483087614}
-  - component: {fileID: 5428843256385623832}
-  - component: {fileID: 554644498710336495}
+  - component: {fileID: 2016718945542796555}
   m_Layer: 0
   m_Name: AppleTree
   m_TagString: Untagged
@@ -163,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f19ba23782377409516cf2d03f69fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animancer: {fileID: 5428843256385623832}
+  animancer: {fileID: 0}
   treeWithFruit: {fileID: 7400000, guid: 02663af77116b764390bae0c5633089e, type: 2}
   treeWithoutFruit: {fileID: 7400000, guid: 71bf5b0931e274341ada34eeb2b0688c, type: 2}
   treeStump: {fileID: 7400000, guid: c5893eca9033dc949bcb08a089e45715, type: 2}
@@ -173,21 +172,7 @@ MonoBehaviour:
   droppingFruit: {fileID: 7400000, guid: 5991b0372b7d2554fa4ecbf591fde264, type: 2}
   hasFruit: 0
   health: 100
---- !u!114 &5428843256385623832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8379467528858659934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad50f81b1d25c441943c37a89ba23f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Animator: {fileID: 554644498710336495}
-  _ActionOnDisable: 0
---- !u!95 &554644498710336495
+--- !u!95 &2016718945542796555
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -197,7 +182,7 @@ Animator:
   m_GameObject: {fileID: 8379467528858659934}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93ee249b40c09c74cbf548b85cd39333, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
