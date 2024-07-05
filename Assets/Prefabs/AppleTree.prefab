@@ -164,8 +164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animancer: {fileID: 5428843256385623832}
-  treeWithFruit: {fileID: -1433953744, guid: ca86f6b4ba500824c8abc236e8e348f3, type: 3}
-  treeWithoutFruit: {fileID: -1801990252, guid: ca86f6b4ba500824c8abc236e8e348f3, type: 3}
+  treeWithFruit: {fileID: 7400000, guid: 02663af77116b764390bae0c5633089e, type: 2}
+  treeWithoutFruit: {fileID: 7400000, guid: 71bf5b0931e274341ada34eeb2b0688c, type: 2}
+  treeStump: {fileID: 7400000, guid: c5893eca9033dc949bcb08a089e45715, type: 2}
   growingFruit: {fileID: 7400000, guid: 23ebf6d3ebac8bc449897f47d3fcf44f, type: 2}
   shakingWithFruit: {fileID: 7400000, guid: e0d5ef3a5a0096f4da45e9049b96e6d3, type: 2}
   shakingWithoutFruit: {fileID: 7400000, guid: 87ede0218239fb148bb24598346701a1, type: 2}
