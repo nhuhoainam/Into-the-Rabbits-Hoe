@@ -14,7 +14,11 @@ public class SpawnManager : MonoBehaviour
                 if (GameObject.FindWithTag("Player").TryGetComponent<PlayerController>(out var player))
                 {
                     player.playerData.position = spawnPoint.transform.position;
+                    player.transform.position = spawnPoint.transform.position;
                     PlayerPrefs.DeleteKey("SpawnPoint");
+                }
+                else {
+                    Debug.LogWarning("PlayerController component not found on the player object");
                 }
             }
         }

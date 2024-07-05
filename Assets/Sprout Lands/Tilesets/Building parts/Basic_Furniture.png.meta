@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,616 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Basic_Furniture_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 83
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf690296d814564abb9a207fe338056
+      internalID: 2049160167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 83
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5ee021c3268124fb98a7ba8aba6057
+      internalID: -270693130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 83
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a18139ec3af9a41b4047748b961498
+      internalID: 506642861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 81
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01551b5a5b203ee438605457edc5eecb
+      internalID: 117375332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 83
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2bf0947edbccb9449d6625cef6f0677
+      internalID: 1777273303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 83
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2fd5005c7e18a4e8943f09dabf4c4a
+      internalID: -469108475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 48
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148c41a16f6f84a40b1ce1081892b92f
+      internalID: 271004802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_7
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 48
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2daa46ce6dde042873e52a7170395e
+      internalID: 1788103756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_8
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 48
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921d53a927b5caa43824b25a61921b16
+      internalID: -1614353074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 69
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c643f75d9b47cd84eae91f2a66899ff3
+      internalID: 47571589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 69
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae13b25bf7bd7f4db5e9a655d0454dd
+      internalID: -933669783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_11
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 69
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca804359ffc2a5840a174e18b14506c7
+      internalID: -154120704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 48
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd63975373d0f614e8600fe02e4f47ce
+      internalID: -1999309908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_13
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 50
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba132378e1b3e541bed1ccc91cf35ff
+      internalID: -773607212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_14
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 50
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e57bc96c9d02e946be2d2dbebe245ef
+      internalID: -1935722356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_15
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 50
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b6d3f6c163fad47b47a25cb1294d13
+      internalID: 1352109147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_16
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 50
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d138c5f3000e2d14a8e7ed66aa505aa0
+      internalID: -2111057975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 16
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e1471a4239a8447b16b504024e3a85
+      internalID: 650976258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 16
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997c0720ce370064aa3f22b3b765875f
+      internalID: -1994117048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_19
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 16
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80dcf16501d540e4398c73e28bd4dee7
+      internalID: -724462537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_20
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 33
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce242719a222c334abd782156a9d6263
+      internalID: 1423778226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_21
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 36
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e9fb7bf258b8e4f87969d816f3afd6
+      internalID: 1297685059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_22
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 33
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0639b49d624ff44c9f21d66c5e2eff7
+      internalID: 1474767764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_23
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 33
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229c9a61df4977a45bc91e4dd18a1f61
+      internalID: 1048904907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_24
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500f0233a2df29543a2cc0967de5d94b
+      internalID: 1799480971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 48
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b9ce10a5988424092e4e63b46fb3de
+      internalID: 1071476256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_26
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c738f8e1e523746b07abc8e8953a16
+      internalID: 1215725061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_27
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d880a1ddd83787c49a55dac3f99d60bb
+      internalID: 855635782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic_Furniture_28
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c311d3d5a2920504d9654681356af632
+      internalID: 906808068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +728,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Basic_Furniture_0: 2049160167
+      Basic_Furniture_1: -270693130
+      Basic_Furniture_10: -933669783
+      Basic_Furniture_11: -154120704
+      Basic_Furniture_12: -1999309908
+      Basic_Furniture_13: -773607212
+      Basic_Furniture_14: -1935722356
+      Basic_Furniture_15: 1352109147
+      Basic_Furniture_16: -2111057975
+      Basic_Furniture_17: 650976258
+      Basic_Furniture_18: -1994117048
+      Basic_Furniture_19: -724462537
+      Basic_Furniture_2: 506642861
+      Basic_Furniture_20: 1423778226
+      Basic_Furniture_21: 1297685059
+      Basic_Furniture_22: 1474767764
+      Basic_Furniture_23: 1048904907
+      Basic_Furniture_24: 1799480971
+      Basic_Furniture_25: 1071476256
+      Basic_Furniture_26: 1215725061
+      Basic_Furniture_27: 855635782
+      Basic_Furniture_28: 906808068
+      Basic_Furniture_3: 117375332
+      Basic_Furniture_4: 1777273303
+      Basic_Furniture_5: -469108475
+      Basic_Furniture_6: 271004802
+      Basic_Furniture_7: 1788103756
+      Basic_Furniture_8: -1614353074
+      Basic_Furniture_9: 47571589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

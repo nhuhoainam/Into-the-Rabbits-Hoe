@@ -6,6 +6,16 @@ TagManager:
   tags:
   - ItemDisplay
   - DroppedItem
+  - Grass
+  - CameraBounding
+  - VirtualCamera
+  - TransitionAnimation
+  - DialogueManager
+  - DialogueText
+  - NPC
+  - NPCName
+  - NPCImage
+  - DialoguePanel
   layers:
   - Default
   - TransparentFX
