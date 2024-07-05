@@ -6,6 +6,7 @@ public class Crop : MonoBehaviour
 {
     [SerializeField] CropData cropData;
     [SerializeField] int growthStage = 0;
+    [SerializeField] int growthTime = 0;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()

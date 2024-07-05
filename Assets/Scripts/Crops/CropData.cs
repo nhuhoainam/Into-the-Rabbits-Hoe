@@ -8,16 +8,11 @@ using UnityEngine.Assertions;
 public class CropData : ScriptableObject
 {
     /// <summary>
-    /// GrowthIntervals is a list of the number of in-game
-    /// hours it takes for the crop to grow to the next stage.
+    /// GrowthIntervals is a list of the number of base in-game
+    /// hours it takes for the crop to grow to the next stage without fetilizer or watering.
     /// </summary>
     public List<int> GrowthIntervals;
     public List<Sprite> GrowthSprites;
-    /// <summary>
-    /// GrowthSpedUpIntervals is a list of the number of in-game hours it takes for
-    /// the crop to grow to the next stage when the player uses a speed-up (fertilizer) item.
-    /// </summary>
-    public List<float> GrowthSpedUpIntervals;
     public int SellPrice;
     public int BuyPrice;
 
