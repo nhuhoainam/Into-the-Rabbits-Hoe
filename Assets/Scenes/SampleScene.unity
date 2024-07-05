@@ -352,7 +352,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1498261002}
         m_TargetAssemblyTypeName: SaveLoadTest, Assembly-CSharp
-        m_MethodName: TestSave
+        m_MethodName: TestLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1726,6 +1726,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1841406989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775433732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1175156004204750851, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+  m_PrefabInstance: {fileID: 5412983241290947128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7772368e6a6036748aae9b959042f8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1793325676 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1498305565323790605, guid: f7673de26ee1b6943ac47bbbd99d8314, type: 3}
@@ -3681,6 +3692,10 @@ PrefabInstance:
       propertyPath: playerInventoryPanel
       value: 
       objectReference: {fileID: 1081147159}
+    - target: {fileID: 8911759914056759389, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1775433732}
     - target: {fileID: 8911759914056759389, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: interactiveMap
       value: 

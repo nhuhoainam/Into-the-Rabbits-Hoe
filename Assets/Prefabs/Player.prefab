@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Animancer: {fileID: 1219905386968366885}
+  position: {x: 0, y: 0, z: 0}
+  prevHighlightedPos: {x: 0, y: 0, z: 0}
   playerData: {fileID: 11400000, guid: cebeca40fb5fa2147a42f4eef8335dd7, type: 2}
 --- !u!114 &1219905386968366885
 MonoBehaviour:
@@ -181,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveMap: {fileID: 0}
-  playerData: {fileID: 11400000, guid: cebeca40fb5fa2147a42f4eef8335dd7, type: 2}
+  playerData: {fileID: 1175156004204750851}
+  hoverTile: {fileID: 0}
 --- !u!61 &4158497885409467686
 BoxCollider2D:
   m_ObjectHideFlags: 0
