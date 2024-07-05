@@ -35,6 +35,11 @@ public class Tree : MonoBehaviour
     void ChopTree()
     {
         animator.SetTrigger("shakeTree");
+        health -= 20;
+        if (health <= 0)
+        {
+            animator.SetTrigger("fallTree");
+        }
     }
 
     void GrowFruit()
@@ -51,17 +56,5 @@ public class Tree : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ChopTree();
-        }
-        else if (Input.GetKeyDown(KeyCode.H))
-        {
-            HarvestFruit();
-        }
-        else if (Input.GetKeyDown(KeyCode.G))
-        {
-            GrowFruit();
-        }
     }
 }
