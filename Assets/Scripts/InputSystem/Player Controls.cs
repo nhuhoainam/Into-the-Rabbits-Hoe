@@ -105,7 +105,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""52a41c1b-a2c0-4d6d-8fbb-15adfe03ceca"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -175,13 +175,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""DragAndDrop"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""a14d44c7-e49c-40ca-ad36-67006e92de98"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""SplitStack"",
+                    ""type"": ""Button"",
+                    ""id"": ""59719912-3853-4bbd-84ed-3577c98b02a3"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""MouseDrag"",
-                    ""initialStateCheck"": true
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CloseInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8e1daac-eae5-4a10-8c70-720025cd68c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -307,48 +316,26 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Mouse Drag"",
-                    ""id"": ""e4d610b0-75a0-4dea-815f-6017854c3009"",
-                    ""path"": ""MouseDrag"",
+                    ""name"": """",
+                    ""id"": ""2b1ff21d-92d7-40eb-a2b6-4db1e989e661"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DragAndDrop"",
-                    ""isComposite"": true,
+                    ""action"": ""SplitStack"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Button"",
-                    ""id"": ""71dea970-39ec-40f1-bf95-e8fff0d89b4a"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""name"": """",
+                    ""id"": ""189b8256-c850-419f-99ad-8b041ccc60fd"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DragAndDrop"",
+                    ""action"": ""CloseInventory"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Axis1"",
-                    ""id"": ""8da988ee-b3a5-4802-bb13-176a9b53360e"",
-                    ""path"": ""<Mouse>/position/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DragAndDrop"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Axis2"",
-                    ""id"": ""eaef6ebc-2121-47e0-89cd-e4ec6dd07993"",
-                    ""path"": ""<Mouse>/position/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DragAndDrop"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -367,7 +354,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Inventory_Active = m_Inventory.FindAction("Active", throwIfNotFound: true);
         m_Inventory_OpenInventory = m_Inventory.FindAction("OpenInventory", throwIfNotFound: true);
         m_Inventory_DropItem = m_Inventory.FindAction("DropItem", throwIfNotFound: true);
-        m_Inventory_DragAndDrop = m_Inventory.FindAction("DragAndDrop", throwIfNotFound: true);
+        m_Inventory_SplitStack = m_Inventory.FindAction("SplitStack", throwIfNotFound: true);
+        m_Inventory_CloseInventory = m_Inventory.FindAction("CloseInventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -532,7 +520,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Inventory_Active;
     private readonly InputAction m_Inventory_OpenInventory;
     private readonly InputAction m_Inventory_DropItem;
-    private readonly InputAction m_Inventory_DragAndDrop;
+    private readonly InputAction m_Inventory_SplitStack;
+    private readonly InputAction m_Inventory_CloseInventory;
     public struct InventoryActions
     {
         private @PlayerControls m_Wrapper;
@@ -540,7 +529,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Active => m_Wrapper.m_Inventory_Active;
         public InputAction @OpenInventory => m_Wrapper.m_Inventory_OpenInventory;
         public InputAction @DropItem => m_Wrapper.m_Inventory_DropItem;
-        public InputAction @DragAndDrop => m_Wrapper.m_Inventory_DragAndDrop;
+        public InputAction @SplitStack => m_Wrapper.m_Inventory_SplitStack;
+        public InputAction @CloseInventory => m_Wrapper.m_Inventory_CloseInventory;
         public InputActionMap Get() { return m_Wrapper.m_Inventory; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -559,9 +549,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @DropItem.started += instance.OnDropItem;
             @DropItem.performed += instance.OnDropItem;
             @DropItem.canceled += instance.OnDropItem;
-            @DragAndDrop.started += instance.OnDragAndDrop;
-            @DragAndDrop.performed += instance.OnDragAndDrop;
-            @DragAndDrop.canceled += instance.OnDragAndDrop;
+            @SplitStack.started += instance.OnSplitStack;
+            @SplitStack.performed += instance.OnSplitStack;
+            @SplitStack.canceled += instance.OnSplitStack;
+            @CloseInventory.started += instance.OnCloseInventory;
+            @CloseInventory.performed += instance.OnCloseInventory;
+            @CloseInventory.canceled += instance.OnCloseInventory;
         }
 
         private void UnregisterCallbacks(IInventoryActions instance)
@@ -575,9 +568,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @DropItem.started -= instance.OnDropItem;
             @DropItem.performed -= instance.OnDropItem;
             @DropItem.canceled -= instance.OnDropItem;
-            @DragAndDrop.started -= instance.OnDragAndDrop;
-            @DragAndDrop.performed -= instance.OnDragAndDrop;
-            @DragAndDrop.canceled -= instance.OnDragAndDrop;
+            @SplitStack.started -= instance.OnSplitStack;
+            @SplitStack.performed -= instance.OnSplitStack;
+            @SplitStack.canceled -= instance.OnSplitStack;
+            @CloseInventory.started -= instance.OnCloseInventory;
+            @CloseInventory.performed -= instance.OnCloseInventory;
+            @CloseInventory.canceled -= instance.OnCloseInventory;
         }
 
         public void RemoveCallbacks(IInventoryActions instance)
@@ -609,6 +605,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnActive(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnDropItem(InputAction.CallbackContext context);
-        void OnDragAndDrop(InputAction.CallbackContext context);
+        void OnSplitStack(InputAction.CallbackContext context);
+        void OnCloseInventory(InputAction.CallbackContext context);
     }
 }

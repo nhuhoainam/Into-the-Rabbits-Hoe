@@ -2,13 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemInstanceContainer : MonoBehaviour
+public class ItemContainer : MonoBehaviour
 {
-    public ItemInstance item;
+    public ItemData item;
+    public int amount;
 
-    public ItemInstance TakeItem()
-    {   
-        Destroy(gameObject);
-        return item;
+    void Awake()
+    {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out PlayerInventoryHolder inventoryHolder))
+        {
+            if (inventoryHolder.PrimaryInventorySystem.AddToInventory(item, amount)) {
+                Debug.Log("Item added to inventory");
+                Destroy(gameObject);
+            }
+        }
     }
 }

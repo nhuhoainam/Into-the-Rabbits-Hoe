@@ -1,52 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class UIInventorySlot : MonoBehaviour, IDropHandler
+public class UIInventorySlot : MonoBehaviour
 {
-    public GameObject itemDisplayPrefab;
-    private UIItemDisplay itemDisplay;
+    [SerializeField] private Image itemSprite;
+    [SerializeField] private TextMeshProUGUI itemCount;
+    [SerializeField] private InventorySlot assignedInventorySlot;
 
-    public int slotIndex;
-    public bool isActiveSlot;
+    private Button button;
 
-    public delegate void OnMouseDrop(GameObject dropped, int slotIndex, bool isActiveSlot);
-    public OnMouseDrop onMouseDrop;
+    public InventorySlot AssignedSlot => assignedInventorySlot;
 
-    void Awake()
+    public InventoryDisplay ParentDisplay { get; private set; }
+
+    private void Awake()
     {
-        itemDisplay = null;
+        ClearUISlot();
+
+        itemSprite.preserveAspect = true;
+
+        button = GetComponent<Button>();
+        button.onClick.AddListener(OnUISlotClick);
+
+        ParentDisplay = GetComponentInParent<InventoryDisplay>();
     }
 
-    public void SetItem(ItemInstance newItemInstance)
+    public void Init(InventorySlot slot)
     {
-        try
-        {
-            var itemDisplayTransform = transform.GetChild(0);
-            itemDisplay = itemDisplayTransform.gameObject.GetComponent<UIItemDisplay>();
-        }
-        catch (System.Exception)
-        {
-            itemDisplay = Instantiate(itemDisplayPrefab, transform).GetComponent<UIItemDisplay>();
-        }
-        itemDisplay.SetItem(newItemInstance);
+        assignedInventorySlot = slot;
+        UpdateUISlot();
     }
 
-    public void ClearItem()
+    public void UpdateUISlot(InventorySlot slot)
     {
-        if (itemDisplay != null)
+        assignedInventorySlot = slot;
+        if (slot.ItemData != null)
         {
-            Destroy(itemDisplay.gameObject);
+            itemSprite.sprite = slot.ItemData.itemSprite;
+            itemSprite.color = Color.white;
+
+            if (slot.StackSize > 1) itemCount.text = slot.StackSize.ToString();
+            else itemCount.text = "";
         }
-        itemDisplay = null;
+        else
+        {
+            itemSprite.sprite = null;
+            itemSprite.color = Color.clear;
+            itemCount.text = "";
+        }
+
     }
 
-    public void OnDrop(PointerEventData pointer)
+    public void UpdateUISlot()
     {
-        GameObject dropped = pointer.pointerDrag;
-        onMouseDrop.Invoke(dropped, slotIndex, isActiveSlot);
+        if (assignedInventorySlot != null) UpdateUISlot(assignedInventorySlot);
+    }
+
+    public void ClearUISlot()
+    {
+        assignedInventorySlot?.ClearSlot();
+        itemSprite.sprite = null;
+        itemSprite.color = Color.clear;
+        itemCount.text = "";
+    }
+
+    public void OnUISlotClick()
+    {
+        ParentDisplay.SlotClicked(this);
     }
 }
