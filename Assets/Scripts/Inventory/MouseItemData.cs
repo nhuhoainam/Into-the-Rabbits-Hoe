@@ -50,7 +50,7 @@ public class MouseItemData : MonoBehaviour
             {
                 Debug.Log("Dropped item");
 
-                var playerDir = playerTransform.gameObject.GetComponent<PlayerController>().playerData.curDirection;
+                var playerDir = playerTransform.gameObject.GetComponent<PlayerController>().Direction;
                 var dropPosition = playerTransform.position + new Vector3(playerDir.x * dropOffset, playerDir.y * dropOffset, 0f);
                 var droppedItem = Instantiate(AssignedSlot.ItemData.itemPrefab, dropPosition, Quaternion.identity);
                 droppedItem.GetComponent<ItemContainer>().amount = AssignedSlot.StackSize;

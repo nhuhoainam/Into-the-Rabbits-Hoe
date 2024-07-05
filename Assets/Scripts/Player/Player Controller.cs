@@ -8,12 +8,17 @@ using Animancer;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private AnimancerComponent _Animancer;
+    public Vector3 position;
+    public Vector3Int prevHighlightedPos = new();
+    private Vector2 curDirection = Vector2.down;
+    private bool isRunning = false;
+    private bool isUsingTool = false;
 
     public PlayerData playerData;
 
-    private Vector2 Direction {
-        get => playerData.curDirection;
-        set => playerData.curDirection = value;
+    public Vector2 Direction {
+        get => curDirection;
+        set => curDirection = value;
     }
     private DirectionalAnimationSet _CurrentAnimationSet;
 
@@ -29,8 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        playerControls.Movement.Run.performed += ctx => playerData.isRunning = true;
-        playerControls.Movement.Run.canceled += ctx => playerData.isRunning = false;
+        playerControls.Movement.Run.performed += ctx => isRunning = true;
+        playerControls.Movement.Run.canceled += ctx => isRunning = false;
         playerControls.Interaction.Interact.performed += ctx => Interact();
     }
     
@@ -54,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (playerData.isUsingTool)
+        if (isUsingTool)
         {
             return;
         }
@@ -76,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMovementState() 
     {
-        Play(playerData.isRunning ? playerData.running : playerData.walking);
+        Play(isRunning ? playerData.running : playerData.walking);
     }
 
     private void MovePlayer()
@@ -84,24 +89,24 @@ public class PlayerController : MonoBehaviour
         playerRb.MovePosition(playerRb.position 
             + _Movement 
             * (playerData.moveSpeed 
-                * (playerData.isRunning ? playerData.runSpeedModifier : 1.0f) 
+                * (isRunning ? playerData.runSpeedModifier : 1.0f) 
                 * Time.fixedDeltaTime));
     }
 
     private void Interact()
     {
-        if (playerData.isUsingTool)
+        if (isUsingTool)
         {
             return;
         }
-        playerData.isUsingTool = true;
+        isUsingTool = true;
         var state = Play(playerData.usingHoe);
-        state.Events.OnEnd = () => playerData.isUsingTool = false;
+        state.Events.OnEnd = () => isUsingTool = false;
     }
 
     private void Update()
     {
-        playerData.position = transform.position;
+        position = transform.position;
         PlayerInput();
     }
 

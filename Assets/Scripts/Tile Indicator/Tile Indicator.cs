@@ -6,12 +6,12 @@ using UnityEngine.Tilemaps;
 public class TileIndicator : MonoBehaviour
 {
     public Tilemap interactiveMap;
-
-    public PlayerData playerData;
+    public PlayerController playerData;
+    [SerializeField] private Tile hoverTile;
 
     private void HighlightTile()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerData.curDirection, 1.0f, LayerMask.GetMask("Tilemap"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerData.Direction, 1.0f, LayerMask.GetMask("Tilemap"));
         if (hit.collider != null)
         {
             var tilemap = hit.collider.GetComponent<Tilemap>();
@@ -20,7 +20,7 @@ public class TileIndicator : MonoBehaviour
             if (playerData.prevHighlightedPos != highlightPos)
             {
                 interactiveMap.SetTile(playerData.prevHighlightedPos, null);
-                interactiveMap.SetTile(highlightPos, playerData.hoverTile);
+                interactiveMap.SetTile(highlightPos, hoverTile);
                 playerData.prevHighlightedPos = highlightPos;
             }
         } else {
