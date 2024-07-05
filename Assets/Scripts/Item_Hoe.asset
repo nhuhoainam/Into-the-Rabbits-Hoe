@@ -18,3 +18,4 @@ MonoBehaviour:
   isStackable: 0
   maxStackSize: 1
   itemDescription: This is a hoe
+  itemPrefab: {fileID: 9204610817383023028, guid: 973bbcd57d6246b47bb20b5a43e8b39e, type: 3}
