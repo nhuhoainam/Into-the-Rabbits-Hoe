@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AnimancerComponent _Animancer;
 
     public PlayerData playerData;
-
+    [SerializeField] private AudioSource footstepAudioSource; 
+    [SerializeField] private AudioClip footstepClip; 
     private Vector2 Direction {
         get => playerData.curDirection;
         set => playerData.curDirection = value;
@@ -67,12 +68,24 @@ public class PlayerController : MonoBehaviour
             UpdateMovementState();
             Direction = _CurrentAnimationSet.Snap(Direction);
             _Movement = Vector2.ClampMagnitude(_Movement, 1);
+
+            if (!footstepAudioSource.isPlaying)
+            {
+                footstepAudioSource.clip = footstepClip;
+                footstepAudioSource.Play();
+            }
         }
         else
         {
             Play(playerData.idle);
+
+            if (footstepAudioSource.isPlaying)
+            {
+                footstepAudioSource.Stop();
+            }
         }
     }
+
 
     private void UpdateMovementState() 
     {
