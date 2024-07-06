@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
             {
                 if (GameObject.FindWithTag("Player").TryGetComponent<PlayerController>(out var player))
                 {
-                    player.position = spawnPoint.transform.position;
+                    player.Position = spawnPoint.transform.position;
                     player.transform.position = spawnPoint.transform.position;
                     PlayerPrefs.DeleteKey("SpawnPoint");
                 }

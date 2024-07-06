@@ -7,19 +7,33 @@ using Animancer;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private float runSpeedModifier = 2.0f;
+    [SerializeField] private DirectionalAnimationSet idle;
+    [SerializeField] private DirectionalAnimationSet walking;
+    [SerializeField] private DirectionalAnimationSet running;
+    [SerializeField] private DirectionalAnimationSet usingHoe;
+    [SerializeField] private DirectionalAnimationSet usingAxe;
+    [SerializeField] private DirectionalAnimationSet usingWateringCan;
+
     [SerializeField] private AnimancerComponent _Animancer;
-    public Vector3 position;
     public Vector3Int prevHighlightedPos = new();
-    private Vector2 curDirection = Vector2.down;
     private bool isRunning = false;
     private bool isUsingTool = false;
 
     public PlayerData playerData;
 
     public Vector2 Direction {
-        get => curDirection;
-        set => curDirection = value;
+        get => playerData.Direction;
+        set => playerData.Direction = value;
     }
+
+    public Vector3 Position {
+        get => playerData.position;
+        set => playerData.position = value;
+    }
+
     private DirectionalAnimationSet _CurrentAnimationSet;
 
     private PlayerControls playerControls;
@@ -75,21 +89,21 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Play(playerData.idle);
+            Play(idle);
         }
     }
 
     private void UpdateMovementState() 
     {
-        Play(isRunning ? playerData.running : playerData.walking);
+        Play(isRunning ? running : walking);
     }
 
     private void MovePlayer()
     {
         playerRb.MovePosition(playerRb.position 
             + _Movement 
-            * (playerData.moveSpeed 
-                * (isRunning ? playerData.runSpeedModifier : 1.0f) 
+            * (moveSpeed 
+                * (isRunning ? runSpeedModifier : 1.0f) 
                 * Time.fixedDeltaTime));
     }
 
@@ -100,13 +114,13 @@ public class PlayerController : MonoBehaviour
             return;
         }
         isUsingTool = true;
-        var state = Play(playerData.usingHoe);
+        var state = Play(usingHoe);
         state.Events.OnEnd = () => isUsingTool = false;
     }
 
     private void Update()
     {
-        position = transform.position;
+        Position = transform.position;
         PlayerInput();
     }
 
@@ -126,6 +140,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SetIdleAnim() {
-        Play(playerData.idle);
+        Play(idle);
     }
 }
