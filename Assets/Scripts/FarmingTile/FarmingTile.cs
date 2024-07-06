@@ -20,7 +20,17 @@ public class FarmingTile : MonoBehaviour
         // If they don't, harvest the crop
 
         Tilemap tilemap = GetComponent<Tilemap>();
-        tilemap.SetTile(tilemap.WorldToCell(position), tilledTile);
+        TileBase tile = tilemap.GetTile(tilemap.WorldToCell(position));
+        if (tile == null)
+        {
+            tilemap.SetTile(tilemap.WorldToCell(position), tilledTile);
+        }
+        else if (tile == tilledTile)
+        {
+            Vector3 pos = tilemap.WorldToCell(position);
+            pos += new Vector3(0.5f, 0.5f, 6);
+            CropFactory.Instance.CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
