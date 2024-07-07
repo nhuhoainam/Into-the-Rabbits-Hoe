@@ -7,17 +7,30 @@ using UnityEngine.Tilemaps;
 
 public class FarmingTile : MonoBehaviour
 {
+
+    private class CropTile
+    {
+        public Vector3Int Position { get; }
+        public Crop Crop { get; }
+        public CropTile(Vector3Int position, Crop crop)
+        {
+            Position = position;
+            Crop = crop;
+        }
+    }
     [SerializeField] TileBase tilledTile;
     [SerializeField] TileBase grassTile;
     Tilemap grassTilemap;
     Tilemap tilemap;
     Tilemap tilledTilemap;
+    List<CropTile> crops;
     // Start is called before the first frame update
     void Start()
     {
+        crops = new();
         tilemap = GetComponent<Tilemap>();
         grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
-        tilledTilemap = GameObject.FindWithTag("TilledDirt").GetComponent<Tilemap>();
+        tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
         tilledTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
         tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 1;
     }
@@ -81,17 +94,45 @@ public class FarmingTile : MonoBehaviour
         // If they do, plant the seed
         // If they don't, harvest the crop
 
+        foreach (var cropTile in crops)
+        {
+            Debug.Log("Crop at: " + cropTile.Position);
+        }
         if (TilledAt(position))
         {
-            Vector3 pos = tilemap.WorldToCell(position);
-            pos += new Vector3(0.5f, 0.5f, 6);
-            CropFactory.Instance.CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity);
+            Crop crop = GetCropAt(position);
+            if (crop == null)
+            {
+                Debug.Log("Planting");
+                Vector3Int posInt = tilemap.WorldToCell(position);
+                Vector3 pos = (Vector3)posInt;
+                pos += new Vector3(0.5f, 0.5f, 6);
+                var newCrop = CropFactory.Instance.CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity);
+                crops.Add(new(posInt, newCrop.GetComponent<Crop>()));
+                Debug.Log("Crop planted at: " + posInt);
+            }
+            else
+            {
+                Debug.Log("Harvesting");
+                crop.Interact();
+            }
         }
         else
         {
             Till(position);
         }
         return;
+    }
+
+    Crop GetCropAt(Vector3 position)
+    {
+        Vector3Int posInt = tilemap.WorldToCell(position);
+        CropTile crop = crops.Find((cropTile) => cropTile.Position == posInt);
+        if (crop != null)
+        {
+            return crop.Crop;
+        }
+        return null;
     }
 
     // Update is called once per frame

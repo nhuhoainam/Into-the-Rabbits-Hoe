@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,7 @@ public class Crop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        growthTime += Time.deltaTime;
+        // growthTime += Time.deltaTime;
         spriteRenderer.sprite = cropData.GrowthSprites[growthStage];
         if (growthStage < cropData.GrowthIntervals.Count - 1 && growthTime >= cropData.GrowthIntervals[growthStage])
         {
@@ -34,5 +35,16 @@ public class Crop : MonoBehaviour
             Instantiate(cropData.itemData.itemPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+
+    public void Interact()
+    {
+        if (growthStage == cropData.GrowthIntervals.Count - 1) {
+            Harvest();
+        }
+    }
+
+    void Harvest() {
+
     }
 }
