@@ -14,7 +14,7 @@ public class MouseItemData : MonoBehaviour
 
     public float dropOffset = 2f;
 
-    private GameObject droppedItemPrefab;
+    private ItemSpawner itemSpawner;
 
     private Transform playerTransform;
 
@@ -24,7 +24,7 @@ public class MouseItemData : MonoBehaviour
         itemSprite.color = Color.clear;
         amount.text = "";
 
-        droppedItemPrefab = GetComponent<ItemSpawner>().itemContainerPrefab;
+        itemSpawner = GetComponent<ItemSpawner>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         if (playerTransform == null) Debug.LogError("Player not found.");
     }
@@ -55,8 +55,7 @@ public class MouseItemData : MonoBehaviour
 
                 var playerDir = playerTransform.gameObject.GetComponent<PlayerController>().Direction;
                 var dropPosition = playerTransform.position + new Vector3(playerDir.x * dropOffset, playerDir.y * dropOffset, 0f);
-                var droppedItem = Instantiate(droppedItemPrefab, dropPosition, Quaternion.identity);
-                droppedItem.GetComponent<ItemContainer>().SetItem(AssignedSlot.ItemData, AssignedSlot.StackSize);
+                itemSpawner.SpawnItem(AssignedSlot.ItemData.itemID, dropPosition, AssignedSlot.StackSize);
 
                 ClearSlot();
             }
