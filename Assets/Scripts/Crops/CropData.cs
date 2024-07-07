@@ -14,8 +14,10 @@ public class CropData : ScriptableObject
     public List<int> GrowthIntervals;
     public List<Sprite> GrowthSprites;
     public int SellPrice;
-    public int BuyPrice;
-
+    public int SeedBuyPrice;
+    public ItemData itemData;
+    public int HarvestAmount;
+    public bool Regrowable;
     void Awake()
     {
         Assert.IsTrue(GrowthIntervals.Count == GrowthSprites.Count, "GrowthIntervals and GrowthSprites must have the same number of elements.");
