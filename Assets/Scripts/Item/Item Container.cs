@@ -7,9 +7,11 @@ public class ItemContainer : MonoBehaviour
     public ItemData item;
     public int amount;
 
-    void Awake()
+    public void SetItem(ItemData item, int amount)
     {
-        
+        this.item = item;
+        this.amount = amount;
+        GetComponent<SpriteRenderer>().sprite = item.itemSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
