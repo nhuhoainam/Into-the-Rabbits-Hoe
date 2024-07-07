@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IMobState
+[CreateAssetMenu]
+public class TreeData : ScriptableObject
 {
-    void Enter();
-    void Update();
-    void Exit();
 }

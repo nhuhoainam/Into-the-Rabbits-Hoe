@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,910 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 66
+        width: 7
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a54794f0a0fb9246957a63f05bf366e
+      internalID: 1139573071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 65
+        width: 10
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09afa8d1a1d3fa4098fbce0bd7abafc
+      internalID: -1942517840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 65
+        width: 13
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b09ed1fcc2553445b4df53a7b474735
+      internalID: 597825227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 66
+        width: 7
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2116e47aeb8b747b9bbf221e1377bc
+      internalID: -326826486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 65
+        width: 7
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3241000c656664594faa5bba9015cb
+      internalID: -1512531248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 69
+        width: 7
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599efdbc8a7b5a843a81b6cd905e6bd9
+      internalID: -437323641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_6
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 66
+        width: 12
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624c23a6568377a4f8a9959e67d1406d
+      internalID: -1831715210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 65
+        width: 15
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05664dc53828409408465cba4d30c1fe
+      internalID: -51414945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 52
+        width: 6
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65a371520883594d93f066d3ca8c2c7
+      internalID: -100245197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_9
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 51
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fe91ed44c376c489bb95c44e084557
+      internalID: -2116845318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_10
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 52
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a3f30577201b0c41bf7358edff07a7d
+      internalID: -1632591998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_11
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 51
+        width: 10
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1455226588a468647bf2211e52e711d2
+      internalID: 1625434395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 49
+        width: 32
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3677c4404ae3fd14abb33b8c9338b37f
+      internalID: -685269920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 33
+        width: 25
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0014b3017757dc34c8903063471de406
+      internalID: 1191124655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_14
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 32
+        width: 30
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b3407576f26e14e81720d52da19ade
+      internalID: 1355126002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 33
+        width: 13
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927257b10f55e9c479328e264a5479df
+      internalID: 1202911770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_16
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 14
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d6e3f2a5dbc654884497ef219fa130
+      internalID: -795746667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 33
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57cd6e6405cee84ab779ac68f562175
+      internalID: 1244100376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_18
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 35
+        width: 8
+        height: 5
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee5ab921575fcd4eaf317533005938d
+      internalID: -458871116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 18
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b0e3ffa1e430e489e3eb6bd4503abf
+      internalID: -1568637003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_21
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 17
+        width: 11
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09899b1c9a386984195c03a6bb39adad
+      internalID: -1012044385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_22
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 17
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23609f6f09c069d48bf58aba37a9036d
+      internalID: 1892064401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_23
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 2
+        width: 14
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db21f3830b8c68e4a900d3718fa33f5c
+      internalID: -1725714373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_24
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 20
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01925b0fd51468442ac3ebe1cad251a6
+      internalID: 1661066915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_25
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 19
+        width: 9
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbcf9e7b94784c147a2af52ba4e23f6f
+      internalID: 946337700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_26
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 18
+        width: 11
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd874c3433dc1e46ba5bbd9b32b8d34
+      internalID: 276202830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_27
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 17
+        width: 16
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c469b1f6e5ab8f842979e1555751904d
+      internalID: 1924158493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_28
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 18
+        width: 11
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af730131a2af7b4d8be3d6ac2f77fdb
+      internalID: 390846015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_29
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 19
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd461048ca7873a43b39f34b3f915886
+      internalID: -1289677913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_30
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 19
+        width: 9
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9056be1c68f2ade4abc1b39a2e7f552b
+      internalID: 1410449771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_31
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 18
+        width: 11
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4c13dc289bb034aac4af42af249c2e
+      internalID: 2113032096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_32
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 8
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480b1a50f7839a144beb9fc36c103a1a
+      internalID: 187355001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_33
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 0
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e940cd72087fde0419c4c87e67c07b4f
+      internalID: -524905435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_34
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 13
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2004cb07119c755438aae580692ae75b
+      internalID: 1739660426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_35
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 3
+        width: 9
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f146b7a066710a840beeaefa3efa0832
+      internalID: 214919854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_36
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 2
+        width: 9
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d939be3f42896b44ab2d4e5fdedc481
+      internalID: 587552378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_37
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 11
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bee55b054321d42954ab5a1fdebadc
+      internalID: 1035255571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1508716d2cdd65e4a9b3858c308e5b25
+      internalID: 1498118070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_39
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 3
+        width: 7
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4e9c9d0b12ec847b515f0e89ff4236
+      internalID: 929879687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_40
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 3
+        width: 7
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770346aa055e2e64f9ba29c3f9657bb4
+      internalID: -191136353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_41
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 3
+        width: 9
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed935e4c31d5324ea5bb70f8d9922fe
+      internalID: 2128211320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_42
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 2
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e98f911f1413d7448073a14ca664658
+      internalID: 123355610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_19
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 32
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad128871fb93474aa0672ffb780522f
+      internalID: -1707014469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +1022,50 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mushrooms, Flowers, Stones_0: 1139573071
+      Mushrooms, Flowers, Stones_1: -1942517840
+      Mushrooms, Flowers, Stones_10: -1632591998
+      Mushrooms, Flowers, Stones_11: 1625434395
+      Mushrooms, Flowers, Stones_12: -685269920
+      Mushrooms, Flowers, Stones_13: 1191124655
+      Mushrooms, Flowers, Stones_14: 1355126002
+      Mushrooms, Flowers, Stones_15: 1202911770
+      Mushrooms, Flowers, Stones_16: -795746667
+      Mushrooms, Flowers, Stones_17: 1244100376
+      Mushrooms, Flowers, Stones_18: -458871116
+      Mushrooms, Flowers, Stones_19: -1707014469
+      Mushrooms, Flowers, Stones_2: 597825227
+      Mushrooms, Flowers, Stones_20: -1568637003
+      Mushrooms, Flowers, Stones_21: -1012044385
+      Mushrooms, Flowers, Stones_22: 1892064401
+      Mushrooms, Flowers, Stones_23: -1725714373
+      Mushrooms, Flowers, Stones_24: 1661066915
+      Mushrooms, Flowers, Stones_25: 946337700
+      Mushrooms, Flowers, Stones_26: 276202830
+      Mushrooms, Flowers, Stones_27: 1924158493
+      Mushrooms, Flowers, Stones_28: 390846015
+      Mushrooms, Flowers, Stones_29: -1289677913
+      Mushrooms, Flowers, Stones_3: -326826486
+      Mushrooms, Flowers, Stones_30: 1410449771
+      Mushrooms, Flowers, Stones_31: 2113032096
+      Mushrooms, Flowers, Stones_32: 187355001
+      Mushrooms, Flowers, Stones_33: -524905435
+      Mushrooms, Flowers, Stones_34: 1739660426
+      Mushrooms, Flowers, Stones_35: 214919854
+      Mushrooms, Flowers, Stones_36: 587552378
+      Mushrooms, Flowers, Stones_37: 1035255571
+      Mushrooms, Flowers, Stones_38: 1498118070
+      Mushrooms, Flowers, Stones_39: 929879687
+      Mushrooms, Flowers, Stones_4: -1512531248
+      Mushrooms, Flowers, Stones_40: -191136353
+      Mushrooms, Flowers, Stones_41: 2128211320
+      Mushrooms, Flowers, Stones_42: 123355610
+      Mushrooms, Flowers, Stones_5: -437323641
+      Mushrooms, Flowers, Stones_6: -1831715210
+      Mushrooms, Flowers, Stones_7: -51414945
+      Mushrooms, Flowers, Stones_8: -100245197
+      Mushrooms, Flowers, Stones_9: -2116845318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
