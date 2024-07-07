@@ -15,7 +15,7 @@ public class Farming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject obj = GameObject.FindWithTag("TilledDirt");
+        GameObject obj = GameObject.FindWithTag("FarmableGround");
         FarmingTile tilemap = obj.GetComponent<FarmingTile>();
         if (Input.GetKeyUp(KeyCode.F))
         {
