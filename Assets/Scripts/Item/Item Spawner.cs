@@ -11,8 +11,7 @@ public class ItemSpawner : MonoBehaviour
     {
         ItemData item = itemDatabase.GetItem(id);
         var itemContainer = Instantiate(itemContainerPrefab, position, Quaternion.identity).GetComponent<ItemContainer>();
-        itemContainer.item = item;
-        itemContainer.amount = amount;
+        itemContainer.SetItem(item, amount);
         StartCoroutine(
             // disable the collider for a short time to prevent the item from being picked up immediately
             DisableCollider(itemContainer.GetComponent<Collider2D>(), 1.0f)

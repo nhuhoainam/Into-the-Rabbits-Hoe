@@ -12,5 +12,4 @@ public class ItemData : ScriptableObject
     public uint maxStackSize;
     [TextArea]
     public string itemDescription;
-    public GameObject itemPrefab; // for dropping items
 }
