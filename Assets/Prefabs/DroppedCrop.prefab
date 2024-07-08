@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6067506223246152517}
   - component: {fileID: 8685664584077723846}
   m_Layer: 0
-  m_Name: DroppedItem
+  m_Name: DroppedCrop
   m_TagString: DroppedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a570a2e8c42f34dbafe55cf19b54f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 31aa8524992c8c14ca7df11d673bf1fe, type: 2}
   amount: 0
 --- !u!50 &3554359425602972463
 Rigidbody2D:
@@ -114,10 +114,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -993197195
-  m_SortingLayer: 5
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 0}
+  m_SortingLayerID: 1608987633
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -822769970, guid: e063cae1c70029b45ace630f7f47ee1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &8685664584077723846
@@ -163,10 +163,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0

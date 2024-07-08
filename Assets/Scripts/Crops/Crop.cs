@@ -32,7 +32,6 @@ public class Crop : MonoBehaviour
         growthStage++;
         if (growthStage >= cropData.GrowthSprites.Count)
         {
-            Instantiate(cropData.itemData.itemPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -41,10 +40,23 @@ public class Crop : MonoBehaviour
     {
         if (growthStage == cropData.GrowthIntervals.Count - 1) {
             Harvest();
+            return;
         }
+
+        NextStage();
     }
 
     void Harvest() {
-
+        ItemSpawner itemSpawner = ItemSpawner.Instance;
+        itemSpawner.SpawnItem(300, transform.position);
+        if (cropData.Regrowable)
+        {
+            growthStage = 0;
+            growthTime = 0;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
