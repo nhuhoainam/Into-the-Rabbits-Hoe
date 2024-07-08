@@ -16,6 +16,8 @@ TagManager:
   - NPCName
   - NPCImage
   - DialoguePanel
+  - FarmableGround
+  - TilledDirt
   layers:
   - Default
   - TransparentFX

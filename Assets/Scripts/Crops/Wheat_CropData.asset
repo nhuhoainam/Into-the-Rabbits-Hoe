@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8c678ca51091747ab5c3dc7607d247, type: 3}
   m_Name: Wheat_CropData
   m_EditorClassIdentifier: 
-  GrowthIntervals: 
-  GrowthSprites: []
-  GrowthSpedUpIntervals: []
+  GrowthIntervals: 02000000020000000200000002000000
+  GrowthSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   SellPrice: 0
   BuyPrice: 0
+  itemData: {fileID: 0}
