@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6067506223246152517}
   - component: {fileID: 8685664584077723846}
   m_Layer: 0
-  m_Name: DroppedWood
+  m_Name: DroppedCrop
   m_TagString: DroppedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a570a2e8c42f34dbafe55cf19b54f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: a0ce5140e85dcbe428e06d49da05b2ca, type: 2}
+  item: {fileID: 11400000, guid: 31aa8524992c8c14ca7df11d673bf1fe, type: 2}
+  amount: 0
 --- !u!50 &3554359425602972463
 Rigidbody2D:
   serializedVersion: 4
@@ -116,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 1608987633
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1374074286, guid: b5c0da0fd702a354381be08420a3cfb0, type: 3}
+  m_Sprite: {fileID: -822769970, guid: e063cae1c70029b45ace630f7f47ee1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
