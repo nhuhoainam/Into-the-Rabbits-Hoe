@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4914537881349917631}
   - component: {fileID: 6067339085477316682}
   - component: {fileID: 6376705861229607122}
+  - component: {fileID: 4695066082876321808}
   m_Layer: 0
   m_Name: Crop
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cropData: {fileID: 11400000, guid: 0049da0691728fa40b9be817e523796f, type: 2}
   growthStage: 0
+  growthTime: 0
+--- !u!114 &4695066082876321808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034178185566254072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1a32593b862ac4f971edfc5bdb4a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDatabase: {fileID: 11400000, guid: eddd6650021b81548ab5e26633eda234, type: 2}
+  itemContainerPrefab: {fileID: 9204610817383023028, guid: 4f0b446f43c6f0b459e4657de1c2a696, type: 3}

@@ -4,17 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class InventorySlot
+public class InventorySlot : ISerializationCallbackReceiver
 {
-    [SerializeField] private ItemData itemData;
+    [NonSerialized] private ItemData _itemData; // Don't use  this directly, use ItemData property
+    [SerializeField] private int itemID = -1;
     [SerializeField] private int stackSize;
 
-    public ItemData ItemData => itemData;
+    public ItemData ItemData
+    {
+        get => _itemData;
+        set
+        {
+            _itemData = value;
+            if (value != null)
+                itemID = value.itemID;
+            else
+                itemID = -1;
+        }
+    }
     public int StackSize => stackSize;
 
     public InventorySlot(ItemData source, int amount)
     {
-        itemData = source;
+        ItemData = source;
         stackSize = amount;
     }
 
@@ -25,16 +37,16 @@ public class InventorySlot
 
     public void ClearSlot()
     {
-        itemData = null;
+        ItemData = null;
         stackSize = -1;
     }
 
     public void AssignItem(InventorySlot invSlot)
     {
-        if (itemData == invSlot.ItemData) AddToStack(invSlot.stackSize);
+        if (ItemData == invSlot.ItemData) AddToStack(invSlot.stackSize);
         else
         {
-            itemData = invSlot.itemData;
+            ItemData = invSlot.ItemData;
             stackSize = 0;
             AddToStack(invSlot.stackSize);
         }
@@ -42,18 +54,18 @@ public class InventorySlot
 
     public void UpdateInventorySlot(ItemData source, int amount)
     {
-        itemData = source;
+        ItemData = source;
         stackSize = amount;
     }
 
     public bool EnoughRoomInStack(int amountToAdd)
     {
-        return itemData == null || (itemData != null && stackSize + amountToAdd <= itemData.maxStackSize);
+        return ItemData == null || (ItemData != null && stackSize + amountToAdd <= ItemData.maxStackSize);
     }
 
     public bool EnoughRoomInStack(int amountToAdd, out int amountRemaining)
     {
-        amountRemaining = (int)(itemData.maxStackSize - stackSize);
+        amountRemaining = (int)(ItemData.maxStackSize - stackSize);
         return EnoughRoomInStack(amountToAdd);
     }
 
@@ -70,7 +82,7 @@ public class InventorySlot
     public bool RoomLeftInStack(uint amountToAdd)
     {
 
-        if (stackSize + amountToAdd <= itemData.maxStackSize) return true;
+        if (stackSize + amountToAdd <= ItemData.maxStackSize) return true;
         else return false;
     }
 
@@ -97,8 +109,20 @@ public class InventorySlot
         int halfStack = Mathf.RoundToInt(stackSize / 2);
         RemoveFromStack(halfStack);
 
-        splitStack = new InventorySlot(itemData, halfStack);
+        splitStack = new InventorySlot(ItemData, halfStack);
         return true;
+    }
+
+    public void OnBeforeSerialize()
+    {
+    }
+
+    public void OnAfterDeserialize()
+    {
+        if (itemID != -1) return;
+
+        var db = Resources.Load<ItemDatabase>("Database");
+        ItemData = db.GetItem(itemID);
     }
 }
 

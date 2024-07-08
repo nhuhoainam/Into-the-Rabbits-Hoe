@@ -7,15 +7,35 @@ using Animancer;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private float runSpeedModifier = 2.0f;
+    [SerializeField] private DirectionalAnimationSet idle;
+    [SerializeField] private DirectionalAnimationSet walking;
+    [SerializeField] private DirectionalAnimationSet running;
+    [SerializeField] private DirectionalAnimationSet usingHoe;
+    [SerializeField] private DirectionalAnimationSet usingAxe;
+    [SerializeField] private DirectionalAnimationSet usingWateringCan;
+
     [SerializeField] private AnimancerComponent _Animancer;
+    public Vector3Int prevHighlightedPos = new();
+    private bool isRunning = false;
+    private bool isUsingTool = false;
 
     public PlayerData playerData;
+
+    public Vector2 Direction {
+        get => playerData.Direction;
+        set => playerData.Direction = value;
+    }
     [SerializeField] private AudioSource footstepAudioSource; 
     [SerializeField] private AudioClip footstepClip; 
-    private Vector2 Direction {
-        get => playerData.curDirection;
-        set => playerData.curDirection = value;
+
+    public Vector3 Position {
+        get => playerData.position;
+        set => playerData.position = value;
     }
+
     private DirectionalAnimationSet _CurrentAnimationSet;
 
     private PlayerControls playerControls;
@@ -30,8 +50,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        playerControls.Movement.Run.performed += ctx => playerData.isRunning = true;
-        playerControls.Movement.Run.canceled += ctx => playerData.isRunning = false;
+        playerControls.Movement.Run.performed += ctx => isRunning = true;
+        playerControls.Movement.Run.canceled += ctx => isRunning = false;
         playerControls.Interaction.Interact.performed += ctx => Interact();
     }
     
@@ -55,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (playerData.isUsingTool)
+        if (isUsingTool)
         {
             return;
         }
@@ -77,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Play(playerData.idle);
+            Play(idle);
 
             if (footstepAudioSource.isPlaying)
             {
@@ -89,32 +109,32 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMovementState() 
     {
-        Play(playerData.isRunning ? playerData.running : playerData.walking);
+        Play(isRunning ? running : walking);
     }
 
     private void MovePlayer()
     {
         playerRb.MovePosition(playerRb.position 
             + _Movement 
-            * (playerData.moveSpeed 
-                * (playerData.isRunning ? playerData.runSpeedModifier : 1.0f) 
+            * (moveSpeed 
+                * (isRunning ? runSpeedModifier : 1.0f) 
                 * Time.fixedDeltaTime));
     }
 
     private void Interact()
     {
-        if (playerData.isUsingTool)
+        if (isUsingTool)
         {
             return;
         }
-        playerData.isUsingTool = true;
-        var state = Play(playerData.usingHoe);
-        state.Events.OnEnd = () => playerData.isUsingTool = false;
+        isUsingTool = true;
+        var state = Play(usingHoe);
+        state.Events.OnEnd = () => isUsingTool = false;
     }
 
     private void Update()
     {
-        playerData.position = transform.position;
+        Position = transform.position;
         PlayerInput();
     }
 
@@ -134,6 +154,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SetIdleAnim() {
-        Play(playerData.idle);
+        Play(idle);
     }
 }
