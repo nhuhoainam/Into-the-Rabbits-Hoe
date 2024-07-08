@@ -32,6 +32,7 @@ public class Crop : MonoBehaviour
         growthStage++;
         if (growthStage >= cropData.GrowthSprites.Count)
         {
+            ItemSpawner.Instance.SpawnItem(300, transform.position);
             Destroy(gameObject);
         }
     }
