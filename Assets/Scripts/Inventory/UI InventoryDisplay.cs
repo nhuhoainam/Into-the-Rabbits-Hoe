@@ -36,7 +36,7 @@ public abstract class InventoryDisplay : MonoBehaviour
         playerControls.Inventory.SplitStack.canceled += ctx => isSplittingStack = false;
     }
 
-    public abstract void AssignSlot(InventorySystem invToDisplay);
+    public abstract void AssignSlot(InventorySystem invToDisplay, int offset = 0);
 
     protected virtual void UpdateSlot(InventorySlot updatedSlot)
     {

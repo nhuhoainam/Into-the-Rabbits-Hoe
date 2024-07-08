@@ -32,7 +32,7 @@ public class Crop : MonoBehaviour
         growthStage++;
         if (growthStage >= cropData.GrowthSprites.Count)
         {
-            Instantiate(cropData.itemData.itemPrefab, transform.position, Quaternion.identity);
+            ItemSpawner.Instance.SpawnItem(300, transform.position);
             Destroy(gameObject);
         }
     }

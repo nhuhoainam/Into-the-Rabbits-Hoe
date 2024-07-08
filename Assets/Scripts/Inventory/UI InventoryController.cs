@@ -11,28 +11,20 @@ public class UIInventoryController : MonoBehaviour
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
-        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested += DisplayPlayerInventory;
         PlayerInventoryHolder.OnInventoryCloseRequested += CloseInventory;
     }
     private void OnDisable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
-        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested -= DisplayPlayerInventory;
         PlayerInventoryHolder.OnInventoryCloseRequested -= CloseInventory;
     }
 
-    void DisplayInventory(InventorySystem invToDisplay)
+    void DisplayInventory(InventorySystem invToDisplay, int offset = 0)
     {
         if (inventoryPanel != null) {
             inventoryPanel.gameObject.SetActive(true);
-            inventoryPanel.RefreshDynamicInventory(invToDisplay);
+            inventoryPanel.RefreshDynamicInventory(invToDisplay, offset);
         }
-    }
-
-    void DisplayPlayerInventory(InventorySystem invToDisplay)
-    {
-        playerInventoryPanel.gameObject.SetActive(true);
-        playerInventoryPanel.RefreshDynamicInventory(invToDisplay);
     }
 
     public void CloseInventory()

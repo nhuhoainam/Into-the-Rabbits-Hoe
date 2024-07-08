@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
+    public static ItemSpawner Instance
+    {
+        get;
+        private set;
+    }
+
     public ItemDatabase itemDatabase;
     public GameObject itemContainerPrefab;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+            Destroy(this);
+        else
+            Instance = this;
+    }
 
     public void SpawnItem(int id, Vector3 position, int amount = 1)
     {
