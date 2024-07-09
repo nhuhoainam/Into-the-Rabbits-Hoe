@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6785075828461581082}
   - component: {fileID: -3459706601483087614}
   - component: {fileID: 2016718945542796555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AppleTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,8 +68,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0054542115, y: -0.763525}
-  m_Size: {x: 1.1870705, y: 0.563701}
+  m_Offset: {x: 0.000000013284604, y: 0.11143935}
+  m_Size: {x: 1.3886509, y: 1.1618055}
   m_Direction: 1
 --- !u!50 &3096170400435850015
 Rigidbody2D:
@@ -79,7 +79,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8379467528858659934}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -136,8 +136,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1399307659
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1690183605, guid: 7c71e6d2d5e898e43a0db45e4a3c1143, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,16 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f19ba23782377409516cf2d03f69fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animancer: {fileID: 0}
-  treeWithFruit: {fileID: 7400000, guid: 02663af77116b764390bae0c5633089e, type: 2}
-  treeWithoutFruit: {fileID: 7400000, guid: 71bf5b0931e274341ada34eeb2b0688c, type: 2}
-  treeStump: {fileID: 7400000, guid: c5893eca9033dc949bcb08a089e45715, type: 2}
-  growingFruit: {fileID: 7400000, guid: 23ebf6d3ebac8bc449897f47d3fcf44f, type: 2}
-  shakingWithFruit: {fileID: 7400000, guid: e0d5ef3a5a0096f4da45e9049b96e6d3, type: 2}
-  shakingWithoutFruit: {fileID: 7400000, guid: 87ede0218239fb148bb24598346701a1, type: 2}
-  droppingFruit: {fileID: 7400000, guid: 5991b0372b7d2554fa4ecbf591fde264, type: 2}
-  hasFruit: 0
   health: 100
+  timeUntilFruit: 240
+  hasFruit: 1
 --- !u!95 &2016718945542796555
 Animator:
   serializedVersion: 5
@@ -182,7 +175,7 @@ Animator:
   m_GameObject: {fileID: 8379467528858659934}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 93ee249b40c09c74cbf548b85cd39333, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3759cf11a33fd5e4994abac566d290ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
