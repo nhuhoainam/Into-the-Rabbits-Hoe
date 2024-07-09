@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SaveLoadSystem
+[System.Serializable]
+public class SaveData
 {
-    [System.Serializable]
-    public class SaveData
+    public InventorySaveData playerInventory;
+    public PlayerData playerData;
+
+    public SaveData()
     {
-        public string playerName = "Nam";
     }
 }

@@ -36,14 +36,14 @@ public class StaticInventoryDisplay : InventoryDisplay
         RefreshDisplay();
     }
 
-    public override void AssignSlot(InventorySystem invToDisplay)
+    public override void AssignSlot(InventorySystem invToDisplay, int offset = 0)
     {
-
+        Debug.Log("Assigning slots");
         slotDictionary = new Dictionary<UIInventorySlot, InventorySlot>();
 
-        if (slots.Length != inventorySystem.InventorySize) Debug.Log($"Inventory slots out of sync on {this.gameObject}");
+        if (slots.Length != inventoryHolder.Offset) Debug.Log($"Inventory slots out of sync on {gameObject}");
 
-        for (int i = 0; i < inventorySystem.InventorySize; i++)
+        for (int i = 0; i < inventoryHolder.Offset; i++)
         {
             slotDictionary.Add(slots[i], inventorySystem.InventorySlots[i]);
             slots[i].Init(inventorySystem.InventorySlots[i]);

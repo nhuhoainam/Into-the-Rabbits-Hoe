@@ -18,6 +18,8 @@ TagManager:
   - DialoguePanel
   - FarmableGround
   - TilledDirt
+  - Slopes
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -25,8 +27,8 @@ TagManager:
   - Tilemap
   - Water
   - UI
-  - 
-  - 
+  - Bridge
+  - Slopes
   - 
   - 
   - 
@@ -69,4 +71,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3301770101
+    locked: 0
+  - name: Player
+    uniqueID: 3509686139
     locked: 0

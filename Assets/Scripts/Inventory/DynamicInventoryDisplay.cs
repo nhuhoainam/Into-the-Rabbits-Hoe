@@ -13,14 +13,16 @@ public class DynamicInventoryDisplay : InventoryDisplay
     }
 
 
-    public void RefreshDynamicInventory(InventorySystem invToDisplay)
+    public void RefreshDynamicInventory(InventorySystem invToDisplay, int offset)
     {
         ClearSlots();
         inventorySystem = invToDisplay;
-        AssignSlot(invToDisplay);
+        if (inventorySystem != null)
+            inventorySystem.OnInventorySlotChanged += UpdateSlot;
+        AssignSlot(invToDisplay, offset);
     }
 
-    public override void AssignSlot(InventorySystem invToDisplay)
+    public override void AssignSlot(InventorySystem invToDisplay, int offset)
     {
         ClearSlots();
 
@@ -28,7 +30,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
 
         if (invToDisplay == null) return;
 
-        for (int i = 0; i < invToDisplay.InventorySize; i++)
+        for (int i = offset; i < invToDisplay.InventorySize; i++)
         {
             var slot = Instantiate(inventorySlotPrefab, transform);
             slotDictionary.Add(slot, invToDisplay.InventorySlots[i]);
@@ -45,5 +47,11 @@ public class DynamicInventoryDisplay : InventoryDisplay
         }
 
         slotDictionary?.Clear();
+    }
+
+    void OnDestroy()
+    {
+        if (inventorySystem != null)
+            inventorySystem.OnInventorySlotChanged -= UpdateSlot;
     }
 }

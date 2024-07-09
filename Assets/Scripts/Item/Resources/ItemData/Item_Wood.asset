@@ -18,4 +18,3 @@ MonoBehaviour:
   isStackable: 1
   maxStackSize: 64
   itemDescription: This is a log of wood
-  itemPrefab: {fileID: 9204610817383023028, guid: 4b427bd030143324ead23ae7356fb207, type: 3}

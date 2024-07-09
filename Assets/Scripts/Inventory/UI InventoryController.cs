@@ -8,31 +8,40 @@ public class UIInventoryController : MonoBehaviour
 
     public DynamicInventoryDisplay playerInventoryPanel;
 
+    private InventorySystem playerInventory;
+
+    void Start()
+    {
+        playerInventory = GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem;
+    }
+
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
-        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested += DisplayPlayerInventory;
         PlayerInventoryHolder.OnInventoryCloseRequested += CloseInventory;
+        PlayerInventoryHolder.OnPlayerInventoryChanged += RefreshDisplay;
     }
     private void OnDisable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
-        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested -= DisplayPlayerInventory;
         PlayerInventoryHolder.OnInventoryCloseRequested -= CloseInventory;
+        PlayerInventoryHolder.OnPlayerInventoryChanged -= RefreshDisplay;
     }
 
-    void DisplayInventory(InventorySystem invToDisplay)
+    void DisplayInventory(InventorySystem invToDisplay, int offset = 0)
     {
         if (inventoryPanel != null) {
             inventoryPanel.gameObject.SetActive(true);
-            inventoryPanel.RefreshDynamicInventory(invToDisplay);
+            inventoryPanel.RefreshDynamicInventory(invToDisplay, offset);
         }
     }
 
-    void DisplayPlayerInventory(InventorySystem invToDisplay)
+    void RefreshDisplay()
     {
-        playerInventoryPanel.gameObject.SetActive(true);
-        playerInventoryPanel.RefreshDynamicInventory(invToDisplay);
+        if (playerInventoryPanel != null) {
+            playerInventoryPanel.gameObject.SetActive(true);
+            playerInventoryPanel.RefreshDynamicInventory(playerInventory, 9);
+        }
     }
 
     public void CloseInventory()
