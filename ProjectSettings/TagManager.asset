@@ -57,21 +57,30 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Land
-    uniqueID: 2143024459
-    locked: 0
   - name: TileHighlight
     uniqueID: 3605692483
     locked: 0
   - name: Items
     uniqueID: 1608987633
     locked: 0
-  - name: Entity
-    uniqueID: 1399307659
-    locked: 0
   - name: UI
     uniqueID: 3301770101
     locked: 0
   - name: Player
     uniqueID: 3509686139
+    locked: 0
+  - name: Valley
+    uniqueID: 481245325
+    locked: 0
+  - name: Land
+    uniqueID: 3155987913
+    locked: 0
+  - name: Hill
+    uniqueID: 4079005929
+    locked: 0
+  - name: Entity
+    uniqueID: 1399307659
+    locked: 0
+  - name: Slopes
+    uniqueID: 81420761
     locked: 0
