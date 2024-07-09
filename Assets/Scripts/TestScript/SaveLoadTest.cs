@@ -13,4 +13,9 @@ public class SaveLoadTest : MonoBehaviour
     {
         SaveGameManager.Load();
     }
+
+    public void TestDelete()
+    {
+        SaveGameManager.Delete();
+    }
 }

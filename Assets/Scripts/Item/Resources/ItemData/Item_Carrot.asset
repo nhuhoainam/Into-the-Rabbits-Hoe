@@ -18,4 +18,3 @@ MonoBehaviour:
   isStackable: 1
   maxStackSize: 64
   itemDescription: 
-  itemPrefab: {fileID: 0}

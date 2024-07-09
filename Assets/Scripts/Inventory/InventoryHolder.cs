@@ -30,4 +30,9 @@ public abstract class InventoryHolder : MonoBehaviour
 public class InventorySaveData
 {
     public InventorySystem InvSystem;
+
+    public InventorySaveData(InventorySystem invSystem)
+    {
+        InvSystem = invSystem;
+    }
 }

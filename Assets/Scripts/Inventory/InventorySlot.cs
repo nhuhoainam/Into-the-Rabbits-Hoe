@@ -119,9 +119,9 @@ public class InventorySlot : ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        if (itemID != -1) return;
+        if (itemID == -1) return;
 
-        var db = Resources.Load<ItemDatabase>("Database");
+        var db = Resources.Load<Database>("Database");
         ItemData = db.GetItem(itemID);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,12 +19,17 @@ public class PlayerInventoryHolder : InventoryHolder
         playerControls = new PlayerControls();
     }
 
+    private void SaveInventory()
+    {
+        // SaveGameManager.CurrentSaveData.playerInventory = new InventorySaveData(primaryInventorySystem);
+    }
+
     protected override void LoadInventory(SaveData data)
     {
         if (data.playerInventory.InvSystem != null)
         {
             primaryInventorySystem = data.playerInventory.InvSystem;
-            OnPlayerInventoryChanged?.Invoke();
+            OnPlayerInventoryChanged.Invoke();
         }
     }
 
@@ -31,16 +37,22 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         playerControls.Inventory.OpenInventory.performed += ctx => OnDynamicInventoryDisplayRequested?.Invoke(primaryInventorySystem, offset);
         playerControls.Inventory.CloseInventory.performed += ctx => OnInventoryCloseRequested?.Invoke();
+
+        SaveGameManager.CurrentSaveData.playerInventory = new InventorySaveData(primaryInventorySystem);
     }
 
     private void OnEnable()
     {
         playerControls.Enable();
+        SaveGameManager.OnLoadGame += LoadInventory;
+        SaveGameManager.OnSaveGame += SaveInventory;
     }
 
     private void OnDisable()
     {
         playerControls.Disable();
+        SaveGameManager.OnLoadGame -= LoadInventory;
+        SaveGameManager.OnSaveGame -= SaveInventory;
     }
 
     public bool AddToInventory(ItemData item, int amount)

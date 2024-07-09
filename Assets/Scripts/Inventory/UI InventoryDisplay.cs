@@ -42,8 +42,10 @@ public abstract class InventoryDisplay : MonoBehaviour
     {
         foreach (var slot in SlotDictionary)
         {
-            if (slot.Value == updatedSlot)
+            if (slot.Value == updatedSlot) {
+                Debug.Log("Updating slot " + slot.Key.gameObject.name);
                 slot.Key.UpdateUISlot(updatedSlot);
+            }
         }
     }
 
