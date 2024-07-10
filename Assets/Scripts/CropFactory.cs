@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class CropFactory : MonoBehaviour
+public class CropFactory : Singleton<CropFactory>
 {
     public enum CropType
     {
@@ -12,18 +12,6 @@ public class CropFactory : MonoBehaviour
         Tomato,
         WhiteRadish,
         Corn,
-    }
-    public static CropFactory Instance { get; private set;}
-    void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
     }
 
     public GameObject CreateCrop(CropType cropType, Vector3 position, Quaternion rotation)
