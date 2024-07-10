@@ -3,23 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSpawner : MonoBehaviour
+public class ItemSpawner : Singleton<ItemSpawner>
 {
-    public static ItemSpawner Instance
-    {
-        get;
-        private set;
-    }
-
     public Database itemDatabase;
     public GameObject itemContainerPrefab;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance != null && Instance != this)
-            Destroy(this);
-        else
-            Instance = this;
         SaveGameManager.OnLoadGame += LoadDroppedItems;
     }
 
