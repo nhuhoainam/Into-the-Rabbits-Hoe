@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fb1addfe82f32d44afb1797371ed7d9, type: 3}
-  m_Name: Item_Hoe
+  m_Name: Item_Eggplant
   m_EditorClassIdentifier: 
-  itemID: 1
-  itemName: Hoe
-  itemSprite: {fileID: -310244799, guid: b5c0da0fd702a354381be08420a3cfb0, type: 3}
-  isStackable: 0
-  maxStackSize: 1
-  itemDescription: This is a hoe
+  itemID: 300
+  itemName: CarrotCrop
+  itemSprite: {fileID: -336714465, guid: e063cae1c70029b45ace630f7f47ee1f, type: 3}
+  isStackable: 1
+  maxStackSize: 64
+  itemDescription: 

@@ -7,6 +7,16 @@ public class ItemContainer : MonoBehaviour
     public ItemData item;
     public int amount;
 
+    void Awake()
+    {
+        SaveGameManager.OnSaveGame += SaveItem;
+    }
+
+    private void SaveItem()
+    {
+        SaveGameManager.CurrentSaveData.droppedItems.Add(new DroppedItemSaveData(item.itemID, amount, transform.position));
+    }
+
     public void SetItem(ItemData item, int amount)
     {
         this.item = item;
@@ -18,10 +28,31 @@ public class ItemContainer : MonoBehaviour
     {
         if (other.TryGetComponent(out PlayerInventoryHolder inventoryHolder))
         {
-            if (inventoryHolder.PrimaryInventorySystem.AddToInventory(item, amount)) {
+            if (inventoryHolder.PrimaryInventorySystem.AddToInventory(item, amount))
+            {
                 Debug.Log("Item added to inventory");
                 Destroy(gameObject);
             }
         }
+    }
+
+    void OnDestroy()
+    {
+        SaveGameManager.OnSaveGame -= SaveItem;
+    }
+}
+
+[System.Serializable]
+public class DroppedItemSaveData
+{
+    public int itemID;
+    public int amount;
+    public Vector3 position;
+
+    public DroppedItemSaveData(int itemID, int amount, Vector3 position)
+    {
+        this.itemID = itemID;
+        this.amount = amount;
+        this.position = position;
     }
 }

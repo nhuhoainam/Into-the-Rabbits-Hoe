@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class ItemSpawner : MonoBehaviour
         private set;
     }
 
-    public ItemDatabase itemDatabase;
+    public Database itemDatabase;
     public GameObject itemContainerPrefab;
 
     private void Awake()
@@ -19,6 +20,16 @@ public class ItemSpawner : MonoBehaviour
             Destroy(this);
         else
             Instance = this;
+        SaveGameManager.OnLoadGame += LoadDroppedItems;
+    }
+
+    private void LoadDroppedItems(SaveData data)
+    {
+        if (data.droppedItems == null) return;
+        foreach (var droppedItem in data.droppedItems)
+        {
+            SpawnItem(droppedItem.itemID, droppedItem.position, droppedItem.amount);
+        }
     }
 
     public void SpawnItem(int id, Vector3 position, int amount = 1)

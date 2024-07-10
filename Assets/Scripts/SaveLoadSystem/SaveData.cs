@@ -7,10 +7,9 @@ public class SaveData
 {
     public InventorySaveData playerInventory;
     public PlayerData playerData;
+    public List<DroppedItemSaveData> droppedItems = new();
 
     public SaveData()
     {
-        playerInventory = new InventorySaveData();
-        playerData = new PlayerData();
     }
 }
