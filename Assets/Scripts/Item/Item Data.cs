@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Inventory System/Item Data")]
 public class ItemData : ScriptableObject
 {
     public int itemID = -1;
