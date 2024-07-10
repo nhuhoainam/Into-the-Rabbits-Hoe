@@ -107,7 +107,7 @@ public class FarmingTile : MonoBehaviour
                 Vector3Int posInt = tilemap.WorldToCell(position);
                 Vector3 pos = (Vector3)posInt;
                 pos += new Vector3(0.5f, 0.5f, 6);
-                var newCrop = CropFactory.Instance.CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity);
+                var newCrop = CropFactory.GetInstance().CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity);
                 crops.Add(new(posInt, newCrop.GetComponent<Crop>()));
                 Debug.Log("Crop planted at: " + posInt);
             }
