@@ -14,7 +14,8 @@ public class PlayerInteraction : MonoBehaviour
 
     void Interact()
     {
-        RaycastHit2D hit = Physics2D.Raycast(rigi.position, Vector2.left, 1.0f, LayerMask.GetMask("Interactable"));
+        Vector2 direction = GetComponent<PlayerController>().playerData.Direction;
+        RaycastHit2D hit = Physics2D.Raycast(rigi.position, direction, 1.0f, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
             hit.collider.GetComponent<IPlayerInteractable>().Interact(GetPlayerData());
