@@ -404,7 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees, stumps and bushes_14
+      name: Small_Bush
       rect:
         serializedVersion: 2
         x: 1
@@ -425,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees, stumps and bushes_15
+      name: Bush
       rect:
         serializedVersion: 2
         x: 16
@@ -761,7 +761,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees, stumps and bushes_31
+      name: Bush_With_RedBerry
       rect:
         serializedVersion: 2
         x: 32
@@ -769,7 +769,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -782,7 +782,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees, stumps and bushes_32
+      name: Bush_With_PurpleBerry
       rect:
         serializedVersion: 2
         x: 48
@@ -790,7 +790,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -803,7 +803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Trees, stumps and bushes_33
+      name: Bush_With_BlueBerry
       rect:
         serializedVersion: 2
         x: 64
@@ -811,7 +811,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -834,14 +834,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Bush: -1987310718
+      Bush_With_BlueBerry: 1017310575
+      Bush_With_PurpleBerry: -537503369
+      Bush_With_RedBerry: -1285021594
+      Small_Bush: -1008927345
       Trees, stumps and bushes_0: -2030596166
       Trees, stumps and bushes_1: 1690183605
       Trees, stumps and bushes_10: -1875372724
       Trees, stumps and bushes_11: -735233186
       Trees, stumps and bushes_12: -99796346
       Trees, stumps and bushes_13: 906058626
-      Trees, stumps and bushes_14: -1008927345
-      Trees, stumps and bushes_15: -1987310718
       Trees, stumps and bushes_16: 85409775
       Trees, stumps and bushes_17: -112778712
       Trees, stumps and bushes_18: 1887742667
@@ -859,9 +862,6 @@ TextureImporter:
       Trees, stumps and bushes_29: 1475398128
       Trees, stumps and bushes_3: 1495911985
       Trees, stumps and bushes_30: 40591072
-      Trees, stumps and bushes_31: -1285021594
-      Trees, stumps and bushes_32: -537503369
-      Trees, stumps and bushes_33: 1017310575
       Trees, stumps and bushes_4: 353127698
       Trees, stumps and bushes_5: 1236845686
       Trees, stumps and bushes_6: 640045855

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16fa9466ef6dcb4f907f59fe888588a, type: 3}
+  m_Name: BushData_RedBerry
+  m_EditorClassIdentifier: 
+  FruitSpawnChance: 0.5
+  BushWithFruitSprite: {fileID: -1285021594, guid: 7c71e6d2d5e898e43a0db45e4a3c1143, type: 3}
+  BushSprite: {fileID: -1987310718, guid: 7c71e6d2d5e898e43a0db45e4a3c1143, type: 3}
+  FruitSprite: {fileID: 0}
+  FruitItem: {fileID: 11400000, guid: 66ce401e6c8942042a5b00183f6a0a3a, type: 2}

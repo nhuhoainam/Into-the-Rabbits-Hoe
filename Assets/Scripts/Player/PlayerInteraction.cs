@@ -18,6 +18,7 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(rigi.position, direction, 1.0f, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
+            Debug.Log("Interacting with " + hit.collider.name);
             hit.collider.GetComponent<IPlayerInteractable>().Interact(GetPlayerData());
         }
     }
@@ -33,6 +34,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
+            Debug.Log("Interacting");
             Interact();
         }
     }

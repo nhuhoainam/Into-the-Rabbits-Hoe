@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
     {
         playerControls = new PlayerControls();
         playerRb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
         SaveGameManager.OnSaveGame += SavePlayer;
         SaveGameManager.OnLoadGame += LoadPlayer;
