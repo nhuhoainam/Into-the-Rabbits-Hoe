@@ -10,11 +10,6 @@ public class UIInventoryController : MonoBehaviour
 
     private InventorySystem playerInventory;
 
-    void Start()
-    {
-        playerInventory = GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem;
-    }
-
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
@@ -40,6 +35,7 @@ public class UIInventoryController : MonoBehaviour
     {
         if (playerInventoryPanel != null) {
             playerInventoryPanel.gameObject.SetActive(true);
+            playerInventory = GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem;
             playerInventoryPanel.RefreshDynamicInventory(playerInventory, 9);
         }
     }
