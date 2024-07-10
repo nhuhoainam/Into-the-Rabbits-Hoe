@@ -21,7 +21,7 @@ public class ItemContainer : MonoBehaviour
     {
         this.item = item;
         this.amount = amount;
-        GetComponent<SpriteRenderer>().sprite = item.itemSprite;
+        GetComponentInChildren<SpriteRenderer>().sprite = item.itemSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

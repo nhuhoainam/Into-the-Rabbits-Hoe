@@ -104,7 +104,7 @@ public class Bush : MonoBehaviour, IPlayerInteractable
         {
             var trans = fruit.GetComponent<Transform>().transform;
             Destroy(fruit);
-            ItemSpawner.Instance.SpawnItem(bushData.FruitItem.itemID, trans.position);
+            ItemSpawner.GetInstance().SpawnItem(bushData.FruitItem.itemID, trans.position);
         }
     }
 

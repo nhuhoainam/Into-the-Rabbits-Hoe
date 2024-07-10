@@ -13,7 +13,7 @@ public class Rock : MonoBehaviour, IPlayerInteractable
             if (health == 0)
             {
                 Destroy(gameObject);
-                ItemSpawner.Instance.SpawnItem(6, transform.position);
+                ItemSpawner.GetInstance().SpawnItem(6, transform.position);
             }
         }
     }
