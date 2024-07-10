@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
 using Animancer;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,6 +46,22 @@ public class PlayerController : MonoBehaviour
     {
         playerControls = new PlayerControls();
         playerRb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        SaveGameManager.OnSaveGame += SavePlayer;
+        SaveGameManager.OnLoadGame += LoadPlayer;
+    }
+
+    private void SavePlayer()
+    {
+        SaveGameManager.CurrentSaveData.playerData = playerData;
+    }
+
+    private void LoadPlayer(SaveData data)
+    {
+        playerData = data.playerData;
+        transform.position = playerData.position;
+        Direction = playerData.Direction;
     }
 
     private void Start()

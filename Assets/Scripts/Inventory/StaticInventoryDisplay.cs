@@ -38,7 +38,7 @@ public class StaticInventoryDisplay : InventoryDisplay
 
     public override void AssignSlot(InventorySystem invToDisplay, int offset = 0)
     {
-
+        Debug.Log("Assigning slots");
         slotDictionary = new Dictionary<UIInventorySlot, InventorySlot>();
 
         if (slots.Length != inventoryHolder.Offset) Debug.Log($"Inventory slots out of sync on {gameObject}");

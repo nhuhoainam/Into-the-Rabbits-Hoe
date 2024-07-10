@@ -10,7 +10,5 @@ public class SaveData
 
     public SaveData()
     {
-        playerInventory = new InventorySaveData();
-        playerData = new PlayerData();
     }
 }

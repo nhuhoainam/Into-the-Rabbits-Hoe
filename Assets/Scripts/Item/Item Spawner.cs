@@ -10,7 +10,7 @@ public class ItemSpawner : MonoBehaviour
         private set;
     }
 
-    public ItemDatabase itemDatabase;
+    public Database itemDatabase;
     public GameObject itemContainerPrefab;
 
     private void Awake()
