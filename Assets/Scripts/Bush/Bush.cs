@@ -27,10 +27,6 @@ public class Bush : MonoBehaviour, IPlayerInteractable
     private float lastCheckTime = 0;
     [SerializeField] private BushData bushData;
 
-    private bool isDroppingFruit = false;
-
-    List<GameObject> fruitList = new();
-
     SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update

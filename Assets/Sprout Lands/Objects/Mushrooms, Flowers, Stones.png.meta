@@ -367,7 +367,7 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 49
-        width: 32
+        width: 16
         height: 12
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -415,7 +415,13 @@ TextureImporter:
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: 4.5}
+        - {x: -15, y: -7.5}
+        - {x: -4, y: -14.5}
+        - {x: 10, y: -14.5}
+        - {x: 15, y: -12.5}
+        - {x: 15, y: 4.5}
       tessellationDetail: 0
       bones: []
       spriteID: 54b3407576f26e14e81720d52da19ade
@@ -999,15 +1005,42 @@ TextureImporter:
         y: 32
         width: 33
         height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -16.5, y: 1}
+        - {x: -16.5, y: -12}
+        - {x: -4.5, y: -18}
+        - {x: 10.5, y: -18}
+        - {x: 16.5, y: -16}
+        - {x: 16.5, y: 1}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad128871fb93474aa0672ffb780522f
+      internalID: -1707014469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mushrooms, Flowers, Stones_43
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 49
+        width: 16
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fad128871fb93474aa0672ffb780522f
-      internalID: -1707014469
+      spriteID: 053f7e06bc9c4414fa7e1a707e2fecf1
+      internalID: -1561012585
       vertices: []
       indices: 
       edges: []
@@ -1061,6 +1094,7 @@ TextureImporter:
       Mushrooms, Flowers, Stones_40: -191136353
       Mushrooms, Flowers, Stones_41: 2128211320
       Mushrooms, Flowers, Stones_42: 123355610
+      Mushrooms, Flowers, Stones_43: -1561012585
       Mushrooms, Flowers, Stones_5: -437323641
       Mushrooms, Flowers, Stones_6: -1831715210
       Mushrooms, Flowers, Stones_7: -51414945
