@@ -15,5 +15,5 @@ MonoBehaviour:
   FruitSpawnChance: 0.5
   BushWithFruitSprite: {fileID: 1017310575, guid: 7c71e6d2d5e898e43a0db45e4a3c1143, type: 3}
   BushSprite: {fileID: -1987310718, guid: 7c71e6d2d5e898e43a0db45e4a3c1143, type: 3}
-  FruitSprite: {fileID: 0}
+  FruitSprite: {fileID: -50538166, guid: 7c71e6d2d5e898e43a0db45e4a3c1143, type: 3}
   FruitItem: {fileID: 11400000, guid: 2a579474b5bafad4d841cc6e5721a8af, type: 2}
