@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         nameBox.GetComponent<TextMeshProUGUI>().text = npcName;
         avatarBox.GetComponent<Image>().sprite = npcAvatar;
         var player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        player.DisableInput();
+        // player.DisableInput();
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
     }
@@ -74,6 +74,6 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
         dialoguePanel.SetActive(false);
         var player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        player.EnableInput();
+        // player.EnableInput();
     }
 }
