@@ -42,9 +42,6 @@ public class PlayerController : MonoBehaviour
     private PlayerControls playerControls;
     private Rigidbody2D playerRb;
     private Vector2 _Movement;
-    private SpriteRenderer spriteRenderer;
-    private int defaultOrderInLayer = 100;
-
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -80,48 +77,6 @@ public class PlayerController : MonoBehaviour
         var state = _Animancer.Play(animations.GetClip(Direction));
 
         return state;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Slopes"))
-        {
-            // Update player's sorting order to match the slope's sorting order
-            Tilemap slopeTilemap = other.GetComponent<Tilemap>();
-            if (slopeTilemap != null)
-            {
-                spriteRenderer.sortingOrder = slopeTilemap.GetComponent<TilemapRenderer>().sortingOrder + 1;
-            }
-            else // If no slope is found, revert to the default sorting order
-            {
-                spriteRenderer.sortingOrder = defaultOrderInLayer;
-            }
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Slopes"))
-        {
-            // Find the ground tilemap the player is currently on
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0);
-            foreach (Collider2D collider in colliders)
-            {
-                if (collider.CompareTag("Grass"))
-                {
-                    Tilemap groundTilemap = collider.GetComponent<Tilemap>();
-                    if (groundTilemap != null)
-                    {
-                        // Update player's sorting order to match the ground's sorting order
-                        spriteRenderer.sortingOrder = groundTilemap.GetComponent<TilemapRenderer>().sortingOrder + 4;
-                        return;
-                    }
-                }
-            }
-
-            // If no ground is found, revert to the default sorting order
-            spriteRenderer.sortingOrder = defaultOrderInLayer;
-        }
     }
 
     private void OnEnable()
