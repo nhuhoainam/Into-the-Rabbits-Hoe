@@ -54,7 +54,7 @@ public class Tree : MonoBehaviour, IPlayerInteractable
         yield return new WaitForSeconds(waitingTime);
         foreach (var position in GetFruitPositions())
         {
-            ItemSpawner.Instance.SpawnItem(0, position);
+            ItemSpawner.GetInstance().SpawnItem(0, position);
         }
     }
 

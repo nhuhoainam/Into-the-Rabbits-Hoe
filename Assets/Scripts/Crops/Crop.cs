@@ -32,7 +32,7 @@ public class Crop : MonoBehaviour
         growthStage++;
         if (growthStage >= cropData.GrowthSprites.Count)
         {
-            ItemSpawner.Instance.SpawnItem(300, transform.position);
+            ItemSpawner.GetInstance().SpawnItem(300, transform.position);
             Destroy(gameObject);
         }
     }
@@ -48,7 +48,7 @@ public class Crop : MonoBehaviour
     }
 
     void Harvest() {
-        ItemSpawner itemSpawner = ItemSpawner.Instance;
+        ItemSpawner itemSpawner = ItemSpawner.GetInstance();
         itemSpawner.SpawnItem(300, transform.position);
         if (cropData.Regrowable)
         {
