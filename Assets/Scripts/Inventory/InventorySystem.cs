@@ -58,6 +58,12 @@ public class InventorySystem
         return slots != null && slots.Count > 0;
     }
 
+    public bool ContainsItems(ItemData itemToCheck, int amountToCheck)
+    {
+        var slots = inventorySlots.Where(slot => slot.ItemData == itemToCheck).ToList();
+        return slots != null && slots.Count > 0 && slots.Sum(slot => slot.StackSize) >= amountToCheck;
+    }
+
     public bool HasFreeSlot(out InventorySlot freeSlots)
     {
         freeSlots = inventorySlots.FirstOrDefault(slot => slot.ItemData == null);

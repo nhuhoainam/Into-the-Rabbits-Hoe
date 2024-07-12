@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
         player.DisableInput();
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
+        NextText();
     }
 
     // Display the next text

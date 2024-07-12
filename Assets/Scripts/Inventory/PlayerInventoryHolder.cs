@@ -60,4 +60,14 @@ public class PlayerInventoryHolder : InventoryHolder
         if (primaryInventorySystem.AddToInventory(item, amount)) return true;
         return false;
     }
+
+    public bool ContainsItem(ItemData item, out List<InventorySlot> slots)
+    {
+        return primaryInventorySystem.ContainsItem(item, out slots);
+    }
+
+    public bool ContainsItems(ItemData item, int amount)
+    {
+        return primaryInventorySystem.ContainsItems(item, amount);
+    }
 }
