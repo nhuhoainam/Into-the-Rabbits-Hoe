@@ -1032,70 +1032,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &164311199
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.225296
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -13.454319
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2013695069984764078, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285451422311329176, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      propertyPath: interactiveMap
-      value: 
-      objectReference: {fileID: 318419508}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2013695069984764078, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 995898566}
-  m_SourcePrefab: {fileID: 100100000, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
 --- !u!1 &188945461
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,6 +3623,14 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.51
+      objectReference: {fileID: 0}
     - target: {fileID: 2095377061378462741, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.13
@@ -3759,10 +3703,17 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 481245325
       objectReference: {fileID: 0}
+    - target: {fileID: 6285451422311329176, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: interactiveMap
+      value: 
+      objectReference: {fileID: 1648396210}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2013695069984764078, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 638889466}
   m_SourcePrefab: {fileID: 100100000, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
 --- !u!1 &237584879
 GameObject:
@@ -8257,6 +8208,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &540691066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2013695069984764078, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+  m_PrefabInstance: {fileID: 216549863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &558799739
 GameObject:
   m_ObjectHideFlags: 0
@@ -8548,6 +8504,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1950776904137205106, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
   m_PrefabInstance: {fileID: 216549863}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &638889466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540691066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df68a2808ab29784fa7c5ee2192270bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &688366002
 GameObject:
   m_ObjectHideFlags: 0
@@ -8841,7 +8809,7 @@ Transform:
   m_GameObject: {fileID: 690289319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.13, y: -13.13, z: -10}
+  m_LocalPosition: {x: -18.17, y: -12.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22333,23 +22301,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &995898565 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2013695069984764078, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
-  m_PrefabInstance: {fileID: 164311199}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &995898566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995898565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df68a2808ab29784fa7c5ee2192270bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1096814787
 GameObject:
   m_ObjectHideFlags: 0
@@ -24245,7 +24196,7 @@ Transform:
   m_GameObject: {fileID: 1299357276}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.13, y: -13.13, z: -10}
+  m_LocalPosition: {x: -18.17, y: -12.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24288,7 +24239,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 638889455}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8
@@ -25051,7 +25002,8 @@ GameObject:
   - component: {fileID: 1483002192}
   - component: {fileID: 1483002191}
   - component: {fileID: 1483002193}
-  m_Layer: 0
+  - component: {fileID: 1483002194}
+  m_Layer: 8
   m_Name: HillBase
   m_TagString: FarmableGround
   m_Icon: {fileID: 0}
@@ -25992,6 +25944,20 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1483002194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483002189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce84a7217cf2004a81fd45cc5cfb14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilledTile: {fileID: 11400000, guid: fb668f129bafe314a876ede0238dafb2, type: 2}
+  grassTile: {fileID: 11400000, guid: 8fa9fa3bc24a2ad40ae97ad371a45f60, type: 2}
 --- !u!1 &1504616211
 GameObject:
   m_ObjectHideFlags: 0
@@ -35812,6 +35778,7 @@ GameObject:
   - component: {fileID: 2124534471}
   - component: {fileID: 2124534470}
   - component: {fileID: 2124534472}
+  - component: {fileID: 2124534473}
   m_Layer: 0
   m_Name: ValleyBase
   m_TagString: FarmableGround
@@ -44729,6 +44696,20 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &2124534473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124534468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce84a7217cf2004a81fd45cc5cfb14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilledTile: {fileID: 11400000, guid: fb668f129bafe314a876ede0238dafb2, type: 2}
+  grassTile: {fileID: 11400000, guid: 492f6b4f62b72844baa388187c91f1e2, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -44742,4 +44723,3 @@ SceneRoots:
   - {fileID: 483864313}
   - {fileID: 626998478}
   - {fileID: 1676810215}
-  - {fileID: 164311199}

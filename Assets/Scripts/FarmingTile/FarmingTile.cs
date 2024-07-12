@@ -5,9 +5,8 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Tilemaps;
 
-public class FarmingTile : MonoBehaviour
+public class FarmingTile : MonoBehaviour, IPlayerInteractable
 {
-
     private class CropTile
     {
         public Vector3Int Position { get; }
@@ -23,16 +22,30 @@ public class FarmingTile : MonoBehaviour
     Tilemap grassTilemap;
     Tilemap tilemap;
     Tilemap tilledTilemap;
-    List<CropTile> crops;
+    List<CropTile> crops = new();
     // Start is called before the first frame update
     void Start()
     {
-        crops = new();
         tilemap = GetComponent<Tilemap>();
+        try {
+            tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
+        } catch (System.Exception e) {
+            var newObj = GameObject.Instantiate<GameObject>(new GameObject(), transform);
+            newObj.AddComponent<Tilemap>();
+            newObj.AddComponent<TilemapRenderer>();
+            newObj.transform.SetParent(transform);
+            tilledTilemap = newObj.GetComponent<Tilemap>();
+        }
         grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
-        tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
         tilledTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
         tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 1;
+        this.gameObject.layer = LayerMask.NameToLayer("Interactable");
+    }
+
+    void IPlayerInteractable.Interact(PlayerData playerData)
+    {
+        // TODO: check if the player has a hoe in their inventory
+        Interact(playerData.position);
     }
 
     void Till(Vector3 position)
@@ -93,7 +106,6 @@ public class FarmingTile : MonoBehaviour
         // Check if the player has seeds in their inventory
         // If they do, plant the seed
         // If they don't, harvest the crop
-
         foreach (var cropTile in crops)
         {
             Debug.Log("Crop at: " + cropTile.Position);
@@ -106,8 +118,10 @@ public class FarmingTile : MonoBehaviour
                 Debug.Log("Planting");
                 Vector3Int posInt = tilemap.WorldToCell(position);
                 Vector3 pos = (Vector3)posInt;
-                pos += new Vector3(0.5f, 0.5f, 6);
-                var newCrop = CropFactory.GetInstance().CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity);
+                pos += new Vector3(0.5f, 0.4f, 0);
+                var sortingLayer = tilemap.GetComponent<TilemapRenderer>().sortingLayerID;
+                var sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
+                var newCrop = CropFactory.GetInstance().CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity, sortingLayer, sortingOrder + 2);
                 crops.Add(new(posInt, newCrop.GetComponent<Crop>()));
                 Debug.Log("Crop planted at: " + posInt);
             }
