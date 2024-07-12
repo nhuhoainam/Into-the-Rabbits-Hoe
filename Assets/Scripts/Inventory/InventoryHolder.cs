@@ -10,6 +10,9 @@ public abstract class InventoryHolder : MonoBehaviour
     [SerializeField] protected InventorySystem primaryInventorySystem;
     [SerializeField] protected int offset = 9;
 
+    [Range(0, 8)]
+    public int ActiveSlot = 0;
+
     public int Offset => offset;
 
     public InventorySystem PrimaryInventorySystem => primaryInventorySystem;
@@ -24,6 +27,11 @@ public abstract class InventoryHolder : MonoBehaviour
     }
 
     protected abstract void LoadInventory(SaveData data);
+
+    public InventorySlot GetItemInActiveSlot()
+    {
+        return primaryInventorySystem.InventorySlots[ActiveSlot];
+    }
 }
 
 [System.Serializable]

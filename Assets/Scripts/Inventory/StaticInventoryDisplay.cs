@@ -5,7 +5,7 @@ using UnityEngine;
 public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private InventoryHolder inventoryHolder;
-    [SerializeField] private UIInventorySlot[] slots;
+    [SerializeField] private UIActiveInventorySlot[] slots;
 
     protected override void OnEnable() {
         base.OnEnable();
@@ -21,6 +21,7 @@ public class StaticInventoryDisplay : InventoryDisplay
         if (inventoryHolder != null) {
             inventorySystem = inventoryHolder.PrimaryInventorySystem;
             inventorySystem.OnInventorySlotChanged += UpdateSlot;
+            ChangeActiveSlot(0);
         }
         else {
             Debug.LogWarning("No Inventory Holder assigned to Static Inventory Display");
@@ -33,7 +34,19 @@ public class StaticInventoryDisplay : InventoryDisplay
     {
         base.Start();
 
+        playerControls.Inventory.Active.performed += ctx => ChangeActiveSlot((int)ctx.ReadValue<float>() - 1);
+        ChangeActiveSlot(0);
+
         RefreshDisplay();
+    }
+
+    void ChangeActiveSlot(int slot) {
+        inventoryHolder.ActiveSlot = slot;
+
+        foreach (var slotObj in slots) {
+            slotObj.ActiveSlotIndicator.SetActive(false);
+        }
+        slots[slot].ActiveSlotIndicator.SetActive(true);
     }
 
     public override void AssignSlot(InventorySystem invToDisplay, int offset = 0)
@@ -45,8 +58,8 @@ public class StaticInventoryDisplay : InventoryDisplay
 
         for (int i = 0; i < inventoryHolder.Offset; i++)
         {
-            slotDictionary.Add(slots[i], inventorySystem.InventorySlots[i]);
-            slots[i].Init(inventorySystem.InventorySlots[i]);
+            slotDictionary.Add(slots[i].slot, inventorySystem.InventorySlots[i]);
+            slots[i].slot.Init(inventorySystem.InventorySlots[i]);
         }
     }
 }
