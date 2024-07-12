@@ -19,26 +19,49 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     }
     [SerializeField] TileBase tilledTile;
     [SerializeField] TileBase grassTile;
+    [SerializeField] TileBase tilledDecorationTile;
     Tilemap grassTilemap;
     Tilemap tilemap;
     Tilemap tilledTilemap;
+    Tilemap tilledDecorationTilemap;
+
     List<CropTile> crops = new();
     // Start is called before the first frame update
     void Start()
     {
         tilemap = GetComponent<Tilemap>();
-        try {
+        try
+        {
             tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
-        } catch (System.Exception e) {
+        }
+        catch (System.Exception)
+        {
             var newObj = GameObject.Instantiate<GameObject>(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
             newObj.transform.SetParent(transform);
             tilledTilemap = newObj.GetComponent<Tilemap>();
         }
+
+        try
+        {
+            tilledDecorationTilemap = transform.GetChild(1).GetComponent<Tilemap>();
+        }
+        catch (System.Exception)
+        {
+            var newObj = GameObject.Instantiate<GameObject>(new GameObject(), transform);
+            newObj.AddComponent<Tilemap>();
+            newObj.AddComponent<TilemapRenderer>();
+            newObj.transform.SetParent(transform);
+            tilledTilemap = newObj.GetComponent<Tilemap>();
+        }
+
         grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
         tilledTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
         tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 1;
+
+        tilledDecorationTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
+        tilledDecorationTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 2;
         this.gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
@@ -76,6 +99,9 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     bool TilledAt(Vector3 position)
     {
         TileBase tile = tilledTilemap.GetTile(tilledTilemap.WorldToCell(position));
+        TileBase decorationTile = tilledDecorationTilemap.GetTile(tilledDecorationTilemap.WorldToCell(position));
+        TileData data = new();
+        decorationTile.GetTileData(new Vector3Int(0, 0, 0), tilledDecorationTilemap, ref data);
         if (tile == null)
         {
             return false;
