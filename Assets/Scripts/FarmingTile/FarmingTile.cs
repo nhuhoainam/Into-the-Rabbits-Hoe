@@ -19,11 +19,12 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     }
     [SerializeField] TileBase tilledTile;
     [SerializeField] TileBase grassTile;
-    [SerializeField] TileBase tilledDecorationTile;
+    [SerializeField] TileBase fertilizerTile;
     Tilemap grassTilemap;
     Tilemap tilemap;
     Tilemap tilledTilemap;
-    Tilemap tilledDecorationTilemap;
+    Tilemap wateredTilemap;
+    Tilemap fertilizerTilemap;
 
     List<CropTile> crops = new();
     // Start is called before the first frame update
@@ -45,7 +46,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
 
         try
         {
-            tilledDecorationTilemap = transform.GetChild(1).GetComponent<Tilemap>();
+            wateredTilemap = transform.GetChild(1).GetComponent<Tilemap>();
         }
         catch (System.Exception)
         {
@@ -53,15 +54,29 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
             newObj.transform.SetParent(transform);
-            tilledTilemap = newObj.GetComponent<Tilemap>();
+            wateredTilemap = newObj.GetComponent<Tilemap>();
+        }
+
+        try {
+            fertilizerTilemap = transform.GetChild(2).GetComponent<Tilemap>();
+        } catch (System.Exception) {
+            var newObj = GameObject.Instantiate<GameObject>(new GameObject(), transform);
+            newObj.AddComponent<Tilemap>();
+            newObj.AddComponent<TilemapRenderer>();
+            newObj.transform.SetParent(transform);
+            fertilizerTilemap = newObj.GetComponent<Tilemap>();
         }
 
         grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
         tilledTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
         tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 1;
 
-        tilledDecorationTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
-        tilledDecorationTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 2;
+        wateredTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
+        wateredTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 2;
+        wateredTilemap.GetComponent<Tilemap>().color = new(0.7924528f, 0.4539565f, 0.2280171f, 0.5f);
+
+        fertilizerTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
+        fertilizerTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 3;
         this.gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
@@ -99,9 +114,6 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     bool TilledAt(Vector3 position)
     {
         TileBase tile = tilledTilemap.GetTile(tilledTilemap.WorldToCell(position));
-        TileBase decorationTile = tilledDecorationTilemap.GetTile(tilledDecorationTilemap.WorldToCell(position));
-        TileData data = new();
-        decorationTile.GetTileData(new Vector3Int(0, 0, 0), tilledDecorationTilemap, ref data);
         if (tile == null)
         {
             return false;
@@ -127,6 +139,20 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         return true;
     }
 
+    bool WateredAt(Vector3 position)
+    {
+        TileBase tile = wateredTilemap.GetTile(wateredTilemap.WorldToCell(position));
+        if (tile == null)
+        {
+            return false;
+        }
+        else if (tile == tilledTile)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void Interact(Vector3 position)
     {
         // Check if the player has seeds in their inventory
@@ -139,22 +165,27 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         if (TilledAt(position))
         {
             Crop crop = GetCropAt(position);
+            if (WateredAt(position)) {
+                Fertilize(position);
+                return;
+            }
+            Water(position);
             if (crop == null)
             {
-                Debug.Log("Planting");
-                Vector3Int posInt = tilemap.WorldToCell(position);
-                Vector3 pos = (Vector3)posInt;
-                pos += new Vector3(0.5f, 0.4f, 0);
-                var sortingLayer = tilemap.GetComponent<TilemapRenderer>().sortingLayerID;
-                var sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
-                var newCrop = CropFactory.GetInstance().CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity, sortingLayer, sortingOrder + 2);
-                crops.Add(new(posInt, newCrop.GetComponent<Crop>()));
-                Debug.Log("Crop planted at: " + posInt);
+            //     Debug.Log("Planting");
+            //     Vector3Int posInt = tilemap.WorldToCell(position);
+            //     Vector3 pos = (Vector3)posInt;
+            //     pos += new Vector3(0.5f, 0.4f, 0);
+            //     var sortingLayer = tilemap.GetComponent<TilemapRenderer>().sortingLayerID;
+            //     var sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
+            //     var newCrop = CropFactory.GetInstance().CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity, sortingLayer, sortingOrder + 2);
+            //     crops.Add(new(posInt, newCrop.GetComponent<Crop>()));
+            //     Debug.Log("Crop planted at: " + posInt);
             }
             else
             {
                 Debug.Log("Harvesting");
-                crop.Interact();
+                // crop.Interact();
             }
         }
         else
@@ -162,6 +193,44 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             Till(position);
         }
         return;
+    }
+
+    void Fertilize(Vector3 position)
+    {
+        Debug.Log("Fertilizing");
+        if (TilledAt(position))
+        {
+            fertilizerTilemap.SetTile(tilemap.WorldToCell(position), fertilizerTile);
+        }
+        else
+        {
+            Crop crop = GetCropAt(position);
+            if (crop != null)
+            {
+                // crop.Fertilize();
+            }
+        }
+    }
+
+    void Water(Vector3 position)
+    {
+        // Check if the player has a watering can in their inventory
+        // Check if the tile is tilled -> water it
+        // Check if the tile is a crop -> water it
+        // Otherwise, do nothing
+        Debug.Log("Watering");
+        if (TilledAt(position))
+        {
+            wateredTilemap.SetTile(tilemap.WorldToCell(position), tilledTile);
+        }
+        else
+        {
+            Crop crop = GetCropAt(position);
+            if (crop != null)
+            {
+                // crop.Water();
+            }
+        }
     }
 
     Crop GetCropAt(Vector3 position)
