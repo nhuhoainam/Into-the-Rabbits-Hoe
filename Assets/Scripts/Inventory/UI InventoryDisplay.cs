@@ -12,7 +12,7 @@ public abstract class InventoryDisplay : MonoBehaviour
     public InventorySystem InventorySystem => inventorySystem;
     public Dictionary<UIInventorySlot, InventorySlot> SlotDictionary => slotDictionary;
 
-    private PlayerControls playerControls;
+    protected PlayerControls playerControls;
     private bool isSplittingStack = false;
 
     void Awake()
