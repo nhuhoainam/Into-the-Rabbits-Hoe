@@ -191,7 +191,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
                 if (FertilizedAt(position))
                 {
                     // Debug.Log("Harvesting");
-                    PlantCrop(position, CropFactory.CropType.Carrot);
+                    PlantCrop(position, CropFactory.cropTypeDictionary[10]);
                     // crop.Interact();
                     return;
                 }
