@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crop : MonoBehaviour
+public class Crop : MonoBehaviour, IPlayerInteractable
 {
     public CropData cropData;
     [SerializeField] int growthStage = 0;
@@ -13,6 +13,11 @@ public class Crop : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void IPlayerInteractable.Interact(PlayerData playerData)
+    {
+        Interact();
     }
 
     // Update is called once per frame
