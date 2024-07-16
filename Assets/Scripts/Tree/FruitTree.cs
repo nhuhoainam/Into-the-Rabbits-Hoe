@@ -64,13 +64,13 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
 
     void IPlayerInteractable.Interact(IPlayerInteractable.InteractionContext ctx)
     {
-        if (ctx.InventorySlot.ItemData.itemName == "Axe")
+        if (ctx.InventorySlot.ItemData == null || ctx.InventorySlot.ItemData.itemName != "Axe")
         {
-            ChopTree();
+            HarvestFruit();
         }
         else
         {
-            HarvestFruit();
+            ChopTree();
         }
     }
 
@@ -112,6 +112,10 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
 
     ItemData IPlayerInteractable.RequiredItem(IPlayerInteractable.InteractionContext ctx)
     {
+        if (ctx.InventorySlot.ItemData == null)
+        {
+            return null;
+        }
         if (ctx.InventorySlot.ItemData.itemName == "Axe")
         {
             return ctx.InventorySlot.ItemData;
