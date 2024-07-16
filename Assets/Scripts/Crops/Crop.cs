@@ -15,11 +15,6 @@ public class Crop : MonoBehaviour, IPlayerInteractable
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void IPlayerInteractable.Interact(PlayerData playerData)
-    {
-        Interact();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -63,6 +58,24 @@ public class Crop : MonoBehaviour, IPlayerInteractable
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void Interact(IPlayerInteractable.InteractionContext ctx)
+    {
+        Harvest();
+    }
+
+    ItemData IPlayerInteractable.RequiredItem(IPlayerInteractable.InteractionContext ctx)
+    {
+        return null;
+    }
+
+    int IPlayerInteractable.Priority
+    {
+        get
+        {
+            return 1;
         }
     }
 }

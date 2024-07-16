@@ -27,6 +27,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     Tilemap tilledTilemap;
     Tilemap wateredTilemap;
     Tilemap fertilizerTilemap;
+    InventoryHolder inventoryHolder;
 
     List<CropTile> crops = new();
     // Start is called before the first frame update
@@ -45,6 +46,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
 
     void Start()
     {
+        inventoryHolder = GameObject.FindWithTag("Player").GetComponent<InventoryHolder>();
         LoadTileResources();
         tilemap = GetComponent<Tilemap>();
         try
@@ -77,7 +79,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         {
             fertilizerTilemap = transform.GetChild(2).GetComponent<Tilemap>();
         }
-        catch (System.Exception)
+        catch (Exception)
         {
             var newObj = Instantiate(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
@@ -101,12 +103,53 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         this.gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
-    void IPlayerInteractable.Interact(PlayerData playerData)
+    void IPlayerInteractable.Interact(IPlayerInteractable.InteractionContext ctx)
     {
+        var inventorySlot = ctx.InventorySlot;
+        var playerData = ctx.PlayerData;
+
         // TODO: check if the player has a hoe in their inventory
-        Interact(playerData.position);
+        var activeItem = inventorySlot.ItemData;
+        if (activeItem == null)
+        {
+            return;
+        }
+        if (activeItem.itemName == "Hoe")
+        {
+            Till(playerData.position);
+        }
+        else if (activeItem.itemName.EndsWith("Seed"))
+        {
+            PlantCrop(playerData.position, CropFactory.cropTypeDictionary[activeItem.itemID]);
+        }
+        else if (activeItem.itemName == "Watering Can")
+        {
+            Water(playerData.position);
+        }
+        else if (activeItem.itemName == "Fertilizer")
+        {
+            Fertilize(playerData.position);
+        }
     }
 
+    ItemData IPlayerInteractable.RequiredItem(IPlayerInteractable.InteractionContext ctx)
+    {
+        if (ctx.InventorySlot.ItemData == null)
+        {
+            return null;
+        }
+        if (ctx.InventorySlot.ItemData.itemName == "Hoe" 
+            || ctx.InventorySlot.ItemData.itemName.EndsWith("Seed") 
+            || ctx.InventorySlot.ItemData.itemName == "Watering Can"
+            || ctx.InventorySlot.ItemData.itemName == "Fertilizer")
+        {
+            return ctx.InventorySlot.ItemData;
+        }
+        else
+        {
+            return null;
+        }
+    }
     void Till(Vector3 position)
     {
         // Check if the player has a hoe in their inventory
@@ -115,6 +158,10 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         // Check if the tile is a crop -> do nothing
         // Otherwise, till the tile
         Debug.Log("Tilling");
+        if (TilledAt(position))
+        {
+            return;
+        }
 
         Debug.Log("Grass at position: " + GrassAt(position));
         if (GrassAt(position))
@@ -122,13 +169,8 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             grassTilemap.SetTile(tilemap.WorldToCell(position), null);
             return;
         }
+
         Debug.Log("Tilled at position: " + TilledAt(position));
-
-        if (TilledAt(position))
-        {
-            return;
-        }
-
         tilledTilemap.SetTile(tilemap.WorldToCell(position), tilledTile);
     }
 
@@ -174,58 +216,12 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         return false;
     }
 
-    public void Interact(Vector3 position)
-    {
-        // Check if the player has seeds in their inventory
-        // If they do, plant the seed
-        // If they don't, harvest the crop
-        foreach (var cropTile in crops)
-        {
-            Debug.Log("Crop at: " + cropTile.Position);
-        }
-        if (TilledAt(position))
-        {
-            Crop crop = GetCropAt(position);
-            if (WateredAt(position))
-            {
-                if (FertilizedAt(position))
-                {
-                    // Debug.Log("Harvesting");
-                    PlantCrop(position, CropFactory.cropTypeDictionary[10]);
-                    // crop.Interact();
-                    return;
-                }
-                Fertilize(position);
-                return;
-            }
-            Water(position);
-            if (crop == null)
-            {
-                //     Debug.Log("Planting");
-                //     Vector3Int posInt = tilemap.WorldToCell(position);
-                //     Vector3 pos = (Vector3)posInt;
-                //     pos += new Vector3(0.5f, 0.4f, 0);
-                //     var sortingLayer = tilemap.GetComponent<TilemapRenderer>().sortingLayerID;
-                //     var sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
-                //     var newCrop = CropFactory.GetInstance().CreateCrop(CropFactory.CropType.Carrot, pos, Quaternion.identity, sortingLayer, sortingOrder + 2);
-                //     crops.Add(new(posInt, newCrop.GetComponent<Crop>()));
-                //     Debug.Log("Crop planted at: " + posInt);
-            }
-            else
-            {
-                Debug.Log("Harvesting");
-                // crop.Interact();
-            }
-        }
-        else
-        {
-            Till(position);
-        }
-        return;
-    }
-
     void PlantCrop(Vector3 position, CropFactory.CropType cropType)
     {
+        if (!TilledAt(position))
+        {
+            return;
+        }
         Debug.Log("Planting");
         Vector3Int posInt = tilemap.WorldToCell(position);
         Vector3 pos = (Vector3)posInt;
@@ -240,17 +236,15 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     void Fertilize(Vector3 position)
     {
         Debug.Log("Fertilizing");
-        if (TilledAt(position))
+        if (!TilledAt(position))
         {
-            fertilizerTilemap.SetTile(tilemap.WorldToCell(position), fertilizerTile);
+            return;
         }
-        else
+        fertilizerTilemap.SetTile(tilemap.WorldToCell(position), fertilizerTile);
+        Crop crop = GetCropAt(position);
+        if (crop != null)
         {
-            Crop crop = GetCropAt(position);
-            if (crop != null)
-            {
-                // crop.Fertilize();
-            }
+            // crop.Fertilize();
         }
     }
 
@@ -275,17 +269,15 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         // Check if the tile is a crop -> water it
         // Otherwise, do nothing
         Debug.Log("Watering");
-        if (TilledAt(position))
+        if (!TilledAt(position))
         {
-            wateredTilemap.SetTile(tilemap.WorldToCell(position), tilledTile);
+            return;
         }
-        else
+        wateredTilemap.SetTile(tilemap.WorldToCell(position), tilledTile);
+        Crop crop = GetCropAt(position);
+        if (crop != null)
         {
-            Crop crop = GetCropAt(position);
-            if (crop != null)
-            {
-                // crop.Water();
-            }
+            // crop.Water();
         }
     }
 
