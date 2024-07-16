@@ -79,9 +79,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1399307659
-  m_SortingLayer: 8
-  m_SortingOrder: 0
+  m_SortingLayerID: 481245325
+  m_SortingLayer: 5
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1315801902, guid: ed5bb7cc76427fd418aea1c63be88ad1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,6 +145,9 @@ MonoBehaviour:
   playerData:
     money: 0
     treesPlanted: 0
+    inactiveQuests: []
+    activeQuests: []
+    completedQuests: []
     position: {x: 0, y: 0, z: 0}
     Direction: {x: 0, y: -1}
   footstepAudioSource: {fileID: 1962184320731299636}
@@ -215,6 +218,7 @@ MonoBehaviour:
   primaryInventorySystem:
     inventorySlots: []
   offset: 9
+  ActiveSlot: 0
 --- !u!114 &6840778360447833272
 MonoBehaviour:
   m_ObjectHideFlags: 0
