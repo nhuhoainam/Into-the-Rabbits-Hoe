@@ -32154,6 +32154,91 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1001
   m_TargetDisplay: 0
+--- !u!1001 &2021918574
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: npcName
+      value: Oskkea
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: defaultDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: defaultDialogue.Array.data[0]
+      value: Hello there, you must be the newcomer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: defaultDialogue.Array.data[1]
+      value: I'm Oskkea, the fisherman.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: defaultDialogue.Array.data[2]
+      value: Nice to see you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299391280915541969, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_Name
+      value: Oskkea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4934015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.428436
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713804438613540957, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030428258013067948, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030428258013067948, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 481245325
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
 --- !u!1001 &2030242982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33831,3 +33916,4 @@ SceneRoots:
   - {fileID: 323823256}
   - {fileID: 928641137}
   - {fileID: 1417554675}
+  - {fileID: 2021918574}
