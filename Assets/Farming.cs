@@ -19,7 +19,6 @@ public class Farming : MonoBehaviour
         FarmingTile tilemap = obj.GetComponent<FarmingTile>();
         if (Input.GetKeyUp(KeyCode.F))
         {
-            tilemap.Interact(player.position);
         }
     }
 }

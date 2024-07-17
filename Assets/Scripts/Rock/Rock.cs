@@ -5,7 +5,7 @@ public class Rock : MonoBehaviour, IPlayerInteractable
 {
     [SerializeField] private int health = 3;
     // Start is called before the first frame update
-    void IPlayerInteractable.Interact(PlayerData playerData)
+    void IPlayerInteractable.Interact(IPlayerInteractable.InteractionContext ctx)
     {
         if (health > 0)
         {
@@ -17,4 +17,10 @@ public class Rock : MonoBehaviour, IPlayerInteractable
             }
         }
     }
+
+    ItemData IPlayerInteractable.RequiredItem(IPlayerInteractable.InteractionContext ctx)
+    {
+        return null;
+    }
+
 }
