@@ -80,6 +80,12 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
         if (health <= 0)
         {
             animator.SetTrigger("Fall");
+            if (hasFruit)
+            {
+                transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
+                var duraction = animator.GetCurrentAnimatorClipInfo(0).Length;
+                StartCoroutine(SpawnDroppedFruits(duraction));
+            }
             return;
         }
         animator.SetTrigger("Shake");
