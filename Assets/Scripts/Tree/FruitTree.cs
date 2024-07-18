@@ -10,6 +10,7 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
     [SerializeField] private int health = MaxHeatlh;
 
     private Animator animator;
+    private Animator fruitDropAnimator;
     [SerializeField] private float timeUntilFruit = 240;
     [SerializeField] private bool hasFruit = true;
 
@@ -22,6 +23,7 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
     void Start()
     {
         animator = GetComponent<Animator>();
+        fruitDropAnimator = transform.GetChild(0).GetComponent<Animator>();
         if (hasFruit)
         {
             animator.SetTrigger("HaveFruit");
@@ -82,10 +84,12 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
             animator.SetTrigger("Fall");
             if (hasFruit)
             {
-                transform.GetChild(0).GetComponent<Animator>().SetTrigger("Drop");
-                var duraction = animator.GetCurrentAnimatorClipInfo(0).Length;
-                StartCoroutine(SpawnDroppedFruits(duraction));
+                fruitDropAnimator.SetTrigger("Drop");
+                var duration = animator.GetCurrentAnimatorClipInfo(0).Length;
+                StartCoroutine(SpawnDroppedFruits(duration));
             }
+            // Change layer to disable interaction
+            gameObject.layer = LayerMask.NameToLayer("Default");
             return;
         }
         animator.SetTrigger("Shake");
