@@ -10,28 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24c7ba591cc405743ae42fc80f90570d, type: 3}
-  m_Name: Beginning
+  m_Name: NPC2Quest1
   m_EditorClassIdentifier: 
-  questName: Beginning
-  questDescription: This is the beginning quest.
+  questName: NPC2Quest1
+  questDescription: Test quest for NPC2
   questType: 1
   toStartAmount: 0
   itemsToStart: []
-  amountRequired: 10
+  amountRequired: 2000
   requiredItems: []
-  amountToGive: 1
+  amountToGive: 0
   startItems: []
-  amountToReward: 1000
-  rewardItems:
-  - itemName: Apple Fruit
-    amount: 1
+  amountToReward: 0
+  rewardItems: []
   startDialog:
-  - This is the start dialogue of the quest.
+  - Start dialogue for NPC2
   inProgressDialog:
-  - This is the in progress dialogue of the quest.
+  - In progress dialogue for NPC2
   endDialog:
-  - This is the end dialogue of the quest.
+  - End dialogue for test quest.
   newDefaultDialog:
-  - First line of new default dialogue.
-  - Extra line to check.
-  - Last line of new default dialogue.
+  - Nothing new

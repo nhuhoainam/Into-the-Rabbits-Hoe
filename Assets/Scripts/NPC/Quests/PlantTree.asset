@@ -35,3 +35,5 @@ MonoBehaviour:
   - In progress of the planting quest.
   endDialog:
   - End of the planting quest.
+  newDefaultDialog:
+  - After planting, this is the new default dialogue.

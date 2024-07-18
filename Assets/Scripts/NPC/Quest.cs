@@ -26,6 +26,7 @@ public class Quest : ScriptableObject
     public string[] startDialog;
     public string[] inProgressDialog;
     public string[] endDialog;
+    public string[] newDefaultDialog;
     public bool CanStart(PlayerController player, PlayerInventoryHolder inventoryHolder, Database database) {
         bool hasItems = true;
         foreach (var item in itemsToStart) {

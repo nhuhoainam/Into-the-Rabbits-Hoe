@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Animancer;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
     public GameObject nameBox;
     public GameObject avatarBox;
+    public GameObject shopButton;
     public bool isDialogueActive = false;
 
     void Start()
@@ -28,7 +30,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Start the conversation, is called by the NPC script
-    public void StartDialogue(string[] dialogue, string npcName, Sprite npcAvatar)
+    public void StartDialogue(string[] dialogue, string npcName, Sprite npcAvatar, bool isShop)
     {
         this.dialogue = dialogue;
         this.npcName = npcName;
@@ -39,16 +41,21 @@ public class DialogueManager : MonoBehaviour
         player.DisableInput();
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
-        NextText();
+        shopButton.SetActive(false);
+        NextText(isShop);
     }
 
     // Display the next text
-    public void NextText()
+    public void NextText(bool isShop)
     {
         if (dialogueIndex < dialogue.Length)
         {
             StopAllCoroutines(); // Stop any ongoing text display
             StartCoroutine(DisplayText(dialogue[dialogueIndex]));
+            if (isShop && dialogueIndex == dialogue.Length - 1)
+            {
+                shopButton.SetActive(true);
+            }
             dialogueIndex++;
         }
         else {
@@ -76,5 +83,10 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         var player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player.EnableInput();
+    }
+    // Create a function for the shop button onClick event
+    public void OpenShop()
+    {
+        Debug.Log("Opening shop");
     }
 }
