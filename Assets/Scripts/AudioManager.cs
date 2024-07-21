@@ -4,9 +4,16 @@ using UnityEngine.UI;
 public class AudioSettingsController : MonoBehaviour
 {
     public static AudioSettingsController Instance;
-    public AudioSource audioSource;
-    public Slider volumeSlider;
-    public Toggle muteToggle;
+
+    // Âm thanh nhạc nền
+    public AudioSource musicAudioSource;
+    public Slider musicVolumeSlider;
+    public Toggle musicMuteToggle;
+
+    // Âm thanh hiệu ứng
+    public AudioSource sfxAudioSource;
+    public Slider sfxVolumeSlider;
+    public Toggle sfxMuteToggle;
 
     void Awake()
     {
@@ -24,26 +31,53 @@ public class AudioSettingsController : MonoBehaviour
 
     void Start()
     {
-        if (audioSource == null)
-        {
 
-            audioSource = FindObjectOfType<AudioSource>();
+        if (musicAudioSource != null)
+        {
+            musicVolumeSlider.value = musicAudioSource.volume;
+            musicMuteToggle.isOn = !musicAudioSource.mute;
+            musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
+            musicMuteToggle.onValueChanged.AddListener(SetMusicMute);
         }
 
-        volumeSlider.value = audioSource.volume;
-        muteToggle.isOn = !audioSource.mute;
-
-        volumeSlider.onValueChanged.AddListener(SetVolume);
-        muteToggle.onValueChanged.AddListener(SetMute);
+        if (sfxAudioSource != null)
+        {
+            sfxVolumeSlider.value = sfxAudioSource.volume;
+            sfxMuteToggle.isOn = !sfxAudioSource.mute;
+            sfxVolumeSlider.onValueChanged.AddListener(SetSfxVolume);
+            sfxMuteToggle.onValueChanged.AddListener(SetSfxMute);
+        }
     }
 
-    void SetVolume(float value)
+    void SetMusicVolume(float value)
     {
-        audioSource.volume = value;
+        if (musicAudioSource != null)
+        {
+            musicAudioSource.volume = value;
+        }
     }
 
-    void SetMute(bool isMuted)
+    void SetMusicMute(bool isMuted)
     {
-        audioSource.mute = !isMuted;
+        if (musicAudioSource != null)
+        {
+            musicAudioSource.mute = !isMuted;
+        }
+    }
+
+    void SetSfxVolume(float value)
+    {
+        if (sfxAudioSource != null)
+        {
+            sfxAudioSource.volume = value;
+        }
+    }
+
+    void SetSfxMute(bool isMuted)
+    {
+        if (sfxAudioSource != null)
+        {
+            sfxAudioSource.mute = !isMuted;
+        }
     }
 }
