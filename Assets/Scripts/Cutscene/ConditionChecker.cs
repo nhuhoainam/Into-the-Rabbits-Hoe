@@ -8,40 +8,53 @@ public class ConditionChecker : MonoBehaviour
     public GameObject storyPanel;
     public GameObject blackScreen; // Reference to the black screen panel
     private TypingEffect typingEffect; // Reference to the TypingEffect script
-    private bool firstSceneAvailable = true;
     private List<string> texts; // Texts to display
+    private PlayerController player;
 
     void Start()
     {
         typingEffect = storyPanel.GetComponent<TypingEffect>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         storyPanel.SetActive(false); // Ensure storyPanel is inactive at the start
     }
 
     void Update()
     {
         // Replace with your own condition
-        if (YourCondition() && firstSceneAvailable)
+        if (player.playerData.newGame)
         {
-            ShowBlackScreenWithText();
-            firstSceneAvailable = false;
+            ShowBlackScreenWithText(
+                new List<string>
+                {
+                    "This is the first scene.",
+                    "You can add more text here."
+                }
+            );
+            player.playerData.newGame = false;
+        }
+        if (BeginningActivated()) {
+            GameObject[] beginningObstacles = GameObject.FindGameObjectsWithTag("BeginningObstacle");
+            foreach (GameObject obstacle in beginningObstacles) {
+                obstacle.SetActive(false);
+            }
         }
     }
 
-    bool YourCondition()
+    bool BeginningActivated()
     {
-        // Your condition logic here
-        return Input.GetKeyDown(KeyCode.Space); // Example: press Space key to trigger
+        return player.playerData.activeQuests.Contains("Beginning");
     }
 
-    void ShowBlackScreenWithText()
+    bool FirstSceneCondition()
+    {
+        return player.playerData.newGame;
+    }
+
+    void ShowBlackScreenWithText(List<string> text)
     {
         storyPanel.SetActive(true);
 
-        texts = new List<string>()
-        {
-            "This is the first scene.",
-            "Story continues..."
-        };
+        texts = new List<string>(text);
 
         // Set the black screen image component to be fully opaque
         blackScreen.GetComponent<Image>().color = new Color(0, 0, 0, 1);

@@ -7,6 +7,7 @@ using Animancer;
 [System.Serializable]
 public class PlayerData
 {
+    public bool newGame;
     public int money;
     public int treesPlanted;
     public List<string> inactiveQuests;
