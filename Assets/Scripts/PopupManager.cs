@@ -2,44 +2,80 @@ using UnityEngine;
 
 public class PopupManager : MonoBehaviour
 {
-    public GameObject popupPanel;  // Drag your panel here in the Inspector
+    public GameObject settingsPopup;  
+    public GameObject instructionsPopup; 
 
     void Start()
     {
-        // Ensure the panel is hidden at the start
-        if (popupPanel != null)
+        
+        if (settingsPopup != null)
         {
-            popupPanel.SetActive(false);
+            settingsPopup.SetActive(false);
         }
         else
         {
-            Debug.LogError("Popup Panel is not assigned in the Inspector.");
+            Debug.LogError("Settings Popup is not assigned in the Inspector.");
+        }
+
+        if (instructionsPopup != null)
+        {
+            instructionsPopup.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Instructions Popup is not assigned in the Inspector.");
         }
     }
 
-    public void ShowPopup()
+    public void ShowSettingsPopup()
     {
-        Debug.Log("ShowPopup called");
-        if (popupPanel != null)
+        Debug.Log("ShowSettingsPopup called");
+        if (settingsPopup != null)
         {
-            popupPanel.SetActive(true);
+            settingsPopup.SetActive(true);
         }
         else
         {
-            Debug.LogError("Popup Panel is not assigned in the Inspector.");
+            Debug.LogError("Settings Popup is not assigned in the Inspector.");
         }
     }
 
-    public void HidePopup()
+    public void HideSettingsPopup()
     {
-        Debug.Log("HidePopup called");
-        if (popupPanel != null)
+        Debug.Log("HideSettingsPopup called");
+        if (settingsPopup != null)
         {
-            popupPanel.SetActive(false);
+            settingsPopup.SetActive(false);
         }
         else
         {
-            Debug.LogError("Popup Panel is not assigned in the Inspector.");
+            Debug.LogError("Settings Popup is not assigned in the Inspector.");
+        }
+    }
+
+    public void ShowInstructionsPopup()
+    {
+        Debug.Log("ShowInstructionsPopup called");
+        if (instructionsPopup != null)
+        {
+            instructionsPopup.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Instructions Popup is not assigned in the Inspector.");
+        }
+    }
+
+    public void HideInstructionsPopup()
+    {
+        Debug.Log("HideInstructionsPopup called");
+        if (instructionsPopup != null)
+        {
+            instructionsPopup.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Instructions Popup is not assigned in the Inspector.");
         }
     }
 }
