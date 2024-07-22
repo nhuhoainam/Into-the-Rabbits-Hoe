@@ -16,6 +16,8 @@ public class NPC : MonoBehaviour
     private PlayerController playerController;
     private Database database;
     private PlayerInventoryHolder playerInventoryHolder;
+    private ShopKeeper shopKeeper;
+
     private void SaveNPCData() {
         if (!SaveGameManager.CurrentSaveData.NPCQuests.ContainsKey(npcName)) {
             SaveGameManager.CurrentSaveData.NPCQuests.Add(npcName, new NPCData(new List<string>(listOfQuestNames), new List<string>(defaultDialogue)));
@@ -35,6 +37,7 @@ public class NPC : MonoBehaviour
         // Find the player and get the PlayerController script
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         playerInventoryHolder = GameObject.FindWithTag("Player").GetComponent<PlayerInventoryHolder>();
+        shopKeeper = GetComponent<ShopKeeper>();
         database = Resources.Load<Database>("Database");
         SaveGameManager.OnSaveGame += SaveNPCData;
         SaveGameManager.OnLoadGame += LoadNPCData;
@@ -68,7 +71,7 @@ public class NPC : MonoBehaviour
                     // If the NPCs have no quests, display the default dialogue
                     if (listOfQuestNames.Count == 0)
                     {
-                        dialogueManager.StartDialogue(defaultDialogue.ToArray(), npcName, avatar, isShop);
+                        dialogueManager.StartDialogue(defaultDialogue.ToArray(), npcName, avatar, shopKeeper);
                     }
                     // looking to see if the first quest in the npc is in player active quests
                     else
@@ -88,14 +91,14 @@ public class NPC : MonoBehaviour
                                         var itemData = database.GetItem(item.itemName);
                                         playerInventoryHolder.AddToInventory(itemData, item.amount);
                                     }
-                                    dialogueManager.StartDialogue(questData.endDialog, npcName, avatar, isShop);
+                                    dialogueManager.StartDialogue(questData.endDialog, npcName, avatar, shopKeeper);
                                     defaultDialogue = new List<string>(questData.newDefaultDialog);
                                     listOfQuestNames.RemoveAt(0);
                                     return;
                                 }
                                 else
                                 {
-                                    dialogueManager.StartDialogue(questData.inProgressDialog, npcName, avatar, isShop);
+                                    dialogueManager.StartDialogue(questData.inProgressDialog, npcName, avatar, shopKeeper);
                                     return;
                                 }
                             }
@@ -115,17 +118,17 @@ public class NPC : MonoBehaviour
                                         var itemData = database.GetItem(item.itemName);
                                         playerInventoryHolder.AddToInventory(itemData, item.amount);
                                     }
-                                    dialogueManager.StartDialogue(questData.startDialog, npcName, avatar, isShop);
+                                    dialogueManager.StartDialogue(questData.startDialog, npcName, avatar, shopKeeper);
                                     return;
                                 }
                             }
                         }
-                        dialogueManager.StartDialogue(defaultDialogue.ToArray(), npcName, avatar, isShop);
+                        dialogueManager.StartDialogue(defaultDialogue.ToArray(), npcName, avatar, shopKeeper);
                     }
                 }
                 else
                 {
-                    dialogueManager.NextText(isShop);
+                    dialogueManager.NextText(shopKeeper);
                 }
             }
             else

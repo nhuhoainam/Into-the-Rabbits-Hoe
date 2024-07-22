@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,12 +14,14 @@ public class UIInventoryController : MonoBehaviour
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
+        DialogueManager.OnOpenShop += (_) => { DisplayInventory(GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem, 9); };
         PlayerInventoryHolder.OnInventoryCloseRequested += CloseInventory;
         PlayerInventoryHolder.OnPlayerInventoryChanged += RefreshDisplay;
     }
     private void OnDisable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
+        DialogueManager.OnOpenShop -= (_) => { DisplayInventory(GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem, 9); };
         PlayerInventoryHolder.OnInventoryCloseRequested -= CloseInventory;
         PlayerInventoryHolder.OnPlayerInventoryChanged -= RefreshDisplay;
     }
