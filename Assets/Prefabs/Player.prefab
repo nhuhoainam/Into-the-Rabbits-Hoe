@@ -79,9 +79,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 481245325
-  m_SortingLayer: 5
-  m_SortingOrder: 5
+  m_SortingLayerID: 1399307659
+  m_SortingLayer: 9
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1315801902, guid: ed5bb7cc76427fd418aea1c63be88ad1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   _Animancer: {fileID: 1468670709392843409}
   prevHighlightedPos: {x: 0, y: 0, z: 0}
   playerData:
+    newGame: 0
     money: 0
     treesPlanted: 0
     inactiveQuests: []
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013695069984764078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95a8d900c9a99c0498c1132ea746270c, type: 3}
   m_Name: 

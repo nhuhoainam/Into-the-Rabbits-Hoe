@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8c678ca51091747ab5c3dc7607d247, type: 3}
+  m_Name: BlueWildPlant_CropData
+  m_EditorClassIdentifier: 
+  GrowthIntervals: 06000000030000000300000005000000
+  GrowthSprites:
+  - {fileID: 214919854, guid: e67f50d94985dec4f9a4ba297dd71b08, type: 3}
+  - {fileID: 587552378, guid: e67f50d94985dec4f9a4ba297dd71b08, type: 3}
+  - {fileID: 1035255571, guid: e67f50d94985dec4f9a4ba297dd71b08, type: 3}
+  - {fileID: 1498118070, guid: e67f50d94985dec4f9a4ba297dd71b08, type: 3}
+  SellPrice: 0
+  SeedBuyPrice: 0
+  itemData: {fileID: 0}
+  HarvestAmount: 0
+  Regrowable: 0

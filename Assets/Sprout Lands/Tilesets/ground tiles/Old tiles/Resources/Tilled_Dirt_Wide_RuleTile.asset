@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tilled_Dirt_Wide_RuleTile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -2147377699, guid: 475b673796fcc13438827247b2c23669, type: 3}
-  m_DefaultGameObject: {fileID: 3537293669399659992, guid: 68b4d112611427748ad0c71a2a07cef9, type: 3}
+  m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
