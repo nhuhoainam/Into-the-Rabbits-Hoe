@@ -37902,6 +37902,10 @@ PrefabInstance:
       value: Koewyner
       objectReference: {fileID: 0}
     - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: listOfQuests.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
       propertyPath: defaultDialogue.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -37909,6 +37913,10 @@ PrefabInstance:
       propertyPath: listOfQuests.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 1ebfa4d760e1b2b468e0910bcc188112, type: 2}
+    - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
+      propertyPath: listOfQuestNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
       propertyPath: defaultDialogue.Array.data[0]
       value: I am Koewyner.
