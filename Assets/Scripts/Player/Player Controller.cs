@@ -167,17 +167,23 @@ public class PlayerController : MonoBehaviour
         isInteracting = false;
     }
 
-    RaycastHit2D compareFunction(RaycastHit2D a, RaycastHit2D b)
+    RaycastHit2D CompareFunction(RaycastHit2D a, RaycastHit2D b)
     {
-        if (a.transform.gameObject.GetComponent<IPlayerInteractable>().Priority > b.transform.gameObject.GetComponent<IPlayerInteractable>().Priority)
+        var AInteractable = a.transform.gameObject.GetComponent<IPlayerInteractable>();
+        var BInteractable = b.transform.gameObject.GetComponent<IPlayerInteractable>();
+        if (AInteractable == null)
+        {
+            return b;
+        }
+        if (BInteractable == null)
         {
             return a;
         }
-        if (a.distance < b.distance)
+        if (AInteractable.Priority == BInteractable.Priority)
         {
-            return a;
+            return a.distance < b.distance ? a : b;
         }
-        return b;
+        return AInteractable.Priority > BInteractable.Priority ? a : b;
     }
 
     private void Interact()
@@ -191,7 +197,8 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(playerRb.position, direction, Color.red, 1.0f);
         Debug.Log("Hit " + hits.ToList().Count.ToString() + " objects");
         IPlayerInteractable.InteractionContext ctx = new(GetPlayerData(), GetCurrentInventorySlot());
-        var hit = hits.Aggregate(compareFunction);
+        var hit = hits.Aggregate((a, b) => CompareFunction(a, b));
+        Debug.Log("Hit " + hit.transform.gameObject.name);
         if (hit.collider.TryGetComponent<IPlayerInteractable>(out var item))
         {
             DirectionalAnimationSet chosenAnimation = null;
