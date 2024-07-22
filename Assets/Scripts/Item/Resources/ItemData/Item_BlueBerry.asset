@@ -15,6 +15,6 @@ MonoBehaviour:
   itemID: 3
   itemName: Blue Berry
   itemSprite: {fileID: -247542942, guid: bd1a00fffcffd6b418dbff080fbae3a0, type: 3}
-  isStackable: 1
+  isStackable: 0
   maxStackSize: 64
   itemDescription: 
