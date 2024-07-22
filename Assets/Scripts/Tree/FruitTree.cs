@@ -40,11 +40,11 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
         hasFruit = false;
         float len = animator.GetCurrentAnimatorClipInfo(0).Length;
         StartCoroutine(SpawnDroppedFruits(len));
-        StartCoroutine(SpawnDroppedWood(len));
     }
 
     IEnumerator SpawnDroppedWood(float waitingTime)
     {
+        yield return new WaitForSeconds(waitingTime);
         int woodAmount = UnityEngine.Random.Range(1, 3);
         Debug.Log(woodAmount);
         for (int i = 0; i < woodAmount; i++)
@@ -54,7 +54,6 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
             var position = transform.position + new Vector3(randomXOffset, randomYOffset, 0);
             ItemSpawner.GetInstance().SpawnItem(2, position);
         }
-        yield return null;
     }
 
     IEnumerator SpawnDroppedFruits(float waitingTime)
@@ -101,6 +100,7 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
                 fruitDropAnimator.SetTrigger("Drop");
                 var duration = animator.GetCurrentAnimatorClipInfo(0).Length;
                 StartCoroutine(SpawnDroppedFruits(duration));
+                StartCoroutine(SpawnDroppedWood(duration));
             }
             // Change layer to disable interaction
             gameObject.layer = LayerMask.NameToLayer("Default");
