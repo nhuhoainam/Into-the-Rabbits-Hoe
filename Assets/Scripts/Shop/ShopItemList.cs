@@ -5,20 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Shop/Shop Item List")]
 public class ShopItemList : ScriptableObject
 {
-    [SerializeField] private List<ShopItem> shopItems;
-    [SerializeField] private int maxAllowedGold;
+    [SerializeField] private List<ItemData> shopItems;
     [SerializeField] private float sellMarkup;
     [SerializeField] private float buyMarkup;
 
-    public List<ShopItem> ShopItems => shopItems;
-    public int MaxAllowedGold => maxAllowedGold;
+    public List<ItemData> ShopItems => shopItems;
     public float SellMarkup => sellMarkup;
     public float BuyMarkup => buyMarkup;
-}
-
-[System.Serializable]
-public struct ShopItem
-{
-    public ItemData itemData;
-    public int amount;
 }

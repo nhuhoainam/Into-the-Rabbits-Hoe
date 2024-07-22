@@ -11,15 +11,14 @@ public class ShopKeeper : MonoBehaviour, IPlayerInteractable
     void Awake()
     {
         shopSystem = new ShopSystem(
-            shopItemsHeld.ShopItems.Count,
-            shopItemsHeld.MaxAllowedGold,
             shopItemsHeld.BuyMarkup,
             shopItemsHeld.SellMarkup
         );
 
         foreach (var item in shopItemsHeld.ShopItems)
         {
-            shopSystem.AddToShop(item.itemData, item.amount);
+            Debug.Log($"Adding {item.itemName}: to shop");
+            shopSystem.AddToShop(item);
         }
     }
 
