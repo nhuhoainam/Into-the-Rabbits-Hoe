@@ -68,6 +68,12 @@ TagManager:
   - name: Valley Entity
     uniqueID: 3927888483
     locked: 0
+  - name: Land
+    uniqueID: 1460633623
+    locked: 0
+  - name: Land Entity
+    uniqueID: 1887825141
+    locked: 0
   - name: Hill
     uniqueID: 4079005929
     locked: 0
