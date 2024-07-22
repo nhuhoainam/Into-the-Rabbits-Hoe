@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class ShopSystem
 {
-    public List<ItemData> shopInventory;
+    public List<ShopSlot> shopInventory;
     public float buyMarkup;
     public float sellMarkup;
 
@@ -17,17 +17,12 @@ public class ShopSystem
 
     public ShopSystem(float buyMarkup, float sellMarkup)
     {
+        shopInventory = new List<ShopSlot>();
         this.buyMarkup = buyMarkup;
         this.sellMarkup = sellMarkup;
     }
 
-    public bool ContainsItem(ItemData itemToCheck, out ItemData slots)
-    {
-        slots = shopInventory.Find(slot => slot == itemToCheck);
-        return slots != null;
-    }
-
-    public void AddToShop(ItemData itemToAdd)
+    public void AddToShop(ShopSlot itemToAdd)
     {
         shopInventory.Add(itemToAdd);
     }

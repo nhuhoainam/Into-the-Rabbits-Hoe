@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(UniqueID))]
-public class ShopKeeper : MonoBehaviour, IPlayerInteractable
+public class ShopKeeper : MonoBehaviour
 {
     [SerializeField] private ShopItemList shopItemsHeld;
-    private ShopSystem shopSystem;
+    public ShopSystem shopSystem;
 
     void Awake()
     {
+        Debug.Log("Awake");
         shopSystem = new ShopSystem(
             shopItemsHeld.BuyMarkup,
             shopItemsHeld.SellMarkup
@@ -18,12 +19,7 @@ public class ShopKeeper : MonoBehaviour, IPlayerInteractable
         foreach (var item in shopItemsHeld.ShopItems)
         {
             Debug.Log($"Adding {item.itemName}: to shop");
-            shopSystem.AddToShop(item);
+            shopSystem.AddToShop(new ShopSlot(item));
         }
-    }
-
-    public void Interact(PlayerData playerData)
-    {
-        throw new System.NotImplementedException();
     }
 }

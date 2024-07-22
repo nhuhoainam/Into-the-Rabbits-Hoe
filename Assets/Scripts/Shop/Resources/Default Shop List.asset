@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Default Shop List
   m_EditorClassIdentifier: 
   shopItems:
-  - itemData: {fileID: 11400000, guid: 44c0f2a0ba33d3b468bedbc8a2f1ef9d, type: 2}
-    amount: 10
-  - itemData: {fileID: 11400000, guid: 04353827c49136b4cbe865f4db05f636, type: 2}
-    amount: 1
-  maxAllowedGold: 1000
-  sellMarkup: 0.25
-  buyMarkup: 0.5
+  - {fileID: 11400000, guid: 44c0f2a0ba33d3b468bedbc8a2f1ef9d, type: 2}
+  - {fileID: 11400000, guid: 6e19535ea90907443892d5b18151d634, type: 2}
+  sellMarkup: 0.2
+  buyMarkup: 0.2

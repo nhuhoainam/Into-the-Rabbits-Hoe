@@ -4,9 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Animancer;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static UnityAction<ShopKeeper> OnOpenShop;
+
     private string[] dialogue;
     private string npcName;
     private Sprite npcAvatar;
@@ -19,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject shopButton;
     public bool isDialogueActive = false;
 
+    [SerializeField] private ShopKeeper currentShopKeeper;
+
     void Start()
     {
         dialoguePanel.SetActive(false);
@@ -30,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Start the conversation, is called by the NPC script
-    public void StartDialogue(string[] dialogue, string npcName, Sprite npcAvatar, bool isShop)
+    public void StartDialogue(string[] dialogue, string npcName, Sprite npcAvatar, ShopKeeper shopKeeper)
     {
         this.dialogue = dialogue;
         this.npcName = npcName;
@@ -42,18 +47,19 @@ public class DialogueManager : MonoBehaviour
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
         shopButton.SetActive(false);
-        NextText(isShop);
+        NextText(shopKeeper);
     }
 
     // Display the next text
-    public void NextText(bool isShop)
+    public void NextText(ShopKeeper shopKeeper)
     {
         if (dialogueIndex < dialogue.Length)
         {
             StopAllCoroutines(); // Stop any ongoing text display
             StartCoroutine(DisplayText(dialogue[dialogueIndex]));
-            if (isShop && dialogueIndex == dialogue.Length - 1)
+            if (shopKeeper != null && dialogueIndex == dialogue.Length - 1)
             {
+                currentShopKeeper = shopKeeper;
                 shopButton.SetActive(true);
             }
             dialogueIndex++;
@@ -88,5 +94,7 @@ public class DialogueManager : MonoBehaviour
     public void OpenShop()
     {
         Debug.Log("Opening shop");
+        EndDialogue();
+        OnOpenShop?.Invoke(currentShopKeeper);
     }
 }

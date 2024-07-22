@@ -7,13 +7,24 @@ public class ShopDisplay : MonoBehaviour
 {
     [SerializeField] private MouseItemData mouseItem;
     [SerializeField] private UIShopSlot itemListingPrefab;
-    [SerializeField] private PlayerData playerData;
 
     [SerializeField] private ShopSystem shopSystem;
-    private Dictionary<UIShopSlot, ItemData> slotDictionary;
+    private Dictionary<UIShopSlot, ShopSlot> slotDictionary;
 
-    public ShopSystem ShopSystem => shopSystem;
-    public Dictionary<UIShopSlot, ItemData> SlotDictionary => slotDictionary;
+    public ShopSystem ShopSystem
+    {
+        get => shopSystem;
+        set => shopSystem = value;
+    }
+    public Dictionary<UIShopSlot, ShopSlot> SlotDictionary => slotDictionary;
+
+    [SerializeField] private PlayerController player;
+    private PlayerData playerData;
+
+    void Awake()
+    {
+        playerData = player.playerData;
+    }
 
     void Start()
     {
@@ -24,17 +35,21 @@ public class ShopDisplay : MonoBehaviour
     {
         ClearSlots();
 
-        slotDictionary = new Dictionary<UIShopSlot, ItemData>();
+        slotDictionary = new Dictionary<UIShopSlot, ShopSlot>();
 
         for (int i = 0; i < shopSystem.ShopSize; i++)
         {
             var slot = Instantiate(itemListingPrefab, transform);
             slotDictionary.Add(slot.GetComponent<UIShopSlot>(), shopSystem.shopInventory[i]);
-            slot.UpdateUISlot(shopSystem.shopInventory[i], shopSystem.shopInventory[i].goldValue + (int)(shopSystem.shopInventory[i].goldValue * shopSystem.buyMarkup));
+            slot.UpdateUISlot(
+                shopSystem.shopInventory[i].item,
+                shopSystem.shopInventory[i].item.goldValue
+                    + (int)(shopSystem.shopInventory[i].item.goldValue * shopSystem.buyMarkup)
+            );
         }
     }
 
-    private void ClearSlots()
+    public void ClearSlots()
     {
         foreach (var item in transform.Cast<Transform>())
         {
