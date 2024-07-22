@@ -18,3 +18,4 @@ MonoBehaviour:
   isStackable: 0
   maxStackSize: 1
   itemDescription: This is a hoe
+  goldValue: 0

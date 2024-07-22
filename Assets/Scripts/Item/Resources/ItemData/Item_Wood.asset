@@ -18,3 +18,4 @@ MonoBehaviour:
   isStackable: 1
   maxStackSize: 64
   itemDescription: This is a log of wood
+  goldValue: 0

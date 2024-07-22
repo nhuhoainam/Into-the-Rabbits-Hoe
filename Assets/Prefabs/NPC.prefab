@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4299391280915541969}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.48, y: -1.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -102,12 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d26c3d7a61663a49836608e794410ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: NPC1
+  isShop: 0
+  npcName: NPC2
   avatar: {fileID: -1315801902, guid: ed5bb7cc76427fd418aea1c63be88ad1, type: 3}
-  listOfQuests: []
+  listOfQuests:
+  - {fileID: 11400000, guid: 14125970315170e4e8c3cdd8d8cc7d31, type: 2}
+  listOfQuestNames:
+  - NPC2Quest1
   defaultDialogue:
-  - First line of default dialogue.
-  - Last line of default dialogue.
+  - NPC2 default.
+  - End of NPC2 default.
 --- !u!50 &1525535018162251735
 Rigidbody2D:
   serializedVersion: 4
