@@ -4,12 +4,13 @@ using UnityEngine;
 using Animancer;
 using System;
 
-public class Tree : MonoBehaviour, IPlayerInteractable
+public class FruitTree : MonoBehaviour, IPlayerInteractable
 {
     static readonly int MaxHeatlh = 100;
     [SerializeField] private int health = MaxHeatlh;
 
     private Animator animator;
+    private Animator fruitDropAnimator;
     [SerializeField] private float timeUntilFruit = 240;
     [SerializeField] private bool hasFruit = true;
 
@@ -22,26 +23,19 @@ public class Tree : MonoBehaviour, IPlayerInteractable
     void Start()
     {
         animator = GetComponent<Animator>();
+        fruitDropAnimator = transform.GetChild(0).GetComponent<Animator>();
         if (hasFruit)
         {
             animator.SetTrigger("HaveFruit");
         }
     }
 
-    public void Interact()
-    {
-        if (hasFruit)
-        {
-            HarvestFruit();
-        }
-        else
-        {
-            ChopTree();
-        }
-    }
-
     void HarvestFruit()
     {
+        if (!hasFruit)
+        {
+            return;
+        }
         animator.SetTrigger("Drop");
         hasFruit = false;
         float len = animator.GetCurrentAnimatorClipInfo(0).Length;
@@ -70,9 +64,16 @@ public class Tree : MonoBehaviour, IPlayerInteractable
         return positions;
     }
 
-    void IPlayerInteractable.Interact(PlayerData playerData)
+    void IPlayerInteractable.Interact(IPlayerInteractable.InteractionContext ctx)
     {
-        Interact();
+        if (ctx.InventorySlot.ItemData == null || ctx.InventorySlot.ItemData.itemName != "Axe")
+        {
+            HarvestFruit();
+        }
+        else
+        {
+            ChopTree();
+        }
     }
 
     void ChopTree()
@@ -81,6 +82,14 @@ public class Tree : MonoBehaviour, IPlayerInteractable
         if (health <= 0)
         {
             animator.SetTrigger("Fall");
+            if (hasFruit)
+            {
+                fruitDropAnimator.SetTrigger("Drop");
+                var duration = animator.GetCurrentAnimatorClipInfo(0).Length;
+                StartCoroutine(SpawnDroppedFruits(duration));
+            }
+            // Change layer to disable interaction
+            gameObject.layer = LayerMask.NameToLayer("Default");
             return;
         }
         animator.SetTrigger("Shake");
@@ -108,6 +117,30 @@ public class Tree : MonoBehaviour, IPlayerInteractable
                 GrowFruit();
                 timeUntilFruit = 240;
             }
+        }
+    }
+
+    ItemData IPlayerInteractable.RequiredItem(IPlayerInteractable.InteractionContext ctx)
+    {
+        if (ctx.InventorySlot.ItemData == null)
+        {
+            return null;
+        }
+        if (ctx.InventorySlot.ItemData.itemName == "Axe")
+        {
+            return ctx.InventorySlot.ItemData;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    int IPlayerInteractable.Priority
+    {
+        get
+        {
+            return 1;
         }
     }
 }

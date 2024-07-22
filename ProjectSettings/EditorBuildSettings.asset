@@ -5,23 +5,26 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlaygroundOut.unity
     guid: 4e17be02d3413704d87a464c92e4a629
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlaygroundCave.unity
     guid: d4d9e6780e37c9c409d672e9441b7932
   - enabled: 1
-    path: Assets/Scenes/Home.unity
-    guid: 86c9ffc40e54d7846b34de0afef17006
+    path: Assets/Scenes/HomeMap.unity
+    guid: 70a866bfbfd92fa45bcb353adee771a1
   - enabled: 1
-    path: Assets/Scenes/FarmArea.unity
-    guid: aa1a7a95701c16a488caee8c2c77219a
+    path: Assets/Scenes/FarmMap.unity
+    guid: 4d7e5831f9f5a584dbf374fdac76fbe2
   - enabled: 1
-    path: Assets/Scenes/Beach.unity
-    guid: 6ef1dff76050459498b2d25fef40fee3
+    path: Assets/Scenes/TownMap.unity
+    guid: 6125c3fdc9f69f24e88c8540e1c8cac4
+  - enabled: 1
+    path: Assets/Scenes/BeachMap.unity
+    guid: 9ca0fabf1a326c74089cbd5c9a7e4378
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0c10c5ea038ca244896f948fc5bbac29, type: 2}

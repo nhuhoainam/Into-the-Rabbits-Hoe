@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.WebSockets;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -64,13 +65,18 @@ public class Bush : MonoBehaviour, IPlayerInteractable
         StartCoroutine(PlayFruitDropAnimation());
     }
 
-    void IPlayerInteractable.Interact(PlayerData playerData)
+    void IPlayerInteractable.Interact(IPlayerInteractable.InteractionContext ctx)
     {
         if (hasFruit)
         {
             Debug.Log("Harvesting");
             Harvest();
         }
+    }
+
+    ItemData IPlayerInteractable.RequiredItem(IPlayerInteractable.InteractionContext ctx)
+    {
+        return null;
     }
 
     GameObject CreateFruit(Vector2 vel)

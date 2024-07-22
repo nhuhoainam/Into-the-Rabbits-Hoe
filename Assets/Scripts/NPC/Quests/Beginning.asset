@@ -31,3 +31,7 @@ MonoBehaviour:
   - This is the in progress dialogue of the quest.
   endDialog:
   - This is the end dialogue of the quest.
+  newDefaultDialog:
+  - First line of new default dialogue.
+  - Extra line to check.
+  - Last line of new default dialogue.

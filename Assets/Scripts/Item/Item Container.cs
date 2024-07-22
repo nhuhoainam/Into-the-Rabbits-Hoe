@@ -7,6 +7,14 @@ public class ItemContainer : MonoBehaviour
     public ItemData item;
     public int amount;
 
+    void Start()
+    {
+        if (item != null)
+        {
+            SetItem(item, amount);
+        }
+    }
+
     void Awake()
     {
         SaveGameManager.OnSaveGame += SaveItem;
@@ -21,7 +29,7 @@ public class ItemContainer : MonoBehaviour
     {
         this.item = item;
         this.amount = amount;
-        GetComponentInChildren<SpriteRenderer>().sprite = item.itemSprite;
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = item.itemSprite;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
