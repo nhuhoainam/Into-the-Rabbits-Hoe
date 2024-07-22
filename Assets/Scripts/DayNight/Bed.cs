@@ -13,17 +13,6 @@ public class Bed : MonoBehaviour, IPlayerInteractable
         _dayNightSystem = FindObjectOfType<DayNightSystem2D>();
     }
 
-    public void Interact(PlayerData playerData)
-    {
-        Debug.Log("Interacting with bed");
-        if (_isSleeping)
-        {
-            return;
-        }
-        _isSleeping = true;
-        Time.timeScale = 10f;
-    }
-
     void Update()
     {
         if (_isSleeping && _dayNightSystem.dayCycle == DayCycles.Sunrise)
@@ -31,5 +20,21 @@ public class Bed : MonoBehaviour, IPlayerInteractable
             _isSleeping = false;
             Time.timeScale = 1f;
         }
+    }
+
+    public void Interact(IPlayerInteractable.InteractionContext ctx)
+    {
+        Debug.Log("Interacting with bed");
+        if (_isSleeping)
+        {
+            return;
+        }
+        _isSleeping = true;
+        Time.timeScale = 100f;
+    }
+
+    public ItemData RequiredItem(IPlayerInteractable.InteractionContext ctx)
+    {
+        return null;
     }
 }
