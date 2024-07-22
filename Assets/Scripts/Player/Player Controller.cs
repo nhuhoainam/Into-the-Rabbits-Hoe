@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using Animancer;
 using System;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 
 public class PlayerController : MonoBehaviour
@@ -166,6 +167,19 @@ public class PlayerController : MonoBehaviour
         isInteracting = false;
     }
 
+    RaycastHit2D compareFunction(RaycastHit2D a, RaycastHit2D b)
+    {
+        if (a.transform.gameObject.GetComponent<IPlayerInteractable>().Priority > b.transform.gameObject.GetComponent<IPlayerInteractable>().Priority)
+        {
+            return a;
+        }
+        if (a.distance < b.distance)
+        {
+            return a;
+        }
+        return b;
+    }
+
     private void Interact()
     {
         if (isInteracting)
@@ -177,7 +191,7 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(playerRb.position, direction, Color.red, 1.0f);
         Debug.Log("Hit " + hits.ToList().Count.ToString() + " objects");
         IPlayerInteractable.InteractionContext ctx = new(GetPlayerData(), GetCurrentInventorySlot());
-        var hit = hits.Aggregate((a, b) => a.transform.gameObject.GetComponent<IPlayerInteractable>().Priority > b.transform.gameObject.GetComponent<IPlayerInteractable>().Priority ? a : b);
+        var hit = hits.Aggregate(compareFunction);
         if (hit.collider.TryGetComponent<IPlayerInteractable>(out var item))
         {
             DirectionalAnimationSet chosenAnimation = null;
