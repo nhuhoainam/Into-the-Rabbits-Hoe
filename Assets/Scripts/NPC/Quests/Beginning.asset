@@ -58,8 +58,6 @@ MonoBehaviour:
   - Whenever you have problems, you can come to me.
   - 'Let me give you some seeds. When you have planted all of them, come back to
     see me. '
-  - 'Let me give you some seeds. When you have planted all of them, come back to
-    see me. '
   - "Oh, and I\u2019ll also have someone clear the trees on the right side of Starting
     Town so you have space to plant."
   inProgressDialog:

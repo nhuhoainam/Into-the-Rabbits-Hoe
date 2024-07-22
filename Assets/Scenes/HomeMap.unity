@@ -28277,6 +28277,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 986705128275015202, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
   m_PrefabInstance: {fileID: 925512714}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &925512716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3215919290379536415, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
+  m_PrefabInstance: {fileID: 925512714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &927650215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49292,7 +49297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f736dfe9b1663d24f86676c89458c22e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopPanel: {fileID: 0}
+  shopPanel: {fileID: 925512716}
 --- !u!114 &2023365346 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2620303819522275266, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
