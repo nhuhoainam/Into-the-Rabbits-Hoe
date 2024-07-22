@@ -29,7 +29,7 @@ public class ItemSpawner : Singleton<ItemSpawner>
         itemContainer.SetItem(item, amount);
         StartCoroutine(
             // disable the collider for a short time to prevent the item from being picked up immediately
-            DisableCollider(itemContainer.GetComponent<Collider2D>(), 1.0f)
+            DisableCollider(itemContainer.GetComponent<Collider2D>(), 0.5f)
         );
     }
 
