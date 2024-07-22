@@ -22,6 +22,7 @@ TagManager:
   - Ground
   - StoryPanel
   - StoryPanelBlackScreen
+  - BeginningObstacles
   layers:
   - Default
   - TransparentFX

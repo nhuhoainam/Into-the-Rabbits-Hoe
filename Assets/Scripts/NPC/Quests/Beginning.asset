@@ -14,24 +14,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Beginning
   questDescription: This is the beginning quest.
-  questType: 1
+  questType: 0
   toStartAmount: 0
   itemsToStart: []
-  amountRequired: 10
+  amountRequired: 20
   requiredItems: []
-  amountToGive: 1
-  startItems: []
-  amountToReward: 1000
+  amountToGive: 0
+  startItems:
+  - itemName: Cauliflower Seed
+    amount: 20
+  amountToReward: 100
   rewardItems:
   - itemName: Apple Fruit
     amount: 1
   startDialog:
-  - This is the start dialogue of the quest.
+  - Hello, I'm Koewyner, the mayor of this town on the island. You must be Rachmin's
+    nephew.
+  - Haha, I've heard Rachmin talk about you all the time. Finally, I get to meet
+    you.
+  - You probably have many questions. I'll explain many things on Rachmin's behalf.
+  - Back in the day, Rachmin, Oskkea, and I were three close friends.
+  - Rachmin used to be very lazy, only living off his parents.
+  - Every time I went to his house, I would hear them scolding him.
+  - I advised him to go out and work, but he didn't listen.
+  - Then one day, his father had an accident and needed urgent surgery.
+  - "However, the family\u2019s savings were mostly spent on Rachmin\u2019s extravagant
+    lifestyle, so it was almost impossible to gather enough money for the surgery."
+  - Without enough money for the surgery, his father passed away that night.
+  - Rachmin was very sad and regretful.
+  - After that, he decided to work hard to earn a lot of money to take care of his
+    family.
+  - He left everything behind and went looking for a job.
+  - He left everything behind and went looking for a job.
+  - I heard that due to his exceptional talent, he became very rich.
+  - Later on, he bought two islands.
+  - This island is one of them. He let the villagers live here and provided amenities
+    to improve their lives.
+  - The other island is where Rachmin, Oskkea, and I used to live together. Like
+    retirement, haha.
+  - Unfortunately, due to many illnesses caused by overwork in his youth, Rachmin
+    also passed away.
+  - I was sad and moved to the other island to live and became the mayor.
+  - Oskkea moved to the seaside. You can visit him whenever you have time.
+  - The other island is what Rachmin left for you. so try to develop it.
+  - Whenever you have problems, you can come to me.
+  - 'Let me give you some seeds. When you have planted all of them, come back to
+    see me. '
+  - 'Let me give you some seeds. When you have planted all of them, come back to
+    see me. '
+  - "Oh, and I\u2019ll also have someone clear the trees on the right side of Starting
+    Town so you have space to plant."
   inProgressDialog:
-  - This is the in progress dialogue of the quest.
+  - "It seems you\u2019re not used to it in the first few days. Try harder. I have
+    some work to do now, I\u2019ll come back tomorrow."
   endDialog:
-  - This is the end dialogue of the quest.
+  - Wow, you did a great job.
+  - ' I will support you with some startup capital.'
+  - "Whenever you need anything, come back to see me. I\u2019m always willing to
+    support you."
   newDefaultDialog:
-  - First line of new default dialogue.
-  - Extra line to check.
-  - Last line of new default dialogue.
+  - You are indeed a hardworking person, keep it up!

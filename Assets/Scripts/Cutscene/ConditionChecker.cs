@@ -26,14 +26,20 @@ public class ConditionChecker : MonoBehaviour
             ShowBlackScreenWithText(
                 new List<string>
                 {
-                    "This is the first scene.",
-                    "You can add more text here."
+                    "You are an IT employee with a salary of 4000 dollars a month.",
+                    "However, you feel unsatisfied with your mundane life.",
+                    "One day, while going to work, you receive news that you have inherited an island.",
+                    "You immediately submit your resignation and leave work in the middle of the day.",
+                    "Upon arriving home, you see a few strangers in black clothes waiting right at the gate.",
+                    "Suddenly, you realize someone is standing behind you, covering your nose and mouth with a cloth",
+                    "Everything suddenly goes dark…",
+                    "When you wake up, you find yourself in the middle of an island, surrounded by no one.",
                 }
             );
             player.playerData.newGame = false;
         }
         if (BeginningActivated()) {
-            GameObject[] beginningObstacles = GameObject.FindGameObjectsWithTag("BeginningObstacle");
+            GameObject[] beginningObstacles = GameObject.FindGameObjectsWithTag("BeginningObstacles");
             foreach (GameObject obstacle in beginningObstacles) {
                 obstacle.SetActive(false);
             }
@@ -42,7 +48,8 @@ public class ConditionChecker : MonoBehaviour
 
     bool BeginningActivated()
     {
-        return player.playerData.activeQuests.Contains("Beginning");
+        // return player.playerData.activeQuests.Contains("Beginning");
+        return player.playerData.money >= 4000;
     }
 
     bool FirstSceneCondition()
