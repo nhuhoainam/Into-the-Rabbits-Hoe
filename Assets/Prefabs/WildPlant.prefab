@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3936047777666182020}
   - component: {fileID: 1729125253335646000}
+  - component: {fileID: -7672180877189986730}
   m_Layer: 0
   m_Name: WildPlant
   m_TagString: Untagged
@@ -84,3 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7672180877189986730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342180014277736582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c4f516d85a0a74eb893fed314f938b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropData: {fileID: 0}
+  growthStage: 0
+  growthTime: 0
