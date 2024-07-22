@@ -19,12 +19,12 @@ public class WildPlant : MonoBehaviour, IPlayerInteractable
     void Update()
     {
         // growthTime += Time.deltaTime;
-        spriteRenderer.sprite = cropData.GrowthSprites[growthStage];
-        if (growthStage < cropData.GrowthIntervals.Count - 1 && growthTime >= cropData.GrowthIntervals[growthStage])
-        {
-            growthTime = 0;
-            NextStage();
-        }
+        // spriteRenderer.sprite = cropData.GrowthSprites[growthStage];
+        // if (growthStage < cropData.GrowthIntervals.Count - 1 && growthTime >= cropData.GrowthIntervals[growthStage])
+        // {
+        //     growthTime = 0;
+        //     NextStage();
+        // }
     }
 
     void NextStage()
