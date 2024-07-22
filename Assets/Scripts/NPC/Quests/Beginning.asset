@@ -24,9 +24,7 @@ MonoBehaviour:
   - itemName: Cauliflower Seed
     amount: 20
   amountToReward: 100
-  rewardItems:
-  - itemName: Apple Fruit
-    amount: 1
+  rewardItems: []
   startDialog:
   - Hello, I'm Koewyner, the mayor of this town on the island. You must be Rachmin's
     nephew.

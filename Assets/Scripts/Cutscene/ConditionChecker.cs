@@ -48,15 +48,8 @@ public class ConditionChecker : MonoBehaviour
 
     bool BeginningActivated()
     {
-        // return player.playerData.activeQuests.Contains("Beginning");
-        return player.playerData.money >= 4000;
+        return player.playerData.activeQuests.Contains("Beginning") || player.playerData.completedQuests.Contains("Beginning");
     }
-
-    bool FirstSceneCondition()
-    {
-        return player.playerData.newGame;
-    }
-
     void ShowBlackScreenWithText(List<string> text)
     {
         storyPanel.SetActive(true);

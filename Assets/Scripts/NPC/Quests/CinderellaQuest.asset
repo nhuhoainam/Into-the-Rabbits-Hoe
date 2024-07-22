@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c7ba591cc405743ae42fc80f90570d, type: 3}
+  m_Name: CinderellaQuest
+  m_EditorClassIdentifier: 
+  questName: CinderellaQuest
+  questDescription: 
+  questType: 1
+  toStartAmount: 0
+  itemsToStart: []
+  amountRequired: 0
+  requiredItems:
+  - itemName: 
+    amount: 1
+  amountToGive: 0
+  startItems: []
+  amountToReward: 200
+  rewardItems: []
+  startDialog:
+  - Oh, I wish I could dance with the prince.
+  - Oh, sorry, I was lost in my thoughts. I'm busy now; let's meet another time.
+  inProgressDialog:
+  - Oh, I wish I could dance with the prince.
+  - Oh, sorry, I was lost in my thoughts. I'm busy now; let's meet another time.
+  endDialog:
+  - "Oh, how did you know I love the Cinderella story. I have always wanted to see
+    a pumpkin in real life, but the seed is too expensive and I don\u2019t know how
+    to grow it."
+  - Thank you for showing me, these are some gold to show my gratitude.
+  newDefaultDialog:
+  - Hello, have a good day.

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8941236833916232589}
   - component: {fileID: 4206849625859999227}
   - component: {fileID: 8477594709444663562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: NPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -76,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: 1399307659
+  m_SortingLayer: 9
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1315801902, guid: ed5bb7cc76427fd418aea1c63be88ad1, type: 3}
   m_Color: {r: 0.9924528, g: 0.6872267, b: 0.6872267, a: 1}
   m_FlipX: 0
@@ -105,10 +105,8 @@ MonoBehaviour:
   isShop: 0
   npcName: NPC2
   avatar: {fileID: -1315801902, guid: ed5bb7cc76427fd418aea1c63be88ad1, type: 3}
-  listOfQuests:
-  - {fileID: 11400000, guid: 14125970315170e4e8c3cdd8d8cc7d31, type: 2}
-  listOfQuestNames:
-  - NPC2Quest1
+  listOfQuests: []
+  listOfQuestNames: []
   defaultDialogue:
   - NPC2 default.
   - End of NPC2 default.

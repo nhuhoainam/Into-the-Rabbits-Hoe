@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/HomeMap.unity
     guid: 70a866bfbfd92fa45bcb353adee771a1
   - enabled: 1
-    path: Assets/Prefabs/Scenes/FarmMap.unity
-    guid: 4d7e5831f9f5a584dbf374fdac76fbe2
+    path: Assets/Scenes/FarmMap.unity
+    guid: 4d27d65cd42d2c4429ed908595f04709
   - enabled: 1
     path: Assets/Scenes/TownMap.unity
     guid: 6125c3fdc9f69f24e88c8540e1c8cac4
