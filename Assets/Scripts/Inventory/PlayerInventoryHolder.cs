@@ -11,6 +11,8 @@ public class PlayerInventoryHolder : InventoryHolder
     public static UnityAction<InventorySystem> OnPlayerInventoryDisplayRequested;
     public static UnityAction OnInventoryCloseRequested;
 
+    public bool isInventoryOpen = false;
+
     private PlayerControls playerControls;
 
     protected override void Awake()
@@ -35,8 +37,16 @@ public class PlayerInventoryHolder : InventoryHolder
 
     void Start()
     {
-        playerControls.Inventory.OpenInventory.performed += ctx => OnDynamicInventoryDisplayRequested?.Invoke(primaryInventorySystem, offset);
-        playerControls.Inventory.CloseInventory.performed += ctx => OnInventoryCloseRequested?.Invoke();
+        playerControls.Inventory.OpenInventory.performed += ctx => { 
+            if (isInventoryOpen)
+            {
+                isInventoryOpen = false;
+                OnInventoryCloseRequested?.Invoke();
+                return;
+            }
+            isInventoryOpen = true;
+            OnDynamicInventoryDisplayRequested?.Invoke(primaryInventorySystem, offset);
+        };
 
         SaveGameManager.CurrentSaveData.playerInventory = new InventorySaveData(primaryInventorySystem);
     }
