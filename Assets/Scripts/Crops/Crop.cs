@@ -10,6 +10,18 @@ public class Crop : MonoBehaviour, IPlayerInteractable
     [SerializeField] float growthTime = 0;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        SaveGameManager.OnSaveScene += SaveCrop;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void SaveCrop(int sceneIndex)
+    {
+        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].cropSaveData.Add(new(growthStage, growthTime, gameObject.name));
+    }
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

@@ -7,6 +7,9 @@ public class SceneData
 {
     public List<DroppedItemSaveData> droppedItems = new();
     public List<TilemapSaveData> tilemapSaveData = new();
+    public List<FruitTreeData> treeSaveData = new();
+    public List<BushSaveData> bushSaveData = new();
+    public List<CropSaveData> cropSaveData = new();
     public SceneData()
     {
     }
