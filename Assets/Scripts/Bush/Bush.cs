@@ -130,4 +130,6 @@ public class Bush : MonoBehaviour, IPlayerInteractable
         }
     }
 
+    int IPlayerInteractable.Priority => 1;
+
 }
