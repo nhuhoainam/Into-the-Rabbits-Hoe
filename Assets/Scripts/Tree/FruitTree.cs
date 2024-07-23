@@ -20,6 +20,17 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
         HasFruit,
         NoFruit,
     }
+    void Awake()
+    {
+        SaveGameManager.OnSaveScene += SaveTree;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void SaveTree(int sceneIndex)
+    {
+        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].treeSaveData.Add(new (hasFruit, timeUntilFruit, gameObject.name));
+    }
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,6 +39,11 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
         {
             animator.SetTrigger("HaveFruit");
         }
+    }
+
+    void OnDestroy()
+    {
+        SaveGameManager.OnSaveScene -= SaveTree;
     }
 
     void HarvestFruit()

@@ -16,19 +16,30 @@ internal class FruitDropping : MonoBehaviour
     {
         rb.AddForce(Vector2.down, ForceMode2D.Impulse);
     }
-    
+
 }
 
 public class Bush : MonoBehaviour, IPlayerInteractable
 {
     private float FruitSpawnChance => bushData.FruitSpawnChance;
     [SerializeField] private bool hasFruit = true;
-    static readonly float CheckSpawnInterval = 20;
+    static readonly float CheckSpawnInterval = 40;
 
     private float lastCheckTime = 0;
     [SerializeField] private BushData bushData;
 
     SpriteRenderer spriteRenderer;
+
+    void Awake()
+    {
+        SaveGameManager.OnSaveScene += SaveBush;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void SaveBush(int sceneIndex)
+    {
+        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].bushSaveData.Add(new(hasFruit, lastCheckTime, gameObject.name));
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +53,11 @@ public class Bush : MonoBehaviour, IPlayerInteractable
         {
             spriteRenderer.sprite = bushData.BushSprite;
         }
+    }
+
+    void OnDestroy()
+    {
+        SaveGameManager.OnSaveScene -= SaveBush;
     }
 
     // Update is called once per frame
@@ -78,7 +94,6 @@ public class Bush : MonoBehaviour, IPlayerInteractable
     {
         return null;
     }
-
     GameObject CreateFruit(Vector2 vel)
     {
         GameObject fruit = new GameObject();
@@ -91,7 +106,8 @@ public class Bush : MonoBehaviour, IPlayerInteractable
         return fruit;
     }
 
-    IEnumerator PlayFruitDropAnimation() {
+    IEnumerator PlayFruitDropAnimation()
+    {
         List<Vector2> vels = new()
         {
             new Vector2(1, 5),
