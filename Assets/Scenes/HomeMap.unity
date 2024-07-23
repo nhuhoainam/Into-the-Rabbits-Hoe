@@ -28491,6 +28491,18 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2620303819522275266, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: axeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a4fdca91435c684c9bee8dddc25a883, type: 3}
+    - target: {fileID: 2620303819522275266, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: hoeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: acd31baa98131944b8b46a0f9b6adc65, type: 3}
+    - target: {fileID: 2620303819522275266, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
+      propertyPath: wateringCanSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f88607d1323b5c4384def1aee6c5654, type: 3}
+    - target: {fileID: 2620303819522275266, guid: 269acf23584dc71479b8a41b9414576a, type: 3}
       propertyPath: playerData.newGame
       value: 0
       objectReference: {fileID: 0}
