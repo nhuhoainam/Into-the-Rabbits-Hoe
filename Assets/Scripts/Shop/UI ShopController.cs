@@ -13,7 +13,7 @@ public class UIShopController : MonoBehaviour
     {
         playerControls = new PlayerControls();
         shopDisplay = shopPanel.GetComponentInChildren<ShopDisplay>();
-        playerControls.Inventory.CloseInventory.performed += ctx => CloseShop();
+        PlayerInventoryHolder.OnInventoryCloseRequested += CloseShop;
     }
 
     void OnEnable()
@@ -41,5 +41,10 @@ public class UIShopController : MonoBehaviour
         shopPanel.SetActive(false);
         shopDisplay.ShopSystem = null;
         shopDisplay.ClearSlots();
+    }
+
+    void OnDestroy()
+    {
+        PlayerInventoryHolder.OnInventoryCloseRequested -= CloseShop;
     }
 }
