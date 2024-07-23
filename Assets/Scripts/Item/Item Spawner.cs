@@ -10,13 +10,20 @@ public class ItemSpawner : Singleton<ItemSpawner>
 
     protected override void Awake()
     {
-        SaveGameManager.OnLoadGame += LoadDroppedItems;
+        base.Awake();
+        SaveGameManager.OnLoadScene += LoadDroppedItems;
     }
 
-    private void LoadDroppedItems(SaveData data)
+    void OnDestroy()
     {
-        if (data.droppedItems == null) return;
-        foreach (var droppedItem in data.droppedItems)
+        SaveGameManager.OnLoadScene -= LoadDroppedItems;
+    }
+
+    private void LoadDroppedItems(SaveData data, int sceneIndex)
+    {
+        var droppedItems = data.sceneData[sceneIndex].droppedItems;
+        if (droppedItems == null) return;
+        foreach (var droppedItem in droppedItems)
         {
             SpawnItem(droppedItem.itemID, droppedItem.position, droppedItem.amount);
         }
@@ -27,10 +34,11 @@ public class ItemSpawner : Singleton<ItemSpawner>
         ItemData item = itemDatabase.GetItem(id);
         var itemContainer = Instantiate(itemContainerPrefab, position, Quaternion.identity).GetComponent<ItemContainer>();
         itemContainer.SetItem(item, amount);
-        StartCoroutine(
-            // disable the collider for a short time to prevent the item from being picked up immediately
-            DisableCollider(itemContainer.GetComponent<Collider2D>(), 0.5f)
-        );
+        Debug.Log("Spawning item with ID: " + item.itemName);
+        // StartCoroutine(
+        //     // disable the collider for a short time to prevent the item from being picked up immediately
+        //     DisableCollider(itemContainer.gameObject.GetComponent<Collider2D>(), 0.5f)
+        // );
     }
 
     private IEnumerator DisableCollider(Collider2D collider, float time)

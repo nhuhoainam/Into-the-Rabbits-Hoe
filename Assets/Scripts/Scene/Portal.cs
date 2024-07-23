@@ -24,8 +24,11 @@ public class Portal : MonoBehaviour
             player.enabled = false;
             player.SetIdleAnim();
             transAnim.GetComponent<Animator>().SetTrigger("End");
+            SaveGameManager.SaveScene(SceneManager.GetActiveScene().buildIndex);
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(sceneToLoad);    
+            SaveGameManager.LoadScene(SaveGameManager.CurrentSaveData, sceneToLoad);
+            SaveGameManager.CurrentSaveData.currentScene = sceneToLoad;
             transAnim.GetComponent<Animator>().SetTrigger("Start");
             player.enabled = true;
         }

@@ -73,13 +73,14 @@ public class PlayerController : MonoBehaviour
 
     private void SavePlayer()
     {
+        playerData.position = Position;
         SaveGameManager.CurrentSaveData.playerData = playerData;
     }
 
     private void LoadPlayer(SaveData data)
     {
         playerData = data.playerData;
-        transform.position = playerData.position;
+        Position = playerData.position;
         Direction = playerData.Direction;
     }
 

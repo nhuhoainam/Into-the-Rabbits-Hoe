@@ -11,17 +11,20 @@ public class UIInventoryController : MonoBehaviour
 
     private InventorySystem playerInventory;
 
+    private void OpenShop(ShopKeeper _) {
+        DisplayInventory(GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem, 9);
+    }
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
-        DialogueManager.OnOpenShop += (_) => { DisplayInventory(GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem, 9); };
+        DialogueManager.OnOpenShop += OpenShop;
         PlayerInventoryHolder.OnInventoryCloseRequested += CloseInventory;
         PlayerInventoryHolder.OnPlayerInventoryChanged += RefreshDisplay;
     }
     private void OnDisable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
-        DialogueManager.OnOpenShop -= (_) => { DisplayInventory(GetComponent<PlayerInventoryHolder>().PrimaryInventorySystem, 9); };
+        DialogueManager.OnOpenShop -= OpenShop;
         PlayerInventoryHolder.OnInventoryCloseRequested -= CloseInventory;
         PlayerInventoryHolder.OnPlayerInventoryChanged -= RefreshDisplay;
     }

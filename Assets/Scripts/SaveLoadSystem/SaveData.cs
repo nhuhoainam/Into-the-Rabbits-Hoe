@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 [System.Serializable]
@@ -17,11 +18,9 @@ public class NPCData {
 public class SaveData
 {
     public InventorySaveData playerInventory;
+    public int currentScene = 0;
     public PlayerData playerData;
-    public List<DroppedItemSaveData> droppedItems = new();
-    public List<TilemapSaveData> tilemapSaveData;
-    public List<string> NPCQuestNames = new();
-    public List<string> NPCDefaultDialogue = new();
+    public SerializableDictionary<int, SceneData> sceneData = new();
     public SerializableDictionary<string, NPCData> NPCQuests = new();
     public SaveData()
     {

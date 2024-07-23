@@ -10,8 +10,8 @@ public class TilemapSaveHandler : Singleton<TilemapSaveHandler> {
 
     private void Start() {
         InitTilemaps();
-        SaveGameManager.OnSaveGame += OnSave;
-        SaveGameManager.OnLoadGame += OnLoad;
+        SaveGameManager.OnSaveScene += OnSave;
+        SaveGameManager.OnLoadScene += OnLoad;
     }
 
     private void InitTilemaps() {
@@ -27,7 +27,7 @@ public class TilemapSaveHandler : Singleton<TilemapSaveHandler> {
         }
     }
 
-    public void OnSave() {
+    public void OnSave(int sceneIndex) {
         // List that will later be safed
         List<TilemapSaveData> data = new();
 
@@ -40,11 +40,11 @@ public class TilemapSaveHandler : Singleton<TilemapSaveHandler> {
 
             data.Add(mapData);
         }
-        SaveGameManager.CurrentSaveData.tilemapSaveData = data;
+        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].tilemapSaveData = data;
     }
 
-    public void OnLoad(SaveData data) {
-        foreach (var mapData in data.tilemapSaveData) {
+    public void OnLoad(SaveData data, int sceneIndex) {
+        foreach (var mapData in data.sceneData[sceneIndex].tilemapSaveData) {
             // if key does NOT exist in dictionary skip it
             if (!tilemaps.ContainsKey(mapData.key)) {
                 Debug.LogError("Found saved data for tilemap called '" + mapData.key + "', but Tilemap does not exist in scene.");

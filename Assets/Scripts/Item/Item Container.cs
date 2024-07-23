@@ -17,12 +17,15 @@ public class ItemContainer : MonoBehaviour
 
     void Awake()
     {
-        SaveGameManager.OnSaveGame += SaveItem;
+        SaveGameManager.OnSaveScene += SaveItem;
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void SaveItem()
+    private void SaveItem(int sceneIndex)
     {
-        SaveGameManager.CurrentSaveData.droppedItems.Add(new DroppedItemSaveData(item.itemID, amount, transform.position));
+        Debug.Log("Saving item: " + item.itemName + " at position: " + transform.position);
+        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].droppedItems.Add(new DroppedItemSaveData(item.itemID, amount, transform.position));
+        Destroy(gameObject);
     }
 
     public void SetItem(ItemData item, int amount)
@@ -46,7 +49,7 @@ public class ItemContainer : MonoBehaviour
 
     void OnDestroy()
     {
-        SaveGameManager.OnSaveGame -= SaveItem;
+        SaveGameManager.OnSaveScene -= SaveItem;
     }
 }
 
