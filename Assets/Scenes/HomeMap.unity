@@ -27927,6 +27927,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1820388955482581395, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1954635394385359047, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
       propertyPath: m_Name
       value: Inventory Canvas
@@ -27977,6 +27981,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2657240360095140196, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215919290379536415, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3752524146261266471, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
@@ -28287,8 +28295,7 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 496544868006709707, guid: 17a83c44ae709fc4e81b8c24f5f386cb, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,5 +84,19 @@ public class ShopDisplay : MonoBehaviour
             // Remove money from player
             playerData.money -= clickedSlot.price;
         }
+    }
+
+    public void SellClicked()
+    {
+        if (mouseItem.AssignedSlot.ItemData == null) return;
+        if (mouseItem.AssignedSlot.StackSize <= 0) return;
+
+        var item = mouseItem.AssignedSlot.ItemData;
+        var price = (int)(item.goldValue - Math.Round(item.goldValue * shopSystem.sellMarkup));
+        
+        // Add money to player
+        playerData.money += price * mouseItem.AssignedSlot.StackSize;
+        // Remove item from mouse item slot
+        mouseItem.ClearSlot();
     }
 }
