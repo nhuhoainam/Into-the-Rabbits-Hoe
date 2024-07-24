@@ -43,6 +43,7 @@ public static class SaveGameManager
         {
             string json = File.ReadAllText(fullPath);
             tempData = JsonUtility.FromJson<SaveData>(json);
+            SceneManager.LoadScene(tempData.currentScene);
             OnLoadGame?.Invoke(tempData);
         }
         else

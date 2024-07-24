@@ -1,8 +1,13 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public GameObject persistentObject;
+    void Awake() {
+        persistentObject.SetActive(false);
+    }
     public void Instructions()
     {
         //Show instructions
@@ -10,12 +15,16 @@ public class MenuController : MonoBehaviour
 
     public void NewGame()
     {
-        //New game
+        SaveGameManager.Delete();
+        SaveGameManager.CurrentSaveData = new();
+        persistentObject.SetActive(true);
+        SceneManager.LoadScene(0);
     }
 
     public void LoadGame()
     {
-        //Load game
+        persistentObject.SetActive(true);
+        SaveGameManager.Load();
     }
 
     public void Settings()

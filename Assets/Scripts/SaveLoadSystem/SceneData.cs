@@ -18,5 +18,8 @@ public class SceneData
     {
         droppedItems.Clear();
         tilemapSaveData.Clear();
+        treeSaveData.Clear();
+        bushSaveData.Clear();
+        cropSaveData.Clear();
     }
 }

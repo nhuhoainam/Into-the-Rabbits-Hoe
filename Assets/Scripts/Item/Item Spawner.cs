@@ -32,7 +32,7 @@ public class ItemSpawner : Singleton<ItemSpawner>
     public void SpawnItem(int id, Vector3 position, int amount = 1)
     {
         ItemData item = itemDatabase.GetItem(id);
-        var itemContainer = Instantiate(itemContainerPrefab, position, Quaternion.identity).GetComponent<ItemContainer>();
+        var itemContainer = Instantiate(itemContainerPrefab, position, Quaternion.identity, transform.root).GetComponent<ItemContainer>();
         itemContainer.SetItem(item, amount);
         Debug.Log("Spawning item with ID: " + item.itemName);
         // StartCoroutine(
