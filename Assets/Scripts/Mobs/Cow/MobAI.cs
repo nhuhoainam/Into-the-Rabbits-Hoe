@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using Animancer;
-using Pathfinding;
-
 
 
 public class MobAI : MonoBehaviour
@@ -14,9 +12,6 @@ public class MobAI : MonoBehaviour
     [SerializeField] internal AnimationClip walking;
     [SerializeField] internal AnimationClip sleeping;
     [SerializeField] internal AnimationClip chewing;
-
-    internal Seeker seeker;
-    internal AIPath aiPath;
 
     [SerializeField] private int hunger = 10000;
     [SerializeField] private int sleepiness = 10000;
@@ -33,8 +28,6 @@ public class MobAI : MonoBehaviour
 
     void Start()
     {
-        aiPath = GetComponent<AIPath>();
-        seeker = GetComponent<Seeker>();
         state = State.Idling;
         StartCoroutine(IdlingAction());
     }
@@ -43,7 +36,6 @@ public class MobAI : MonoBehaviour
         state = State.Eating;
 
         animancer.Play(walking);
-        aiPath.destination = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
         yield return new WaitForSeconds(Random.Range(5, 10));
 
         animancer.Play(eating);
