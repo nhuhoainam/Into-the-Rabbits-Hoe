@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private Dictionary<int, DirectionalAnimationSet> itemAnimationMapping = new();
+    private Dictionary<string, DirectionalAnimationSet> itemAnimationMapping = new();
     public Vector3Int prevHighlightedPos = new();
     private bool isRunning = false;
     private bool isInteracting = false;
@@ -62,9 +62,9 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         inventoryHolder = GetComponent<InventoryHolder>();
 
-        itemAnimationMapping.Add(1, usingHoe);
-        itemAnimationMapping.Add(13, usingAxe);
-        itemAnimationMapping.Add(15, usingWateringCan);
+        itemAnimationMapping.Add("Hoe", usingHoe);
+        itemAnimationMapping.Add("Axe", usingAxe);
+        itemAnimationMapping.Add("Watering Can", usingWateringCan);
 
         SaveGameManager.OnSaveGame += SavePlayer;
         SaveGameManager.OnLoadGame += LoadPlayer;
@@ -221,9 +221,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             Debug.Log("Required item: " + requiredItem.ToString());
-            if (itemAnimationMapping.ContainsKey(requiredItem.itemID))
+            if (itemAnimationMapping.ContainsKey(requiredItem.itemName))
             {
-                chosenAnimation = itemAnimationMapping[requiredItem.itemID];
+                chosenAnimation = itemAnimationMapping[requiredItem.itemName];
                 isInteracting = true;
                 item.Interact(ctx);
                 if (chosenAnimation != null)

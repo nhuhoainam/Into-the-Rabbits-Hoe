@@ -166,11 +166,5 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
         }
     }
 
-    int IPlayerInteractable.Priority
-    {
-        get
-        {
-            return 1;
-        }
-    }
+    int IPlayerInteractable.Priority => 2;
 }
