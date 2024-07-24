@@ -29,14 +29,11 @@ public class CropFactory : Singleton<CropFactory>
 
     public GameObject CreateCrop(CropType cropType, Vector3 position, Quaternion rotation, int sortingLayer, int sortingOrder)
     {
-        Debug.Log("Creating crop " + cropType.ToString() + " at " + position.ToString() + " with sorting layer " + sortingLayer + " and sorting order " + sortingOrder + "...");
         GameObject crop = Instantiate(Resources.Load("Crop")) as GameObject;
-        Debug.Log("Assets/Scripts/Crops/" + cropType.ToString() + "_CropData.asset");
+        Debug.Log("plant " + crop);
         crop.GetComponent<Crop>().cropData = Resources.Load<CropData>("CropsData/" + cropType.ToString() + "_CropData");
         Assert.IsNotNull(crop.GetComponent<Crop>().cropData);
         crop.transform.SetPositionAndRotation(position, rotation);
-        crop.GetComponent<SpriteRenderer>().sortingLayerID = sortingLayer;
-        crop.GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         return crop;
     }
 }

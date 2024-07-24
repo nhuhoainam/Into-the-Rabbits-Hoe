@@ -13,6 +13,7 @@ public class Crop : MonoBehaviour, IPlayerInteractable
 
     void Awake()
     {
+        Debug.Log("Crop awake");
         SaveGameManager.OnSaveScene += SaveCrop;
         // DontDestroyOnLoad(gameObject);
     }
@@ -44,9 +45,15 @@ public class Crop : MonoBehaviour, IPlayerInteractable
         growthStage++;
         if (growthStage >= cropData.GrowthSprites.Count)
         {
-            ItemSpawner.GetInstance().SpawnItem(300, transform.position);
+            var itemId = cropData.itemData.itemID;
+            ItemSpawner.GetInstance().SpawnItem(itemId, transform.position);
             Destroy(gameObject);
         }
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Destroying crop");
     }
 
     public void Interact()
@@ -60,6 +67,7 @@ public class Crop : MonoBehaviour, IPlayerInteractable
     }
 
     void Harvest() {
+        Debug.Log("Harvesting");
         ItemSpawner itemSpawner = ItemSpawner.GetInstance();
         itemSpawner.SpawnItem(300, transform.position);
         if (cropData.Regrowable)
