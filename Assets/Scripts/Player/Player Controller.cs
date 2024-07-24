@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
     {
         playerData = data.playerData;
         Position = playerData.position;
+        transform.position = Position;
         Direction = playerData.Direction;
     }
 
