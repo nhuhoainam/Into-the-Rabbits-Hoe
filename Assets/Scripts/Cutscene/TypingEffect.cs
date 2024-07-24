@@ -9,7 +9,7 @@ public class TypingEffect : MonoBehaviour
     public float typingSpeed = 0.05f; // Speed of typing effect
     private Queue<string> textsToDisplay = new Queue<string>();
 
-    void Start()
+    void Awake()
     {
         // Hide the text initially
         uiText.text = "";
@@ -55,8 +55,5 @@ public class TypingEffect : MonoBehaviour
 
         // Clear the text after finishing
         uiText.text = "";
-
-        // Notify the ConditionChecker that typing is complete
-        GameObject.FindObjectOfType<ConditionChecker>().OnTypingComplete();
     }
 }

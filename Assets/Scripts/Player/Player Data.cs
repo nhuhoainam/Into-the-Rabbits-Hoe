@@ -7,12 +7,28 @@ using Animancer;
 [System.Serializable]
 public class PlayerData
 {
-    public bool newGame;
-    public int money;
-    public int treesPlanted;
-    public List<string> inactiveQuests;
-    public List<string> activeQuests;
-    public List<string> completedQuests;
-    public Vector3 position;
+    public bool newGame = true;
+    public int money = 0;
+    public int treesPlanted = 0;
+    public List<string> inactiveQuests = new();
+    public List<string> activeQuests = new();
+    public List<string> completedQuests = new();
+    public Vector3 position = new(-17.42f, -13.12f, 0);
     public Vector2 Direction = Vector2.down;
+
+    public PlayerData()
+    {
+    }
+
+    public PlayerData(PlayerData other)
+    {
+        newGame = other.newGame;
+        money = other.money;
+        treesPlanted = other.treesPlanted;
+        inactiveQuests = new(other.inactiveQuests);
+        activeQuests = new(other.activeQuests);
+        completedQuests = new(other.completedQuests);
+        position = other.position;
+        Direction = other.Direction;
+    }
 }

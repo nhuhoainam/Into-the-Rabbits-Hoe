@@ -1,8 +1,19 @@
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] GameObject prefab;
+
+    private GameObject persistentObject;
+    void Awake() 
+    {
+        persistentObject = Instantiate(prefab);
+        persistentObject.SetActive(false);
+    }
+
     public void Instructions()
     {
         //Show instructions
@@ -10,12 +21,18 @@ public class MenuController : MonoBehaviour
 
     public void NewGame()
     {
-        //New game
+        SaveGameManager.Delete();
+        SaveGameManager.CurrentSaveData = new();
+        persistentObject.SetActive(true);
+        SceneManager.LoadScene(0);
     }
 
     public void LoadGame()
     {
-        //Load game
+        if (File.Exists(Application.persistentDataPath + SaveGameManager.SaveDirectory + SaveGameManager.Filename)) {
+            persistentObject.SetActive(true);
+            SaveGameManager.Load();
+        }
     }
 
     public void Settings()

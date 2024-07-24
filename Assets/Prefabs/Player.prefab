@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6840778360447833272}
   - component: {fileID: 1962184320731299636}
   - component: {fileID: -8423114261596870624}
+  - component: {fileID: 5541996613573453926}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -141,12 +142,17 @@ MonoBehaviour:
   usingAxe: {fileID: 11400000, guid: 43a28226709b5054eb8012377943f54a, type: 2}
   usingWateringCan: {fileID: 11400000, guid: a376349e41d7aca489dc8552a90e4509, type: 2}
   _Animancer: {fileID: 1468670709392843409}
+  hoeSound: {fileID: 8300000, guid: acd31baa98131944b8b46a0f9b6adc65, type: 3}
+  axeSound: {fileID: 8300000, guid: 8a4fdca91435c684c9bee8dddc25a883, type: 3}
+  wateringCanSound: {fileID: 8300000, guid: 4f88607d1323b5c4384def1aee6c5654, type: 3}
   prevHighlightedPos: {x: 0, y: 0, z: 0}
   playerData:
     newGame: 0
     money: 0
     treesPlanted: 0
-    inactiveQuests: []
+    inactiveQuests:
+    - Beginning
+    - CinderellaQuest
     activeQuests: []
     completedQuests: []
     position: {x: 0, y: 0, z: 0}
@@ -220,6 +226,7 @@ MonoBehaviour:
     inventorySlots: []
   offset: 9
   ActiveSlot: 0
+  isInventoryOpen: 0
 --- !u!114 &6840778360447833272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,3 +372,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.003594875, y: -0.2539248}
   m_Size: {x: 0.5078478, y: 0.5078478}
   m_Direction: 0
+--- !u!114 &5541996613573453926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013695069984764078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f736dfe9b1663d24f86676c89458c22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPanel: {fileID: 0}

@@ -23,7 +23,7 @@ public class PlayerInventoryHolder : InventoryHolder
 
     private void SaveInventory()
     {
-        // SaveGameManager.CurrentSaveData.playerInventory = new InventorySaveData(primaryInventorySystem);
+        SaveGameManager.CurrentSaveData.playerInventory = new InventorySaveData(primaryInventorySystem);
     }
 
     protected override void LoadInventory(SaveData data)
@@ -32,6 +32,7 @@ public class PlayerInventoryHolder : InventoryHolder
         {
             primaryInventorySystem = data.playerInventory.InvSystem;
             OnPlayerInventoryChanged.Invoke();
+            isInventoryOpen = true;
         }
     }
 

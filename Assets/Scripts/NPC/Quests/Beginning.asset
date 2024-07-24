@@ -23,6 +23,10 @@ MonoBehaviour:
   startItems:
   - itemName: Cauliflower Seed
     amount: 20
+  - itemName: Axe
+    amount: 1
+  - itemName: Hoe
+    amount: 1
   amountToReward: 100
   rewardItems: []
   startDialog:

@@ -15,19 +15,19 @@ public class AudioSettingsController : MonoBehaviour
     public Slider sfxVolumeSlider;
     public Toggle sfxMuteToggle;
 
-    void Awake()
-    {
+    // void Awake()
+    // {
 
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    //     if (Instance == null)
+    //     {
+    //         Instance = this;
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
     void Start()
     {
