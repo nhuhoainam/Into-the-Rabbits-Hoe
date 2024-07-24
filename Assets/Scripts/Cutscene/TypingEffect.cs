@@ -55,8 +55,5 @@ public class TypingEffect : MonoBehaviour
 
         // Clear the text after finishing
         uiText.text = "";
-
-        // Notify the ConditionChecker that typing is complete
-        GameObject.FindObjectOfType<ConditionChecker>().OnTypingComplete();
     }
 }

@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject persistentObject;
-    void Awake() {
+    [SerializeField] GameObject prefab;
+
+    private GameObject persistentObject;
+    void Awake() 
+    {
+        persistentObject = Instantiate(prefab);
         persistentObject.SetActive(false);
     }
+
     public void Instructions()
     {
         //Show instructions

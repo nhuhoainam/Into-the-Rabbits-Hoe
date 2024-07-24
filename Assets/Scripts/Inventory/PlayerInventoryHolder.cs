@@ -32,6 +32,7 @@ public class PlayerInventoryHolder : InventoryHolder
         {
             primaryInventorySystem = data.playerInventory.InvSystem;
             OnPlayerInventoryChanged.Invoke();
+            isInventoryOpen = true;
         }
     }
 
