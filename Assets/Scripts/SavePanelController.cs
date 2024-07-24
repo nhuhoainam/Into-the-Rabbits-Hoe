@@ -25,7 +25,7 @@ public class SavePanelController : MonoBehaviour
     public void SaveAndExitButton() {
         SaveGameManager.Save();
         // Return to main menu (scene 5 in build settings)
+        SceneManager.LoadScene(4);
         persistentObject.SetActive(false);
-        SceneManager.LoadScene(5);
     }
 }
