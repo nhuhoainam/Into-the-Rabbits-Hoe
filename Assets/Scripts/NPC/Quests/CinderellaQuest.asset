@@ -19,11 +19,11 @@ MonoBehaviour:
   itemsToStart: []
   amountRequired: 0
   requiredItems:
-  - itemName: 
+  - itemName: Pumpkin
     amount: 1
   amountToGive: 0
   startItems: []
-  amountToReward: 200
+  amountToReward: 20000
   rewardItems: []
   startDialog:
   - Oh, I wish I could dance with the prince.
