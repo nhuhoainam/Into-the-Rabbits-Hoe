@@ -47,17 +47,27 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     void Start()
     {
         inventoryHolder = GameObject.FindWithTag("Player").GetComponent<InventoryHolder>();
-        LoadTileResources();
         tilemap = GetComponent<Tilemap>();
+        tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
+        wateredTilemap = transform.GetChild(1).GetComponent<Tilemap>();
+        fertilizerTilemap = transform.GetChild(2).GetComponent<Tilemap>();
+        grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
+    }
+
+    public void InitFarmTiles()
+    {
+        tilemap = GetComponent<Tilemap>();
+        LoadTileResources();
         try
         {
             tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
         }
         catch (Exception)
         {
-            var newObj = Instantiate<GameObject>(new GameObject(), transform);
+            var newObj = Instantiate(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
+            newObj.AddComponent<UniqueID>();
             newObj.transform.SetParent(transform);
             tilledTilemap = newObj.GetComponent<Tilemap>();
         }
@@ -71,6 +81,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             var newObj = Instantiate(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
+            newObj.AddComponent<UniqueID>();
             newObj.transform.SetParent(transform);
             wateredTilemap = newObj.GetComponent<Tilemap>();
         }
@@ -84,11 +95,10 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             var newObj = Instantiate(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
+            newObj.AddComponent<UniqueID>();
             newObj.transform.SetParent(transform);
             fertilizerTilemap = newObj.GetComponent<Tilemap>();
         }
-
-        grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
 
         tilledTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
         tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 1;
@@ -100,7 +110,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         fertilizerTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
         fertilizerTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 3;
 
-        this.gameObject.layer = LayerMask.NameToLayer("Interactable");
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
     void IPlayerInteractable.Interact(IPlayerInteractable.InteractionContext ctx)

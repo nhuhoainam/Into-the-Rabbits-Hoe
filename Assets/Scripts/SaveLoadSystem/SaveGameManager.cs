@@ -19,6 +19,7 @@ public static class SaveGameManager
     public static bool Save()
     {
         CurrentSaveData.currentScene = SceneManager.GetActiveScene().buildIndex;
+        SaveScene(CurrentSaveData.currentScene);
         OnSaveGame?.Invoke();
 
         var dir = Application.persistentDataPath + SaveDirectory;
