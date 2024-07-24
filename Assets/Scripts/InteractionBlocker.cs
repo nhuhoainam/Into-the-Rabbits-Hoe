@@ -14,5 +14,5 @@ public class InteractionBlocker : MonoBehaviour, IPlayerInteractable
         return null;
     }
 
-    public int Priority => 1;
+    int IPlayerInteractable.Priority => 1;
 }
