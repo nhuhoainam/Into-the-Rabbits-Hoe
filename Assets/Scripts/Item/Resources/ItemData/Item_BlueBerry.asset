@@ -18,4 +18,4 @@ MonoBehaviour:
   isStackable: 0
   maxStackSize: 64
   itemDescription: 
-  goldValue: 30
+  goldValue: 3000
