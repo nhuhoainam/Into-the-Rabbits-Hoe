@@ -50,7 +50,6 @@ public class Bush : MonoBehaviour, IPlayerInteractable
     void Awake()
     {
         SaveGameManager.OnSaveScene += SaveBush;
-        // DontDestroyOnLoad(gameObject);
     }
 
     public void LoadBush(BushSaveData saveData, int sceneIndex)
