@@ -49,11 +49,11 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     {
         inventoryHolder = GameObject.FindWithTag("Player").GetComponent<InventoryHolder>();
         tilemap = GetComponent<Tilemap>();
-        tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
-        wateredTilemap = transform.GetChild(1).GetComponent<Tilemap>();
-        fertilizerTilemap = transform.GetChild(2).GetComponent<Tilemap>();
+        tilledTilemap = transform.Find("TilledTilemap").GetComponent<Tilemap>();
+        wateredTilemap = transform.Find("WateredTilemap").GetComponent<Tilemap>();
+        fertilizerTilemap = transform.Find("FertilizerTilemap").GetComponent<Tilemap>();
         grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
-        farmableMaskTilemap = transform.Find("Mask").gameObject.GetComponent<Tilemap>();
+        farmableMaskTilemap = transform.GetChild(0).GetComponent<Tilemap>();
     }
 
     public void InitFarmTiles()
@@ -216,15 +216,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     bool GrassAt(Vector3 position)
     {
         TileBase tile = grassTilemap.GetTile(grassTilemap.WorldToCell(position));
-        if (tile == null)
-        {
-            return false;
-        }
-        else if (tile == grassTile)
-        {
-            return true;
-        }
-        return true;
+        return tile != null;
     }
 
     bool WateredAt(Vector3 position)
