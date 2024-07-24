@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a91b2a66245abb41b7dddb1ebf85b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopItemsHeld: {fileID: 11400000, guid: 4160dd1ea101a6844a939a147d349d58, type: 2}
+  shopItemsHeld: {fileID: 11400000, guid: 002b454f9ba264344999e45e89ca36f9, type: 2}
   shopSystem:
     shopInventory: []
     buyMarkup: 0
@@ -10737,7 +10737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3944081412759794951, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
       propertyPath: defaultDialogue.Array.data[0]
-      value: End of NPC2 default.
+      value: I'm Stivelock, nice to see you.
       objectReference: {fileID: 0}
     - target: {fileID: 4299391280915541969, guid: 4c7e06c1ee7f3b545b412531e4171e83, type: 3}
       propertyPath: m_Name
@@ -25297,7 +25297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a91b2a66245abb41b7dddb1ebf85b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopItemsHeld: {fileID: 11400000, guid: 4160dd1ea101a6844a939a147d349d58, type: 2}
+  shopItemsHeld: {fileID: 11400000, guid: 604cb0ff51baf14448702d0ec1b6e9b2, type: 2}
   shopSystem:
     shopInventory: []
     buyMarkup: 0

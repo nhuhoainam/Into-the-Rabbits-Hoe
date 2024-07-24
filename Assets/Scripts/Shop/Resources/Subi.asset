@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7601abdf32cc64180ee05cc91e19b7, type: 3}
+  m_Name: Subi
+  m_EditorClassIdentifier: 
+  shopItems:
+  - {fileID: 11400000, guid: e547eed83ac128545956aa7595621482, type: 2}
+  - {fileID: 11400000, guid: 464dd4d72eeb762488ee2b2558eb784c, type: 2}
+  - {fileID: 11400000, guid: 31aa8524992c8c14ca7df11d673bf1fe, type: 2}
+  - {fileID: 11400000, guid: 58c6835de92210a4cbbe07d13e440356, type: 2}
+  - {fileID: 11400000, guid: 4c5e46e3b38985d46901b5099011814d, type: 2}
+  - {fileID: 11400000, guid: 66ce401e6c8942042a5b00183f6a0a3a, type: 2}
+  - {fileID: 11400000, guid: 0dc1f7e360210f34f8bbdd5f02bae526, type: 2}
+  - {fileID: 11400000, guid: de9b57446cb52c84d8eaa6369c9742b4, type: 2}
+  - {fileID: 11400000, guid: 3bad52612741d394e93317372ab63b0f, type: 2}
+  sellMarkup: 0.2
+  buyMarkup: -0.2
