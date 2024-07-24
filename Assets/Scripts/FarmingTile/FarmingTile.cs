@@ -129,11 +129,11 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
 
         // TODO: check if the player has a hoe in their inventory
         var activeItem = inventorySlot.ItemData;
-        Debug.Log("Interacting with " + activeItem.itemName);
         if (activeItem == null)
         {
             return;
         }
+        Debug.Log("Interacting with " + activeItem.itemName);
         if (activeItem.itemName == "Hoe")
         {
             Till(playerData.position);
