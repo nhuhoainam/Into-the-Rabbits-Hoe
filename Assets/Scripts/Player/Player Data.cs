@@ -15,4 +15,20 @@ public class PlayerData
     public List<string> completedQuests = new();
     public Vector3 position = new(-17.42f, -13.12f, 0);
     public Vector2 Direction = Vector2.down;
+
+    public PlayerData()
+    {
+    }
+
+    public PlayerData(PlayerData other)
+    {
+        newGame = other.newGame;
+        money = other.money;
+        treesPlanted = other.treesPlanted;
+        inactiveQuests = new(other.inactiveQuests);
+        activeQuests = new(other.activeQuests);
+        completedQuests = new(other.completedQuests);
+        position = other.position;
+        Direction = other.Direction;
+    }
 }

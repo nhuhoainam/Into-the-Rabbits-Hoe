@@ -67,6 +67,12 @@ public class PlayerController : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
     }
 
+    void OnDestroy()
+    {
+        SaveGameManager.OnSaveGame -= SavePlayer;
+        SaveGameManager.OnLoadGame -= LoadPlayer;
+    }
+
     private void SavePlayer()
     {
         playerData.position = Position;
@@ -75,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void LoadPlayer(SaveData data)
     {
-        playerData = data.playerData;
+        playerData = new(data.playerData);
         Position = playerData.position;
         transform.position = Position;
         Direction = playerData.Direction;
