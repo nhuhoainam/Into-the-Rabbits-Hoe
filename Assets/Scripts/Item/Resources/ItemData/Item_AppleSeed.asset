@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb1addfe82f32d44afb1797371ed7d9, type: 3}
+  m_Name: Item_AppleSeed
+  m_EditorClassIdentifier: 
+  itemID: 1
+  itemName: Apple Seed
+  itemSprite: {fileID: -780534314, guid: e063cae1c70029b45ace630f7f47ee1f, type: 3}
+  isStackable: 1
+  maxStackSize: 64
+  itemDescription: 
+  goldValue: 1000

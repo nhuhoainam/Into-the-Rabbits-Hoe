@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private Dictionary<int, DirectionalAnimationSet> itemAnimationMapping = new();
+    private Dictionary<string, DirectionalAnimationSet> itemAnimationMapping = new();
     public Vector3Int prevHighlightedPos = new();
     private bool isRunning = false;
     private bool isInteracting = false;
@@ -62,9 +62,9 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         inventoryHolder = GetComponent<InventoryHolder>();
 
-        itemAnimationMapping.Add(1, usingHoe);
-        itemAnimationMapping.Add(13, usingAxe);
-        itemAnimationMapping.Add(15, usingWateringCan);
+        itemAnimationMapping.Add("Hoe", usingHoe);
+        itemAnimationMapping.Add("Axe", usingAxe);
+        itemAnimationMapping.Add("Watering Can", usingWateringCan);
 
         SaveGameManager.OnSaveGame += SavePlayer;
         SaveGameManager.OnLoadGame += LoadPlayer;
@@ -202,9 +202,11 @@ public class PlayerController : MonoBehaviour
     }
     Vector2 direction = GetComponent<PlayerController>().playerData.Direction;
     RaycastHit2D[] hits = Physics2D.RaycastAll(playerRb.position, direction, 1.0f, LayerMask.GetMask("Interactable"));
-    Debug.DrawRay(playerRb.position, direction, Color.red, 1.0f);
-    Debug.Log("Hit " + hits.ToList().Count.ToString() + " objects");
     IPlayerInteractable.InteractionContext ctx = new(GetPlayerData(), GetCurrentInventorySlot());
+    if (hits.Length == 0)
+    {
+        return;
+    }
     var hit = hits.Aggregate((a, b) => CompareFunction(a, b));
     Debug.Log("Hit " + hit.transform.gameObject.name);
     if (hit.collider.TryGetComponent<IPlayerInteractable>(out var item))
@@ -220,9 +222,9 @@ public class PlayerController : MonoBehaviour
         else
         {
             Debug.Log("Required item: " + requiredItem.ToString());
-            if (itemAnimationMapping.ContainsKey(requiredItem.itemID))
+            if (itemAnimationMapping.ContainsKey(requiredItem.itemName))
             {
-                chosenAnimation = itemAnimationMapping[requiredItem.itemID];
+                chosenAnimation = itemAnimationMapping[requiredItem.itemName];
                 isInteracting = true;
                 item.Interact(ctx);
                 if (chosenAnimation != null)
@@ -244,6 +246,18 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
+            else
+            {
+                item.Interact(ctx);
+            }
+            var playerInventoryHolder = GetComponent<PlayerInventoryHolder>();
+            if (playerInventoryHolder.GetItemInActiveSlot().ItemData.isStackable)
+            {
+                Debug.Log("Removing from stack");
+                playerInventoryHolder.GetItemInActiveSlot().RemoveFromStack(1);
+                PlayerInventoryHolder.OnPlayerInventoryChanged?.Invoke();
+            }
+            
         }
     }
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb1addfe82f32d44afb1797371ed7d9, type: 3}
   m_Name: Item_EggplantSeed
   m_EditorClassIdentifier: 
-  itemID: 11
+  itemID: 16
   itemName: Eggplant Seed
-  itemSprite: {fileID: -311138957, guid: bd1a00fffcffd6b418dbff080fbae3a0, type: 3}
+  itemSprite: {fileID: 998830528, guid: e063cae1c70029b45ace630f7f47ee1f, type: 3}
   isStackable: 1
   maxStackSize: 64
   itemDescription: 
-  goldValue: 0
+  goldValue: 500

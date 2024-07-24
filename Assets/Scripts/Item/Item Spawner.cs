@@ -29,17 +29,28 @@ public class ItemSpawner : Singleton<ItemSpawner>
         }
     }
 
+    public void SpawnItem(string name, Vector3 position, int amount = 1)
+    {
+        ItemData item = itemDatabase.GetItem(name);
+        SpawnItem(item, position, amount);
+    }
+
     public void SpawnItem(int id, Vector3 position, int amount = 1)
     {
         ItemData item = itemDatabase.GetItem(id);
-        var itemContainer = Instantiate(itemContainerPrefab, position, Quaternion.identity, transform.root).GetComponent<ItemContainer>();
-        itemContainer.SetItem(item, amount);
-        Debug.Log("Spawning item with ID: " + item.itemName);
-        // StartCoroutine(
-        //     // disable the collider for a short time to prevent the item from being picked up immediately
-        //     DisableCollider(itemContainer.gameObject.GetComponent<Collider2D>(), 0.5f)
-        // );
+        SpawnItem(item, position, amount);
     }
+
+    void SpawnItem(ItemData item, Vector3 position, int amount)
+    {
+        var itemContainer = Instantiate(itemContainerPrefab, position, Quaternion.identity).GetComponent<ItemContainer>();
+        itemContainer.SetItem(item, amount);
+        StartCoroutine(
+            // disable the collider for a short time to prevent the item from being picked up immediately
+            DisableCollider(itemContainer.gameObject.GetComponent<Collider2D>(), 0.5f)
+        );
+    }
+
 
     private IEnumerator DisableCollider(Collider2D collider, float time)
     {

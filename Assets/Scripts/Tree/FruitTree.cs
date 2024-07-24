@@ -68,7 +68,7 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
             float randomYOffset = UnityEngine.Random.Range(-1, 1);
             float randomXOffset = UnityEngine.Random.Range(-1, 1);
             var position = transform.position + new Vector3(randomXOffset, randomYOffset, 0);
-            ItemSpawner.GetInstance().SpawnItem(2, position);
+            ItemSpawner.GetInstance().SpawnItem("Wood", position);
         }
     }
 
@@ -166,11 +166,5 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
         }
     }
 
-    int IPlayerInteractable.Priority
-    {
-        get
-        {
-            return 1;
-        }
-    }
+    int IPlayerInteractable.Priority => 2;
 }

@@ -19,12 +19,29 @@ internal class FruitDropping : MonoBehaviour
 
 }
 
+internal class BushLoader : Singleton<BushLoader>
+{
+    private void LoadBush(SaveData _, int sceneIndex)
+    {
+        var bushSaveData = SaveGameManager.CurrentSaveData.sceneData[sceneIndex].bushSaveData;
+        foreach (var bushData in bushSaveData)
+        {
+            var gameObject = GameObject.Find(bushData.key);
+            gameObject.GetComponent<Bush>().LoadBush(bushData, sceneIndex);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SaveGameManager.OnLoadScene -= LoadBush;
+    }
+}
+
 public class Bush : MonoBehaviour, IPlayerInteractable
 {
     private float FruitSpawnChance => bushData.FruitSpawnChance;
     [SerializeField] private bool hasFruit = true;
     static readonly float CheckSpawnInterval = 40;
-
     private float lastCheckTime = 0;
     [SerializeField] private BushData bushData;
 
@@ -33,12 +50,30 @@ public class Bush : MonoBehaviour, IPlayerInteractable
     void Awake()
     {
         SaveGameManager.OnSaveScene += SaveBush;
-        // DontDestroyOnLoad(gameObject);
+    }
+
+    public void LoadBush(BushSaveData saveData, int sceneIndex)
+    {
+        if (saveData != null)
+        {
+            transform.position = saveData.position;
+            gameObject.name = saveData.key;
+            hasFruit = saveData.hasBerries;
+            lastCheckTime = saveData.lastCheckBerrySpawnTime;
+            if (hasFruit)
+            {
+                spriteRenderer.sprite = bushData.BushWithFruitSprite;
+            }
+            else
+            {
+                spriteRenderer.sprite = bushData.BushSprite;
+            }
+        }
     }
 
     void SaveBush(int sceneIndex)
     {
-        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].bushSaveData.Add(new(hasFruit, lastCheckTime, gameObject.name));
+        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].bushSaveData.Add(new(transform.position, hasFruit, lastCheckTime, gameObject.name));
     }
 
     // Start is called before the first frame update
