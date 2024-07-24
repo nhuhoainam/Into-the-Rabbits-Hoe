@@ -48,17 +48,28 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     void Start()
     {
         inventoryHolder = GameObject.FindWithTag("Player").GetComponent<InventoryHolder>();
-        LoadTileResources();
         tilemap = GetComponent<Tilemap>();
+        tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
+        wateredTilemap = transform.GetChild(1).GetComponent<Tilemap>();
+        fertilizerTilemap = transform.GetChild(2).GetComponent<Tilemap>();
+        grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
+        farmableMaskTilemap = transform.Find("Mask").gameObject.GetComponent<Tilemap>();
+    }
+
+    public void InitFarmTiles()
+    {
+        tilemap = GetComponent<Tilemap>();
+        LoadTileResources();
         try
         {
             tilledTilemap = transform.Find("TilledTilemap").gameObject.GetComponent<Tilemap>();
         }
         catch (Exception)
         {
-            var newObj = Instantiate<GameObject>(new GameObject(), transform);
+            var newObj = Instantiate(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
+            newObj.AddComponent<UniqueID>();
             newObj.transform.SetParent(transform);
             newObj.name = "TilledTilemap";
             tilledTilemap = newObj.GetComponent<Tilemap>();
@@ -73,6 +84,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             var newObj = Instantiate(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
+            newObj.AddComponent<UniqueID>();
             newObj.transform.SetParent(transform);
             newObj.name = "WateredTilemap";
             wateredTilemap = newObj.GetComponent<Tilemap>();
@@ -87,14 +99,11 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             var newObj = Instantiate(new GameObject(), transform);
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
+            newObj.AddComponent<UniqueID>();
             newObj.transform.SetParent(transform);
             newObj.name = "FertilizerTilemap";
             fertilizerTilemap = newObj.GetComponent<Tilemap>();
         }
-
-        grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
-
-        farmableMaskTilemap = transform.Find("Mask").gameObject.GetComponent<Tilemap>();
 
         tilledTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
         tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 4;
