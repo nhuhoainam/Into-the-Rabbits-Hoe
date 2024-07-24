@@ -14,8 +14,9 @@ public class PopupController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
-            popupPanel.SetActive(!popupPanel.activeSelf);
+            var state = !popupPanel.activeSelf;
+            Time.timeScale = state ? 0 : 1;
+            popupPanel.SetActive(state);
         }
     }
 }

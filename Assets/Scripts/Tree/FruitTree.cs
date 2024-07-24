@@ -23,7 +23,7 @@ public class FruitTree : MonoBehaviour, IPlayerInteractable
     void Awake()
     {
         SaveGameManager.OnSaveScene += SaveTree;
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
 
     private void SaveTree(int sceneIndex)

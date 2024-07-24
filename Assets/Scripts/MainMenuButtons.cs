@@ -1,3 +1,4 @@
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,8 +24,10 @@ public class MenuController : MonoBehaviour
 
     public void LoadGame()
     {
-        persistentObject.SetActive(true);
-        SaveGameManager.Load();
+        if (File.Exists(Application.persistentDataPath + SaveGameManager.SaveDirectory + SaveGameManager.Filename)) {
+            persistentObject.SetActive(true);
+            SaveGameManager.Load();
+        }
     }
 
     public void Settings()

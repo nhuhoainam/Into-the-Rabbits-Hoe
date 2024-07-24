@@ -14,7 +14,7 @@ public class Crop : MonoBehaviour, IPlayerInteractable
     void Awake()
     {
         SaveGameManager.OnSaveScene += SaveCrop;
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
 
     void SaveCrop(int sceneIndex)
