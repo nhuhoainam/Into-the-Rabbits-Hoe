@@ -70,7 +70,7 @@ public class ShopDisplay : MonoBehaviour
         if (mouseItem.AssignedSlot.ItemData != null)
         {
             // Check if there is enough space in the mouse item slot
-            if (mouseItem.AssignedSlot.StackSize >= mouseItem.AssignedSlot.ItemData.maxStackSize) return;
+            if (!mouseItem.AssignedSlot.EnoughRoomInStack(1)) return;
 
             // Add item to mouse item slot
             mouseItem.AssignedSlot.AddToStack(1);

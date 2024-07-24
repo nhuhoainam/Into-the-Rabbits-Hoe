@@ -26,7 +26,16 @@ public class InventorySystem
 
     public bool AddToInventory(ItemData itemToAdd, int amountToAdd)
     {
-
+        if (itemToAdd.isStackable == false)
+        {
+            if (HasFreeSlot(out InventorySlot freeSlot))
+            {
+                freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
+                OnInventorySlotChanged?.Invoke(freeSlot);
+                return true;
+            }
+            return false;
+        }
         if (ContainsItem(itemToAdd, out List<InventorySlot> invSlot)) // Check whether item exists in inventory.
         {
             foreach (InventorySlot slot in invSlot)
