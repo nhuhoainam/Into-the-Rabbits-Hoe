@@ -201,9 +201,11 @@ public class PlayerController : MonoBehaviour
     }
     Vector2 direction = GetComponent<PlayerController>().playerData.Direction;
     RaycastHit2D[] hits = Physics2D.RaycastAll(playerRb.position, direction, 1.0f, LayerMask.GetMask("Interactable"));
-    Debug.DrawRay(playerRb.position, direction, Color.red, 1.0f);
-    Debug.Log("Hit " + hits.ToList().Count.ToString() + " objects");
     IPlayerInteractable.InteractionContext ctx = new(GetPlayerData(), GetCurrentInventorySlot());
+    if (hits.Length == 0)
+    {
+        return;
+    }
     var hit = hits.Aggregate((a, b) => CompareFunction(a, b));
     Debug.Log("Hit " + hit.transform.gameObject.name);
     if (hit.collider.TryGetComponent<IPlayerInteractable>(out var item))
@@ -243,6 +245,18 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
+            else
+            {
+                item.Interact(ctx);
+            }
+            var playerInventoryHolder = GetComponent<PlayerInventoryHolder>();
+            if (playerInventoryHolder.GetItemInActiveSlot().ItemData.isStackable)
+            {
+                Debug.Log("Removing from stack");
+                playerInventoryHolder.GetItemInActiveSlot().RemoveFromStack(1);
+                PlayerInventoryHolder.OnPlayerInventoryChanged?.Invoke();
+            }
+            
         }
     }
 }
