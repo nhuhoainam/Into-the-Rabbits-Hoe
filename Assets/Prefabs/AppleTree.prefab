@@ -116,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2703286882890340394}
   - component: {fileID: 2263738734112190150}
+  - component: {fileID: 2877192884127374783}
   m_Layer: 8
   m_Name: InteractionBlocker
   m_TagString: Untagged
@@ -145,7 +146,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4925292493155241616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -167,7 +168,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.021536827, y: 0.33742094}
@@ -183,6 +184,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0481548, y: 1.6748419}
   m_EdgeRadius: 0
+--- !u!114 &2877192884127374783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925292493155241616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d64a31a5a346544381ce3a4c21c2ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8379467528858659934
 GameObject:
   m_ObjectHideFlags: 0
