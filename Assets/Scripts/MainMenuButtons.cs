@@ -24,7 +24,7 @@ public class MenuController : MonoBehaviour
         SaveGameManager.Delete();
         SaveGameManager.CurrentSaveData = new();
         persistentObject.SetActive(true);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void LoadGame()

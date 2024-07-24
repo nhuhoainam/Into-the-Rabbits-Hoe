@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PlaygroundCave.unity
     guid: d4d9e6780e37c9c409d672e9441b7932
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d2c216d2cf9ac43409d68dc58f86c7a0
+  - enabled: 1
     path: Assets/Scenes/HomeMap.unity
     guid: 70a866bfbfd92fa45bcb353adee771a1
   - enabled: 1
@@ -26,8 +29,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BeachMap.unity
     guid: 9ca0fabf1a326c74089cbd5c9a7e4378
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d2c216d2cf9ac43409d68dc58f86c7a0
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0c10c5ea038ca244896f948fc5bbac29, type: 2}

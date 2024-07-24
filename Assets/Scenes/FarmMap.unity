@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9df4b6b3b36a9645a175479545947a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 0
+  sceneToLoad: 1
   spawnPointName: HomeEast
 --- !u!61 &276849795
 BoxCollider2D:

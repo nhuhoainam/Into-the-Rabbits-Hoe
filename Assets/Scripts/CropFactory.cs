@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -26,6 +27,16 @@ public class CropFactory : Singleton<CropFactory>
         { 12, CropType.Pumpkin },
     };
 
+    protected override void Awake()
+    {
+        base.Awake();
+        SaveGameManager.OnLoadScene += LoadCrops;
+    }
+
+    private void LoadCrops(SaveData data, int sceneIndex)
+    {
+        
+    }
 
     public GameObject CreateCrop(CropType cropType, Vector3 position, Quaternion rotation, int sortingLayer, int sortingOrder)
     {

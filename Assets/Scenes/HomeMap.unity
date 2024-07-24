@@ -36745,7 +36745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9df4b6b3b36a9645a175479545947a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 3
+  sceneToLoad: 4
   spawnPointName: BeachNorth
 --- !u!61 &1592424297
 BoxCollider2D:
@@ -45373,7 +45373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9df4b6b3b36a9645a175479545947a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 1
+  sceneToLoad: 2
   spawnPointName: FarmWest
 --- !u!61 &1693675651
 BoxCollider2D:

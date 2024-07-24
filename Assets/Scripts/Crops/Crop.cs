@@ -20,7 +20,7 @@ public class Crop : MonoBehaviour, IPlayerInteractable
 
     void SaveCrop(int sceneIndex)
     {
-        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].cropSaveData.Add(new(growthStage, growthTime, gameObject.name));
+        SaveGameManager.CurrentSaveData.sceneData[sceneIndex].cropSaveData.Add(new(transform.position, growthStage, growthTime, gameObject.name));
     }
 
     void Start()

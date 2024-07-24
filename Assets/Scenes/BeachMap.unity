@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9df4b6b3b36a9645a175479545947a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 0
+  sceneToLoad: 1
   spawnPointName: HomeSouth
 --- !u!61 &323823254
 BoxCollider2D:
@@ -11107,7 +11107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9df4b6b3b36a9645a175479545947a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 2
+  sceneToLoad: 3
   spawnPointName: TownWestFerry
 --- !u!61 &928641135
 BoxCollider2D:
