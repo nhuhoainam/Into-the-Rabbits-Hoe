@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 using Animancer;
 using System;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,8 +31,6 @@ public class PlayerController : MonoBehaviour
     private bool isInteracting = false;
 
     public PlayerData playerData;
-
-
 
     public Vector2 Direction
     {
@@ -142,7 +138,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void UpdateMovementState()
     {
         Play(isRunning ? running : walking);
@@ -166,7 +161,6 @@ public class PlayerController : MonoBehaviour
     {
         return inventoryHolder.GetItemInActiveSlot();
     }
-
 
     IEnumerator InteractingCountDown()
     {
@@ -194,72 +188,74 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Interact()
-{
-    if (isInteracting)
     {
-        return;
-    }
-    Vector2 direction = GetComponent<PlayerController>().playerData.Direction;
-    RaycastHit2D[] hits = Physics2D.RaycastAll(playerRb.position, direction, 1.0f, LayerMask.GetMask("Interactable"));
-    IPlayerInteractable.InteractionContext ctx = new(GetPlayerData(), GetCurrentInventorySlot());
-    if (hits.Length == 0)
-    {
-        return;
-    }
-    var hit = hits.Aggregate((a, b) => CompareFunction(a, b));
-    Debug.Log("Hit " + hit.transform.gameObject.name);
-    if (hit.collider.TryGetComponent<IPlayerInteractable>(out var item))
-    {
-        DirectionalAnimationSet chosenAnimation = null;
-        var requiredItem = item.RequiredItem(ctx);
-        if (requiredItem == null)
+        if (isInteracting)
         {
-            isInteracting = true;
-            item.Interact(ctx);
-            StartCoroutine(InteractingCountDown());
+            return;
         }
-        else
+        Vector2 direction = GetComponent<PlayerController>().playerData.Direction;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(playerRb.position, direction, 1.0f, LayerMask.GetMask("Interactable"));
+        IPlayerInteractable.InteractionContext ctx = new(GetPlayerData(), GetCurrentInventorySlot());
+        if (hits.Length == 0)
         {
-            Debug.Log("Required item: " + requiredItem.ToString());
-            if (itemAnimationMapping.ContainsKey(requiredItem.itemName))
+            return;
+        }
+        var hit = hits.Aggregate((a, b) => CompareFunction(a, b));
+        Debug.Log("Hit " + hit.transform.gameObject.name);
+        if (hit.collider.TryGetComponent<IPlayerInteractable>(out var item))
+        {
+            DirectionalAnimationSet chosenAnimation = null;
+            var requiredItem = item.RequiredItem(ctx);
+            if (requiredItem == null)
             {
-                chosenAnimation = itemAnimationMapping[requiredItem.itemName];
                 isInteracting = true;
                 item.Interact(ctx);
-                if (chosenAnimation != null)
-                {
-                    var state = Play(chosenAnimation);
-                    state.Events.OnEnd = () => isInteracting = false;
-
-                    switch (requiredItem.itemID)
-                    {
-                        case 1:
-                            audioSource.PlayOneShot(hoeSound);
-                            break;
-                        case 13:
-                            audioSource.PlayOneShot(axeSound);
-                            break;
-                        case 15:
-                            audioSource.PlayOneShot(wateringCanSound);
-                            break;
-                    }
-                }
+                StartCoroutine(InteractingCountDown());
             }
             else
             {
-                item.Interact(ctx);
+                Debug.Log("Required item: " + requiredItem.ToString());
+                if (itemAnimationMapping.ContainsKey(requiredItem.itemName))
+                {
+                    chosenAnimation = itemAnimationMapping[requiredItem.itemName];
+                    isInteracting = true;
+                    item.Interact(ctx);
+                    if (chosenAnimation != null)
+                    {
+                        var state = Play(chosenAnimation);
+                        state.Events.OnEnd = () => isInteracting = false;
+                        switch (requiredItem.itemID)
+                        {
+                            case 17:
+                                audioSource.PlayOneShot(hoeSound);
+                                break;
+                            case 2:
+                                audioSource.PlayOneShot(axeSound);
+                                break;
+                            case 25:
+                                audioSource.PlayOneShot(wateringCanSound);
+                                break;
+                            default:
+                                Debug.LogWarning("No sound for itemID: " + requiredItem.itemID);
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    item.Interact(ctx);
+                }
+                var playerInventoryHolder = GetComponent<PlayerInventoryHolder>();
+                if (playerInventoryHolder.GetItemInActiveSlot().ItemData.isStackable)
+                {
+                    Debug.Log("Removing from stack");
+                    playerInventoryHolder.GetItemInActiveSlot().RemoveFromStack(1);
+                    PlayerInventoryHolder.OnPlayerInventoryChanged?.Invoke();
+                }
+
             }
-            var playerInventoryHolder = GetComponent<PlayerInventoryHolder>();
-            if (playerInventoryHolder.GetItemInActiveSlot().ItemData.isStackable)
-            {
-                Debug.Log("Removing from stack");
-                playerInventoryHolder.GetItemInActiveSlot().RemoveFromStack(1);
-                PlayerInventoryHolder.OnPlayerInventoryChanged?.Invoke();
-            }
-            
         }
     }
-}
 
     private void Update()
     {
