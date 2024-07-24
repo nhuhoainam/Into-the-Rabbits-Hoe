@@ -6,9 +6,12 @@ using UnityEngine.InputSystem;
 using Animancer;
 using System;
 using System.Linq;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    public static UnityAction OnGoldChanged;
+
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float runSpeedModifier = 2.0f;
     [SerializeField] private DirectionalAnimationSet idle;
@@ -31,6 +34,15 @@ public class PlayerController : MonoBehaviour
     private bool isInteracting = false;
 
     public PlayerData playerData;
+
+    public int Money
+    {
+        get => playerData.Money;
+        set {
+            playerData.Money = value;
+            OnGoldChanged?.Invoke();
+        }
+    }
 
     public Vector2 Direction
     {

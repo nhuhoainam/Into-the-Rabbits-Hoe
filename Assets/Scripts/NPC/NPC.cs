@@ -100,7 +100,7 @@ public class NPC : MonoBehaviour, IPlayerInteractable
                     {
                         playerController.playerData.activeQuests.Remove(quest);
                         playerController.playerData.completedQuests.Add(quest);
-                        playerController.playerData.money += questData.amountToReward;
+                        playerController.Money += questData.amountToReward;
                         foreach (var item in questData.rewardItems)
                         {
                             var itemData = database.GetItem(item.itemName);
@@ -128,7 +128,7 @@ public class NPC : MonoBehaviour, IPlayerInteractable
                     {
                         playerController.playerData.inactiveQuests.Remove(quest);
                         playerController.playerData.activeQuests.Add(quest);
-                        playerController.playerData.money += questData.amountToGive;
+                        playerController.Money += questData.amountToGive;
                         foreach (var item in questData.startItems)
                         {
                             var itemData = database.GetItem(item.itemName);

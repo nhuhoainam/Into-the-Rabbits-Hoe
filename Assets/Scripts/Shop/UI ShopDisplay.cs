@@ -20,12 +20,6 @@ public class ShopDisplay : MonoBehaviour
     public Dictionary<UIShopSlot, ShopSlot> SlotDictionary => slotDictionary;
 
     [SerializeField] private PlayerController player;
-    private PlayerData playerData;
-
-    void Awake()
-    {
-        playerData = player.playerData;
-    }
 
     void Start()
     {
@@ -63,7 +57,7 @@ public class ShopDisplay : MonoBehaviour
     public void SlotClicked(UIShopSlot clickedSlot)
     {
         if (clickedSlot.itemData == null) return;
-        if (playerData.money < clickedSlot.price) return;
+        if (player.Money < clickedSlot.price) return;
         // Clicked with item in mouse 
         // Check if mouse item is the same as the clicked item
         if (mouseItem.AssignedSlot.ItemData != null && mouseItem.AssignedSlot.ItemData != clickedSlot.itemData) return;
@@ -75,14 +69,14 @@ public class ShopDisplay : MonoBehaviour
             // Add item to mouse item slot
             mouseItem.AssignedSlot.AddToStack(1);
             // Remove money from player
-            playerData.money -= clickedSlot.price;
+            player.Money -= clickedSlot.price;
         }
         else
         {
             // Add item to mouse item slot
             mouseItem.UpdateMouseSlot(new InventorySlot(clickedSlot.itemData, 1));
             // Remove money from player
-            playerData.money -= clickedSlot.price;
+            player.Money -= clickedSlot.price;
         }
     }
 
@@ -95,7 +89,7 @@ public class ShopDisplay : MonoBehaviour
         var price = (int)(item.goldValue - Math.Round(item.goldValue * shopSystem.sellMarkup));
         
         // Add money to player
-        playerData.money += price * mouseItem.AssignedSlot.StackSize;
+        player.Money += price * mouseItem.AssignedSlot.StackSize;
         // Remove item from mouse item slot
         mouseItem.ClearSlot();
     }

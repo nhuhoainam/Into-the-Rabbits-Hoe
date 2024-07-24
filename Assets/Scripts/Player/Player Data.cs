@@ -8,7 +8,7 @@ using Animancer;
 public class PlayerData
 {
     public bool newGame = true;
-    public int money = 0;
+    public int Money = 0;
     public int treesPlanted = 0;
     public List<string> inactiveQuests = new();
     public List<string> activeQuests = new();
@@ -23,7 +23,7 @@ public class PlayerData
     public PlayerData(PlayerData other)
     {
         newGame = other.newGame;
-        money = other.money;
+        Money = other.Money;
         treesPlanted = other.treesPlanted;
         inactiveQuests = new(other.inactiveQuests);
         activeQuests = new(other.activeQuests);

@@ -37,7 +37,7 @@ public class Quest : ScriptableObject
         var enoughAmount = questType switch
         {
             QuestType.Planting => player.playerData.treesPlanted >= toStartAmount,
-            QuestType.Earning => player.playerData.money >= toStartAmount,
+            QuestType.Earning => player.Money >= toStartAmount,
             _ => false,
         };
         return hasItems && enoughAmount;
@@ -53,7 +53,7 @@ public class Quest : ScriptableObject
         var enoughAmount = questType switch
         {
             QuestType.Planting => player.playerData.treesPlanted >= amountRequired,
-            QuestType.Earning => player.playerData.money >= amountRequired,
+            QuestType.Earning => player.Money >= amountRequired,
             _ => false,
         };
         return hasItems && enoughAmount;
