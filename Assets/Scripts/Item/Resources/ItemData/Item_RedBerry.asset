@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb1addfe82f32d44afb1797371ed7d9, type: 3}
   m_Name: Item_RedBerry
   m_EditorClassIdentifier: 
-  itemID: 5
+  itemID: -1
   itemName: Red Berry
   itemSprite: {fileID: -2119205069, guid: bd1a00fffcffd6b418dbff080fbae3a0, type: 3}
   isStackable: 1
   maxStackSize: 64
   itemDescription: 
-  goldValue: 0
+  goldValue: 1
