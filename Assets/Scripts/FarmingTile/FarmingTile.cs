@@ -28,6 +28,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
     Tilemap wateredTilemap;
     Tilemap fertilizerTilemap;
     InventoryHolder inventoryHolder;
+    Tilemap farmableMaskTilemap;
 
     List<CropTile> crops = new();
     // Start is called before the first frame update
@@ -51,7 +52,7 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         tilemap = GetComponent<Tilemap>();
         try
         {
-            tilledTilemap = transform.GetChild(0).GetComponent<Tilemap>();
+            tilledTilemap = transform.Find("TilledTilemap").gameObject.GetComponent<Tilemap>();
         }
         catch (Exception)
         {
@@ -59,12 +60,13 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
             newObj.transform.SetParent(transform);
+            newObj.name = "TilledTilemap";
             tilledTilemap = newObj.GetComponent<Tilemap>();
         }
 
         try
         {
-            wateredTilemap = transform.GetChild(1).GetComponent<Tilemap>();
+            wateredTilemap = transform.Find("WateredTilemap").gameObject.GetComponent<Tilemap>();
         }
         catch (Exception)
         {
@@ -72,12 +74,13 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
             newObj.transform.SetParent(transform);
+            newObj.name = "WateredTilemap";
             wateredTilemap = newObj.GetComponent<Tilemap>();
         }
 
         try
         {
-            fertilizerTilemap = transform.GetChild(2).GetComponent<Tilemap>();
+            fertilizerTilemap = transform.Find("FertilizerTilemap").gameObject.GetComponent<Tilemap>();
         }
         catch (Exception)
         {
@@ -85,31 +88,39 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
             newObj.AddComponent<Tilemap>();
             newObj.AddComponent<TilemapRenderer>();
             newObj.transform.SetParent(transform);
+            newObj.name = "FertilizerTilemap";
             fertilizerTilemap = newObj.GetComponent<Tilemap>();
         }
 
         grassTilemap = GameObject.FindWithTag("Grass").GetComponent<Tilemap>();
 
+        farmableMaskTilemap = transform.Find("Mask").gameObject.GetComponent<Tilemap>();
+
         tilledTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
-        tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 1;
+        tilledTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 4;
 
         wateredTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
-        wateredTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 2;
+        wateredTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 5;
         wateredTilemap.GetComponent<Tilemap>().color = new(0.7924528f, 0.4539565f, 0.2280171f, 0.5f);
 
         fertilizerTilemap.GetComponent<TilemapRenderer>().sortingLayerName = tilemap.GetComponent<TilemapRenderer>().sortingLayerName;
-        fertilizerTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 3;
+        fertilizerTilemap.GetComponent<TilemapRenderer>().sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder + 6;
 
-        this.gameObject.layer = LayerMask.NameToLayer("Interactable");
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
     void IPlayerInteractable.Interact(IPlayerInteractable.InteractionContext ctx)
     {
+        if (!Farmable(ctx.PlayerData.position))
+        {
+            return;
+        }
         var inventorySlot = ctx.InventorySlot;
         var playerData = ctx.PlayerData;
 
         // TODO: check if the player has a hoe in their inventory
         var activeItem = inventorySlot.ItemData;
+        Debug.Log("Interacting with " + activeItem.itemName);
         if (activeItem == null)
         {
             return;
@@ -132,9 +143,14 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         }
     }
 
+    bool Farmable(Vector3 position)
+    {
+        return farmableMaskTilemap.GetTile(farmableMaskTilemap.WorldToCell(position)) != null;
+    }
+
     ItemData IPlayerInteractable.RequiredItem(IPlayerInteractable.InteractionContext ctx)
     {
-        if (ctx.InventorySlot.ItemData == null)
+        if (ctx.InventorySlot.ItemData == null || !Farmable(ctx.PlayerData.position))
         {
             return null;
         }
@@ -226,10 +242,11 @@ public class FarmingTile : MonoBehaviour, IPlayerInteractable
         Vector3Int posInt = tilemap.WorldToCell(position);
         Vector3 pos = (Vector3)posInt;
         pos += new Vector3(0.5f, 0.4f, 0);
-        var sortingLayer = tilemap.GetComponent<TilemapRenderer>().sortingLayerID;
-        var sortingOrder = tilemap.GetComponent<TilemapRenderer>().sortingOrder;
-        var newCrop = CropFactory.GetInstance().CreateCrop(cropType, pos, Quaternion.identity, sortingLayer, sortingOrder + 4);
+        var st = SortingLayer.NameToID("Entity");
+        Debug.Log("Sorting layer: " + st);
+        var newCrop = CropFactory.GetInstance().CreateCrop(cropType, pos, Quaternion.identity, st, 0);
         crops.Add(new(posInt, newCrop.GetComponent<Crop>()));
+        newCrop.transform.SetParent(transform);
         Debug.Log("Crop planted at: " + posInt);
     }
 
