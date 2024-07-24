@@ -18,7 +18,6 @@ public class AssignUUIDTilemap : Editor
             }
             if (tilemap.TryGetComponent<FarmingTile>(out var farming))
             {
-                tilemap.gameObject.AddComponent<UniqueID>();
                 farming.InitFarmTiles();
             }
         }

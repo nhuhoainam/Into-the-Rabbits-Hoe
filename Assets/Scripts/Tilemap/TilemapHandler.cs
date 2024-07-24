@@ -7,8 +7,6 @@ public class TilemapSaveHandler : Singleton<TilemapSaveHandler>
 {
     Dictionary<string, Tilemap> tilemaps = new();
 
-    [SerializeField] BoundsInt bounds = new(-500, -500, 0, 1000, 1000, 1);
-
     private void Start()
     {
         SaveGameManager.OnSaveScene += OnSave;
@@ -45,11 +43,11 @@ public class TilemapSaveHandler : Singleton<TilemapSaveHandler>
                 key = mapObj.Key,
                 tiles = new List<TileSaveData>()
             };
-            for (int x = bounds.xMin; x < bounds.xMax; x++)
+            for (int x = mapObj.Value.cellBounds.xMin; x < mapObj.Value.cellBounds.xMax; x++)
             {
-                for (int y = bounds.yMin; y < bounds.yMax; y++)
+                for (int y = mapObj.Value.cellBounds.yMin; y < mapObj.Value.cellBounds.yMax; y++)
                 {
-                    for (int z = bounds.zMin; z < bounds.zMax; z++)
+                    for (int z = mapObj.Value.cellBounds.zMin; z < mapObj.Value.cellBounds.zMax; z++)
                     {
                         Vector3Int pos = new(x, y, z);
                         TileBase tile = mapObj.Value.GetTile(pos);
