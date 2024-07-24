@@ -21,13 +21,13 @@ MonoBehaviour:
   requiredItems: []
   amountToGive: 0
   startItems:
-  - itemName: Cauliflower Seed
+  - itemName: Corn Seed
     amount: 20
   - itemName: Axe
     amount: 1
   - itemName: Hoe
     amount: 1
-  amountToReward: 100
+  amountToReward: 10000
   rewardItems: []
   startDialog:
   - Hello, I'm Koewyner, the mayor of this town on the island. You must be Rachmin's
@@ -46,7 +46,6 @@ MonoBehaviour:
   - Rachmin was very sad and regretful.
   - After that, he decided to work hard to earn a lot of money to take care of his
     family.
-  - He left everything behind and went looking for a job.
   - He left everything behind and went looking for a job.
   - I heard that due to his exceptional talent, he became very rich.
   - Later on, he bought two islands.
@@ -69,7 +68,7 @@ MonoBehaviour:
     some work to do now, I\u2019ll come back tomorrow."
   endDialog:
   - Wow, you did a great job.
-  - ' I will support you with some startup capital.'
+  - I will support you with some startup capital.
   - "Whenever you need anything, come back to see me. I\u2019m always willing to
     support you."
   newDefaultDialog:

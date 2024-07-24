@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7601abdf32cc64180ee05cc91e19b7, type: 3}
+  m_Name: Dese
+  m_EditorClassIdentifier: 
+  shopItems:
+  - {fileID: 11400000, guid: 9c8ca9c8d1078d2499b74e92ed0308d6, type: 2}
+  - {fileID: 11400000, guid: 987fbde345ec9614ea8f233c7869e48a, type: 2}
+  - {fileID: 11400000, guid: ee0db0a7fc43e234199f690bfcd4af77, type: 2}
+  - {fileID: 11400000, guid: 7ab922eb9330e4448aa3ebe9b0efd057, type: 2}
+  - {fileID: 11400000, guid: 3bbfb548eebddc44c8788fa0a09cba9d, type: 2}
+  - {fileID: 11400000, guid: 464dd4d72eeb762488ee2b2558eb784c, type: 2}
+  - {fileID: 11400000, guid: 58c6835de92210a4cbbe07d13e440356, type: 2}
+  - {fileID: 11400000, guid: 3556fb667f51fb145b41f7549e5c770b, type: 2}
+  - {fileID: 11400000, guid: 5ddb6d5f7479fa84cae17dcc88159738, type: 2}
+  - {fileID: 11400000, guid: 6684692e38146924dbf65b495fe46b42, type: 2}
+  sellMarkup: 0.2
+  buyMarkup: 0
