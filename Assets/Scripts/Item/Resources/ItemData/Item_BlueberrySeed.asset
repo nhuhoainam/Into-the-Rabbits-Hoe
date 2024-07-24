@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 4
   itemName: Blueberry Seed
   itemSprite: {fileID: 2061813235, guid: e063cae1c70029b45ace630f7f47ee1f, type: 3}
-  isStackable: 0
+  isStackable: 1
   maxStackSize: 64
   itemDescription: 
   goldValue: 800

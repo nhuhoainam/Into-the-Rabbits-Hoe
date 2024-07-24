@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 3
   itemName: Blueberry
   itemSprite: {fileID: -1337190075, guid: e063cae1c70029b45ace630f7f47ee1f, type: 3}
-  isStackable: 0
+  isStackable: 1
   maxStackSize: 64
   itemDescription: 
   goldValue: 3000
