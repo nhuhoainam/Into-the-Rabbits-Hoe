@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         get => playerData.Direction;
         set => playerData.Direction = value;
     }
-    [SerializeField] private AudioSource footstepAudioSource;
+    // [SerializeField] private AudioSource footstepAudioSource;
     [SerializeField] private AudioClip footstepClip;
 
     public Vector3 Position
@@ -128,20 +128,20 @@ public class PlayerController : MonoBehaviour
             Direction = _CurrentAnimationSet.Snap(Direction);
             _Movement = Vector2.ClampMagnitude(_Movement, 1);
 
-            if (!footstepAudioSource.isPlaying)
-            {
-                footstepAudioSource.clip = footstepClip;
-                footstepAudioSource.Play();
-            }
+            // if (!footstepAudioSource.isPlaying)
+            // {
+            //     footstepAudioSource.clip = footstepClip;
+            //     footstepAudioSource.Play();
+            // }
         }
         else
         {
             Play(idle);
 
-            if (footstepAudioSource.isPlaying)
-            {
-                footstepAudioSource.Stop();
-            }
+            // if (footstepAudioSource.isPlaying)
+            // {
+            //     footstepAudioSource.Stop();
+            // }
         }
     }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioSettingsController : MonoBehaviour
+public class AudioSettingsController : Singleton<AudioSettingsController>
 {
     public static AudioSettingsController Instance;
 

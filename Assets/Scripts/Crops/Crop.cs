@@ -54,6 +54,7 @@ public class Crop : MonoBehaviour, IPlayerInteractable
     void OnDestroy()
     {
         Debug.Log("Destroying crop");
+        SaveGameManager.OnSaveScene -= SaveCrop;
     }
 
     public void Interact()

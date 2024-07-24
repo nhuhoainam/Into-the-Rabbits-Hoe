@@ -113,6 +113,7 @@ public class Bush : MonoBehaviour, IPlayerInteractable
     {
         spriteRenderer.sprite = bushData.BushSprite;
         hasFruit = false;
+        lastCheckTime = Time.time;
         StartCoroutine(PlayFruitDropAnimation());
     }
 
